@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./Navbar.css";
 
-function Navbar({ items }) {
+function Navbar({ parentSelector, items }) {
   const links = items.map((item) => {
     return (
       <>
@@ -14,7 +14,7 @@ function Navbar({ items }) {
 
   return (
     <>
-      <nav className="navbar">{links}</nav>
+      <nav className={`${parentSelector}__navbar`}>{links}</nav>
     </>
   );
 }

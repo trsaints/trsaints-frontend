@@ -1,3 +1,4 @@
+import "./Header.css";
 import Navbar from "../Navbar/Navbar";
 
 function Header() {
@@ -16,7 +17,7 @@ function Header() {
         <figcaption className="logo__caption">trsaints</figcaption>
       </picture>
 
-      <Navbar items={mainLinks} />
+      <Navbar items={mainLinks} parentSelector={"header"} />
     </header>
   );
 }

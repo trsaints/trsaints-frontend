@@ -1,0 +1,21 @@
+:root {
+  --c-raisin-ds: hsl(267, 45%, 3%);
+  --c-raisin-d: hsl(267, 45%, 5%);
+  --c-raisin: hsl(267, 45%, 8%);
+  --c-raisin-l: hsl(267, 45%, 13%);
+  --c-raisin-ls: hsl(267, 45%, 18%);
+  --c-mardi-ds: hsl(298, 52%, 20%);
+  --c-mardi-d: hsl(298, 52%, 27%);
+  --c-mardi: hsl(298, 52%, 34%);
+  --c-mardi-l: hsl(298, 52%, 41%);
+  --c-mardi-ls: hsl(298, 52%, 48%);
+  --c-sky-ds: hsl(191, 90%, 42%);
+  --c-sky-d: hsl(191, 90%, 47%);
+  --c-sky: hsl(191, 90%, 52%);
+  --c-sky-l: hsl(191, 90%, 62%);
+  --c-sky-ls: hsl(191, 90%, 72%);
+  --c-honeydrew-ds: hsl(85, 31%, 83%);
+  --c-honeydrew-d: hsl(85, 31%, 88%);
+  --c-honeydrew: hsl(85, 31%, 93%);
+  --c-honeydrew-l: hsl(85, 31%, 98%);
+}

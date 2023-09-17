@@ -1,0 +1,15 @@
+@import url("../../../global-variables.css");
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  background-color: var(--c-raisin-ds);
+  padding: 1.5rem;
+}
+
+.header__navbar {
+  justify-content: center;
+}
