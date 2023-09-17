@@ -4,28 +4,28 @@ function ContactForm() {
       <fieldset>
         <legend>Informações básicas</legend>
 
-        <div>
-          <label htmlFor=""></label>
-          <input type="text" />
-          <output></output>
+        <div role="group">
+          <label htmlFor="name">Nome:</label>
+          <input id="name" type="text" />
+          <output htmlFor="name"></output>
         </div>
 
-        <div>
-          <label htmlFor=""></label>
-          <input type="text" />
-          <output></output>
+        <div role="group">
+          <label htmlFor="email">Email:</label>
+          <input id="email" type="email" />
+          <output htmlFor="email"></output>
         </div>
 
-        <div>
-          <label htmlFor=""></label>
-          <input type="text" />
-          <output></output>
+        <div role="group">
+          <label htmlFor="subject">Assunto:</label>
+          <input id="subject" type="text" />
+          <output htmlFor="subject"></output>
         </div>
 
-        <div>
-          <label htmlFor=""></label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <output></output>
+        <div role="group">
+          <label htmlFor="message">Mensagem:</label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+          <output htmlFor="message"></output>
         </div>
       </fieldset>
 
