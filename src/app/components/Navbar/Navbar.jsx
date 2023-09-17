@@ -5,8 +5,8 @@ function Navbar({ items }) {
   const links = items.map((item) => {
     return (
       <>
-        <li key={item.href}>
-          <a href={item.href}>{item.name}</a>
+        <li className="navbar__item" key={item.href}>
+          <a className="navbar__link" href={item.href}>{item.name}</a>
         </li>
       </>
     );

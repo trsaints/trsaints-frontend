@@ -10,7 +10,13 @@ function Header() {
 
   return (
     <header className="header">
-      <Navbar items={mainLinks}></Navbar>
+      <picture className="logo">
+        <img className="logo__icon" src="" alt="" />
+
+        <figcaption className="logo__caption">trsaints</figcaption>
+      </picture>
+
+      <Navbar items={mainLinks} />
     </header>
   );
 }
