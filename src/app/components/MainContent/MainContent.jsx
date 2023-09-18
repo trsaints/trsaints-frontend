@@ -1,12 +1,14 @@
+import "./MainContent.css";
+
 import AboutSection from "../AboutSection/AboutSection";
 import ContactSection from "../ContactSection/ContactSection";
-import MainHeader from "../MainHeader/MainHeader";
+import MainHero from "../MainHero/MainHero"
 import ProjectSection from "../ProjectSection/ProjectSection";
 
 function MainContent() {
   return (
     <main className="main">
-      <MainHeader />
+      <MainHero />
 
       <AboutSection />
 
@@ -14,7 +16,7 @@ function MainContent() {
 
       <ContactSection />
 
-      <a className="option__link" href="#">
+      <a className="main__top-scroll" href="#">
         Voltar ao topo
       </a>
     </main>

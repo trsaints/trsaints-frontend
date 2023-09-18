@@ -1,0 +1,9 @@
+.hero {
+  padding: 3rem 1.5rem;
+}
+
+.hero__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
