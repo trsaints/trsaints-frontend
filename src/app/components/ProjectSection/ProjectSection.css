@@ -1,0 +1,17 @@
+.projects {
+  padding: 3rem 1.5rem;
+}
+
+.projects__title {
+  font-size: 1.5rem;
+}
+
+.projects__button {
+  background-color: var(--c-raisin-ls);
+}
+
+.projects__list {
+  padding-block: 3rem;
+  display: grid;
+  gap: 1rem;
+}

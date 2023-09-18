@@ -1,0 +1,36 @@
+.project {
+  border: 1px solid var(--c-raisin-ls);
+  background-color: var(--c-raisin);
+  padding: 1.5rem;
+}
+
+.project__title {
+  font-size: 1.25rem;
+}
+
+.project__nav {
+  list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.project__option {
+  flex: 1;
+  text-align: center;
+}
+
+.project__option:nth-child(even) {
+  background-color: var(--c-raisin-ls);
+  border: 4px solid var(--c-raisin-ls);
+}
+
+.project__option:nth-child(odd) {
+  border: 4px solid var(--c-raisin-ls);
+}
+
+.project__link {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+}

@@ -1,3 +1,5 @@
+import "./AboutSection.css";
+
 import { useState } from "react";
 import MenuBar from "../Menu/MenuBar";
 import Resume from "../Resume/Resume";

@@ -1,3 +1,5 @@
+import "./ProjectSection.css";
+
 import { useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 
@@ -60,19 +62,19 @@ function ProjectSection() {
   });
 
   return (
-    <section>
-      <h2 id="myProjects">Projetos</h2>
+    <section className="projects">
+      <h2 className="projects__title" id="myProjects">Projetos</h2>
 
-      <p>
+      <p className="projects__description">
         Meus trabalhos estão voltados principalmente ao desenvolvimento de UIs,
         contendo alguns projetos de script, desktop ou Back-End
       </p>
 
-      <button className="" onClick={() => setProjectsShown(!projectsShown)}>
+      <button className="projects__button" onClick={() => setProjectsShown(!projectsShown)}>
         {projectsButtonText}
       </button>
 
-      <div className={projectsShown ? "projects" : "projects hidden"}>
+      <div className={projectsShown ? "projects__list" : "projects__list hidden"}>
         {projectCards}
       </div>
     </section>

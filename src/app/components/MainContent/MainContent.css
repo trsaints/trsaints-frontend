@@ -1,0 +1,12 @@
+.main__top-scroll {
+  display: block;
+  width: 4rem;
+  position: fixed;
+  z-index: 99;
+  top: calc(100vh - 5.5rem);
+  height: 4rem;
+  background-color: var(--c-mardi-ds);
+  padding: 0.5rem;
+  font-size: 80%;
+  left: calc(100vw - 5.5rem);
+}

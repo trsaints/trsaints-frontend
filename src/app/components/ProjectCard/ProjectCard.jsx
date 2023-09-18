@@ -1,9 +1,11 @@
+import "./ProjectCard.css";
+
 function ProjectCard({ content }) {
   const { name, imageUrl, description, repoUrl, deploy, deployURL } = content;
 
   const deployButton = deploy ? (
-    <li>
-      <a href={deployURL}>Ver Projeto</a>
+    <li className="project__option">
+      <a className="project__link" href={deployURL}>Ver Projeto</a>
     </li>
   ) : (
     ""

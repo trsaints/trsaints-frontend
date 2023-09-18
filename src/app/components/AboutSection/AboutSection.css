@@ -1,0 +1,13 @@
+
+.about {
+  padding: 3rem 1.5rem;
+  background: var(--c-raisin);
+}
+
+.about__title {
+  font-size: 1.5rem;
+}
+
+.about__button {
+  background-color: var(--c-mardi-ds);
+}

@@ -1,0 +1,8 @@
+.contact {
+  padding: 3rem 1.5rem;
+  background-color: var(--c-raisin);
+}
+
+.contact__title {
+  font-size: 1.5rem;
+}
