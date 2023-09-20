@@ -1,35 +1,61 @@
+import "./ContactForm.css";
+
 function ContactForm() {
   return (
-    <form action="" method="post">
-      <fieldset>
-        <legend>Informações básicas</legend>
+    <form className="form" action="" method="post">
+      <fieldset className="form__fieldset">
+        <legend className="form__legend">Informações básicas</legend>
 
-        <div role="group">
-          <label htmlFor="name">Nome:</label>
-          <input id="name" type="text" />
-          <output htmlFor="name"></output>
+        <div className="form__field" role="group">
+          <label className="form__label" htmlFor="nameField">
+            Nome:
+          </label>
+
+          <input className="form__input" id="nameField" type="text" />
+
+          <output className="form__output" htmlFor="nameField"></output>
         </div>
 
-        <div role="group">
-          <label htmlFor="email">Email:</label>
-          <input id="email" type="email" />
-          <output htmlFor="email"></output>
+        <div className="form__field" role="group">
+          <label className="form__label" htmlFor="emailField">
+            Email:
+          </label>
+
+          <input className="form__input" id="emailField" type="email" />
+
+          <output className="form__output" htmlFor="emailField"></output>
         </div>
 
-        <div role="group">
-          <label htmlFor="subject">Assunto:</label>
-          <input id="subject" type="text" />
-          <output htmlFor="subject"></output>
+        <div className="form__field" role="group">
+          <label className="form__label" htmlFor="name">
+            Assunto:
+          </label>
+
+          <input className="form__input" id="subjectField" type="text" />
+
+          <output className="form__output" htmlFor="subjectField"></output>
         </div>
 
-        <div role="group">
-          <label htmlFor="message">Mensagem:</label>
-          <textarea id="message" cols="30" rows="10"></textarea>
-          <output htmlFor="message"></output>
+        <div className="form__field--textarea" role="group">
+          <label className="form__label" htmlFor="messageField">
+            Mensagem:
+          </label>
+
+          <textarea
+            className="form__textarea"
+            name="message"
+            id="messageField"
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <output className="form__output--textarea" htmlFor="messageField"></output>
         </div>
       </fieldset>
 
-      <button type="submit">Fale Comigo</button>
+      <button className="form__submit" type="submit">
+        Fale Comigo
+      </button>
     </form>
   );
 }

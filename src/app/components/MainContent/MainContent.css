@@ -1,12 +1,21 @@
 .main__top-scroll {
   display: block;
-  width: 4rem;
   position: fixed;
   z-index: 99;
-  top: calc(100vh - 5.5rem);
-  height: 4rem;
-  background-color: var(--c-mardi-ds);
+  top: calc(100vh - 4.5rem);
+  left: calc(100vw - 4.5rem);
+  width: 3rem;
+  height: 3rem;
   padding: 0.5rem;
+  color: var(--c-honeydrew);
   font-size: 80%;
-  left: calc(100vw - 5.5rem);
+  font-weight: bold;
+  text-shadow: 0 0 4px var(--c-sky);
+  background-color: var(--c-mardi-ds);
+  background-image: linear-gradient(
+    to top,
+    var(--c-gray-ls),
+    var(--c-gray-ds)
+  );
+  border: 4px outset var(--c-gray-ls);
 }

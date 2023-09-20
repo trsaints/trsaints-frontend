@@ -2,10 +2,27 @@
   border: 1px solid var(--c-raisin-ls);
   background-color: var(--c-raisin);
   padding: 1.5rem;
+  box-shadow: 1px 1px 2px var(--c-raisin-ls), -1px -1px 2px var(--c-raisin-ls);
+  background-image: linear-gradient(to top, var(--c-raisin), var(--c-raisin-l));
+}
+
+.project[open] .project__title::marker {
+  content: "";
+}
+
+.project__title::marker {
+  content: "./";
+  font-weight: bold;
 }
 
 .project__title {
   font-size: 1.25rem;
+  list-style: inside;
+}
+
+.project__title::after {
+  content: "_";
+  font-weight: bold;
 }
 
 .project__nav {
@@ -21,12 +38,16 @@
 }
 
 .project__option:nth-child(even) {
-  background-color: var(--c-raisin-ls);
-  border: 4px solid var(--c-raisin-ls);
+  border: 4px outset var(--c-gray);
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+}
+.project__option:nth-child(even) .project__link {
+  color: var(--c-raisin);
 }
 
 .project__option:nth-child(odd) {
-  border: 4px solid var(--c-raisin-ls);
+  border: 4px outset var(--c-mardi-d);
+  background-color: var(--c-mardi-ds);
 }
 
 .project__link {

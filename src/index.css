@@ -8,13 +8,18 @@
 body {
   background-color: var(--c-raisin-d);
   font-family: "JetBrains Mono";
-  color: var(--c-honeydrew);
+  color: var(--c-honeydrew-ds);
 }
 
 a,
 button,
-label {
+label,
+summary {
   cursor: pointer;
+}
+
+button {
+  border-style: outset;
 }
 
 .hidden {
@@ -34,6 +39,17 @@ h5,
 h6 {
   margin-bottom: 2rem;
   font-weight: bold;
+}
+
+h1,
+h2 {
+  color: var(--c-gray-ls);
+  text-shadow: 1px 1px var(--c-gray-ds);
+}
+
+h1::after,
+h2::after {
+  content: "|";
 }
 
 p {
@@ -57,4 +73,21 @@ dialog[open] {
 
 ::backdrop {
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+.sr-only {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+button {
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  border: 4px outset var(--c-gray-ls);
+  color: var(--c-raisin);
+}
+
+textarea {
+  resize: vertical;
 }

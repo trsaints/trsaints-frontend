@@ -5,15 +5,17 @@ function ProjectCard({ content }) {
 
   const deployButton = deploy ? (
     <li className="project__option">
-      <a className="project__link" href={deployURL}>Ver Projeto</a>
+      <a className="project__link" href={deployURL}>
+        Ver Projeto
+      </a>
     </li>
   ) : (
     ""
   );
 
   return (
-    <article className="project">
-      <h3 className="project__title">{name}</h3>
+    <details className="project">
+      <summary className="project__title">{name}</summary>
 
       <img className="project__banner" src={imageUrl} />
 
@@ -28,7 +30,7 @@ function ProjectCard({ content }) {
 
         {deployButton}
       </nav>
-    </article>
+    </details>
   );
 }
 

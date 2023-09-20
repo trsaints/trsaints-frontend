@@ -10,5 +10,10 @@
 }
 
 .header__navbar {
+  flex-direction: column;
   justify-content: center;
+}
+
+.header__navbar .navbar__item::before {
+  content: "~/";
 }

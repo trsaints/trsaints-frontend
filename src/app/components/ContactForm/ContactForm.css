@@ -1,0 +1,71 @@
+.form {
+  padding: 1.5rem;
+  background-color: var(--c-raisin-ls);
+}
+
+.form__legend {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.form__field {
+  display: grid;
+  grid-template-areas: "fieldLabel blank" "input output";
+  grid-template-columns: repeat(4, auto);
+}
+
+.form__field--textarea {
+  display: grid;
+  grid-template-areas: "fieldLabel" "input" "output";
+  grid-template-columns: repeat(4, auto);
+}
+
+.form__field,
+.form__field--textarea {
+  margin-bottom: 1rem;
+}
+
+.form__label,
+.form__input,
+.form__textarea,
+.form__output,
+.form__output--textarea {
+  padding: 0.5rem;
+}
+
+.form__label,
+.form__output,
+.form__output--textarea {
+  background-color: var(--c-raisin-ds);
+}
+
+.form__label {
+  grid-area: fieldLabel;
+  width: fit-content;
+}
+
+.form__input,
+.form__textarea {
+  grid-area: input;
+  color: var(--c-raisin-ds);
+  background-color: var(--c-gray-ls);
+  width: 100%;
+}
+
+.form__output,
+.form__output--textarea {
+  grid-area: output;
+}
+
+.form__output {
+  width: 3rem;
+}
+
+.form__output--textarea {
+  width: 100%;
+}
+
+.form__submit {
+  font-weight: bold;
+  background-image: linear-gradient(to top, var(--c-mardi-l) , var(--c-mardi-ds), var(--c-sky-ls), var(--c-sky-ds));
+}
