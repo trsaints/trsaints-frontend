@@ -48,7 +48,8 @@
 .form__textarea {
   grid-area: input;
   color: var(--c-raisin-ds);
-  background-color: var(--c-gray-ls);
+  border: 4px inset var(--c-gray-l);
+  background-color: var(--c-gray);
   width: 100%;
 }
 
