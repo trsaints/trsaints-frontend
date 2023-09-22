@@ -45,6 +45,23 @@ h1,
 h2 {
   color: var(--c-gray-ls);
   text-shadow: 1px 1px var(--c-gray-ds);
+  position: relative;
+}
+
+h1::before {
+  content: "> ";
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2::before {
+  content: "~/";
+}
+
+h2 {
+  font-size: 1.75rem;
 }
 
 h1::after,

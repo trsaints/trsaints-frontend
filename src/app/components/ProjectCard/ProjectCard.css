@@ -28,8 +28,9 @@
 }
 
 .project__title {
-  font-size: 1.25rem;
   list-style: inside;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .project__title::after {
@@ -54,16 +55,16 @@
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
 }
 
+.project__option:nth-child(odd) {
+  border: 4px outset var(--c-mardi);
+  background-image: linear-gradient(to top, var(--c-mardi), var(--c-mardi-ds));
+}
+
 .project__option:nth-child(even) .project__link {
   color: var(--c-raisin);
 }
 .project__option:nth-child(odd) .project__link {
   color: var(--c-honeydrew);
-}
-
-.project__option:nth-child(odd) {
-  border: 4px outset var(--c-mardi-d);
-  background-color: var(--c-mardi-ds);
 }
 
 .project__link {
