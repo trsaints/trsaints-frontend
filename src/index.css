@@ -99,6 +99,11 @@ dialog[open] {
   overflow: hidden;
 }
 
+button,
+a {
+  text-transform: capitalize;
+}
+
 button {
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
   border: 4px outset var(--c-gray-ls);

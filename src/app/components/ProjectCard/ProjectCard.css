@@ -1,6 +1,6 @@
 .project::before {
   content: "";
-  background-image: url("../../../../public/ellipsis-solid.svg");
+  background-image: url("/ellipsis-solid.svg");
   background-repeat: no-repeat;
   display: block;
   width: 2rem;

@@ -3,6 +3,10 @@
   background: var(--c-raisin);
 }
 
-.about__button {
-  background-color: var(--c-mardi-ds);
+.about__link {
+  display: inline-block;
+  border: 4px outset var(--c-gray);
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  padding: 0.5rem 1rem;
+  color: var(--c-raisin);
 }
