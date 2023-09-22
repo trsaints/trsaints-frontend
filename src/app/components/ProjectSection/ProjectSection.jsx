@@ -63,18 +63,27 @@ function ProjectSection() {
 
   return (
     <section className="projects">
-      <h2 className="projects__title" id="myProjects">Projetos</h2>
+      <h2 className="projects__title" id="myProjects">
+        Projetos
+      </h2>
 
       <p className="projects__description">
         Meus trabalhos estão voltados principalmente ao desenvolvimento de UIs,
         contendo alguns projetos de script, desktop ou Back-End
       </p>
 
-      <button className="projects__button" onClick={() => setProjectsShown(!projectsShown)}>
-        {projectsButtonText}
-      </button>
+      <menu className="projects__options">
+        <button
+          className="projects__button"
+          onClick={() => setProjectsShown(!projectsShown)}
+        >
+          {projectsButtonText}
+        </button>
+      </menu>
 
-      <div className={projectsShown ? "projects__list" : "projects__list hidden"}>
+      <div
+        className={projectsShown ? "projects__list" : "projects__list hidden"}
+      >
         {projectCards}
       </div>
     </section>
