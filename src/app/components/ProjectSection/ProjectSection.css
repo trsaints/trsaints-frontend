@@ -1,5 +1,6 @@
 .projects {
   padding: 5rem 1.5rem;
+  scroll-margin-top: 6rem;
 }
 
 .projects__button {

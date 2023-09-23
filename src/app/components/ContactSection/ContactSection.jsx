@@ -4,10 +4,8 @@ import ContactForm from "../ContactForm/ContactForm";
 
 function ContactSection() {
   return (
-    <section className="contact">
-      <h2 className="contact__title" id="contactMe">
-        Contato
-      </h2>
+    <section className="contact" id="contactMe">
+      <h2 className="contact__title">Contato</h2>
 
       <p className="contact__description">
         Mande um olá para sugestões, elogios, críticas, enfim... o que quiser me

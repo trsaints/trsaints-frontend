@@ -14,7 +14,7 @@ function ProjectCard({ content }) {
   );
 
   return (
-    <details className="project">
+    <details className="project window">
       <summary className="project__title">{name}</summary>
 
       <img className="project__banner" src={imageUrl} />

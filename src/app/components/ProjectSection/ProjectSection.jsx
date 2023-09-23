@@ -62,10 +62,8 @@ function ProjectSection() {
   });
 
   return (
-    <section className="projects">
-      <h2 className="projects__title" id="myProjects">
-        Projetos
-      </h2>
+    <section className="projects" id="myProjects">
+      <h2 className="projects__title">Projetos</h2>
 
       <p className="projects__description">
         Meus trabalhos estão voltados principalmente ao desenvolvimento de UIs,

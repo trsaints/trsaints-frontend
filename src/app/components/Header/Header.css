@@ -1,19 +1,33 @@
-
 .header {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  display: grid;
+  grid-template-areas: "logo option" "navbar navbar";
+  scroll-margin-bottom: 4rem;
   background-color: var(--c-raisin-ds);
   padding: 1.5rem;
 }
 
-.header__navbar {
-  flex-direction: column;
-  justify-content: center;
+.header__icon {
+  display: block;
+  max-width: 2rem;
+  grid-area: logo;
 }
 
-.header__navbar .navbar__item::before {
+.header__menu {
+  list-style: none;
+  grid-area: option;
+  justify-self: flex-end;
+}
+
+.header__navbar {
+  padding-top: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: navbar;
+}
+
+.header__navbar .header__item::before {
   content: "~/";
 }

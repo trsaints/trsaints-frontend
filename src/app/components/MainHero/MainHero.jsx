@@ -11,7 +11,9 @@ function MainHeader() {
     <header className="hero">
       <h1 className="hero__title">Olá, meu nome é Thiago</h1>
 
-      <img src="/trs_logo.png" alt="" />
+      <figure className="hero__banner window">
+        <img className="hero__img" src="/trs_logo.png"/>
+      </figure>
 
       <p className="hero__description">Eu construo páginas Web</p>
 

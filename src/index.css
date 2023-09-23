@@ -99,6 +99,12 @@ dialog[open] {
   overflow: hidden;
 }
 
+.toggle {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 button,
 a {
   text-transform: capitalize;
@@ -113,3 +119,25 @@ button {
 textarea {
   resize: vertical;
 }
+
+.window::after {
+  content: "";
+  background-image: url("/ellipsis-solid.svg");
+  background-repeat: no-repeat;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: -2rem;
+  right: 0.25rem;
+  transform: scale(1.5);
+}
+
+.window {
+  border: 4px outset var(--c-gray);
+  border-top-width: 2rem;
+  background-color: var(--c-raisin-ds);
+  padding: 1.5rem;
+  position: relative;
+}
+

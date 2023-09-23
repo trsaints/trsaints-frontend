@@ -1,7 +1,13 @@
 import "./Header.css";
 import Navbar from "../Navbar/Navbar";
+import { useState } from "react";
 
 function Header() {
+  const [menuToggle, setMenuToggle] = useState(true);
+  const menuText = menuToggle ? "Abrir Menu" : "Fechar Menu";
+  const toggleMenu = () => setMenuToggle(!menuToggle);
+  const hideAfterClick = () => setMenuToggle(true);
+
   const mainLinks = [
     { name: "Início", href: "#" },
     { name: "Sobre Mim", href: "#aboutMe" },
@@ -11,13 +17,27 @@ function Header() {
 
   return (
     <header className="header">
-      <picture className="logo">
-        <img className="logo__icon" src="" alt="" />
+      <img
+        className="header__icon"
+        src="/computer_logo.png"
+        alt=""
+        aria-hidden
+      />
 
-        <figcaption className="logo__caption">trsaints</figcaption>
-      </picture>
+      <menu className="header__menu">
+        <li className="header__option">
+          <button className="header__button" onClick={toggleMenu}>
+            <span className="sr-only">{menuText}</span>
+          </button>
+        </li>
+      </menu>
 
-      <Navbar items={mainLinks} parentSelector={"header"} />
+      <Navbar
+        items={mainLinks}
+        parentSelector={"header"}
+        toggle={menuToggle}
+        handleToggle={hideAfterClick}
+      />
     </header>
   );
 }

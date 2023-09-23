@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
 import "./Navbar.css";
 
-function Navbar({ parentSelector, items }) {
+function Navbar({
+  toggle = false,
+  parentSelector,
+  items,
+  handleToggle = null,
+}) {
+  const navbarClass = `${parentSelector}__navbar`;
   const links = items.map((item) => {
     return (
       <>
-        <li className="navbar__item">
-          <a className="navbar__link" href={item.href}>{item.name}</a>
+        <li className={`${parentSelector}__item`}>
+          <a className={`${parentSelector}__link`} onClick={handleToggle} href={item.href}>
+            {item.name}
+          </a>
         </li>
       </>
     );
@@ -14,7 +22,9 @@ function Navbar({ parentSelector, items }) {
 
   return (
     <>
-      <nav className={`${parentSelector}__navbar`}>{links}</nav>
+      <nav className={toggle ? `${navbarClass} toggle` : navbarClass}>
+        {links}
+      </nav>
     </>
   );
 }
