@@ -9,13 +9,17 @@ function MainHeader() {
 
   return (
     <header className="hero">
-      <h1 className="hero__title">Olá, meu nome é Thiago</h1>
+      <h1 className="hero__title" lang="en">trsaints</h1>
 
       <figure className="hero__banner window">
-        <img className="hero__img" src="/trs_logo.png"/>
+        <img className="hero__img" src="/trs_logo.png" />
       </figure>
 
-      <p className="hero__description">Eu construo páginas Web</p>
+      <p className="hero__description">
+        Olá, meu nome é Thiago,
+        <br />
+        eu construo páginas Web.
+      </p>
 
       <Navbar items={socialLinks} parentSelector={"hero"} />
     </header>

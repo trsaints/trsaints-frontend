@@ -21,6 +21,11 @@
   justify-self: flex-end;
 }
 
+.header__button {
+  background-image: linear-gradient(var(--c-raisin), var(--c-raisin-ls));
+  border: 4px outset var(--c-raisin-l);
+}
+
 .header__navbar {
   padding-top: 3rem;
   flex-direction: column;

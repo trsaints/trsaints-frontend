@@ -37,14 +37,14 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-weight: bold;
 }
 
 h1,
 h2 {
   color: var(--c-gray-ls);
-  text-shadow: 1px 1px var(--c-gray-ds);
+  text-shadow: 2px 0px var(--c-gray-ds);
   position: relative;
 }
 
@@ -53,7 +53,7 @@ h1::before {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
 
 h2::before {
@@ -61,12 +61,14 @@ h2::before {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
+  border-bottom: 4px solid var(--c-gray-l);
+  width: fit-content;
 }
 
 h1::after,
 h2::after {
-  content: "|";
+  content: "_";
 }
 
 p {
@@ -112,7 +114,7 @@ a {
 
 button {
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
-  border: 4px outset var(--c-gray-ls);
+  border: 4px outset var(--c-gray);
   color: var(--c-raisin);
 }
 

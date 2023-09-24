@@ -1,6 +1,7 @@
 .projects {
   padding: 5rem 1.5rem;
   scroll-margin-top: 6rem;
+  box-shadow: 0 0 16px var(--c-raisin-ls);
 }
 
 .projects__button {

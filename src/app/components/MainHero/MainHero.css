@@ -1,16 +1,60 @@
 .hero {
   padding: 8rem 1.5rem 5rem 1.5rem;
+  background-color: transparent;
+  position: relative;
+  isolation: isolate;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background-image: linear-gradient(
+    var(--c-raisin-ds), var(--c-raisin-ls)
+  );
+}
+
+.hero::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 320px;
+  height: 320px;
+  background-image: linear-gradient(var(--c-pink-ds), var(--c-pink-ls));
+  border-radius: 50%;
+  bottom: -100px;
+  right: -50px;
+  z-index: -1;
 }
 
 .hero__title {
-  color: var(--c-sky);
-  text-shadow: 1px 1px var(--c-sky-ds);
-  background: var(--c-raisin-ds);
+  font-size: 3rem;
+  /* background-image: linear-gradient(var(--c-gray-ls), var(--c-gray-d), var(--c-gray-l), var(--c-gray-ds));
+  background-clip: text;
+  text-shadow: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-weight: 800;
 }
 
 .hero__banner.window {
   padding: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.hero__banner {
+  box-shadow: 16px 16px var(--c-raisin-ds);
+}
+
+.hero__description {
+  font-size: 1.5rem;
 }
 
 .hero__item {
