@@ -69,6 +69,7 @@
 .hero__description {
   font-size: 1.5rem;
   grid-area: desc;
+  text-shadow: 4px 4px 4px var(--c-raisin-ds);
 }
 
 .hero__navbar {
@@ -80,6 +81,8 @@
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
   padding: 0.5rem 1rem;
   color: var(--c-raisin);
+  width: 8rem;
+  text-align: center;
 }
 
 .hero__link {
@@ -106,6 +109,10 @@
     padding-inline: 5rem;
     grid-template-areas: "title title" "desc banner" "option banner";
     column-gap: 2rem;
+  }
+
+  .hero__title {
+    font-size: 4rem;
   }
 
   .hero__banner {

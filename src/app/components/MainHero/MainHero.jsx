@@ -16,7 +16,7 @@ function MainHeader() {
       </figure>
 
       <p className="hero__description">
-        Olá, meu nome é Thiago,
+        Olá. Meu nome é Thiago,
         <br />
         eu construo páginas Web.
       </p>
