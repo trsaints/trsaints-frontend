@@ -124,15 +124,15 @@ textarea {
 
 .window::after {
   content: "";
-  background-image: url("/ellipsis-solid.svg");
+  background-image: url("/menu.svg");
+  background-size: 5rem;
+  width: 5rem;
+  height: 1.5rem;
   background-repeat: no-repeat;
   display: block;
-  width: 2rem;
-  height: 2rem;
   position: absolute;
-  top: -2rem;
-  right: 0.25rem;
-  transform: scale(1.5);
+  top: -1.625rem;
+  right: 0;
 }
 
 .window {
