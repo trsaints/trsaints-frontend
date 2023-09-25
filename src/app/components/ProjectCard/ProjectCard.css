@@ -1,3 +1,7 @@
+.project {
+  align-self: flex-start;
+}
+
 .project[open] .project__title::marker {
   content: "";
 }

@@ -23,3 +23,11 @@
     padding: 1rem;
   }
 }
+
+@media screen and (min-width: 728px) {
+  .main__top-scroll {
+    top: calc(100vh - 4.5rem);
+    left: calc(100vw - 5rem);
+    padding: 1rem;
+  }
+}

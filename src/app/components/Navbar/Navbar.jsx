@@ -12,7 +12,11 @@ function Navbar({
     return (
       <>
         <li className={`${parentSelector}__item`}>
-          <a className={`${parentSelector}__link`} onClick={handleToggle} href={item.href}>
+          <a
+            className={`${parentSelector}__link`}
+            onClick={handleToggle}
+            href={item.href}
+          >
             {item.name}
           </a>
         </li>

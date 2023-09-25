@@ -13,3 +13,10 @@
     background-position: 30rem 40rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .contact {
+    padding-inline: 5rem;
+    background-position-x: 50vw;
+  }
+}

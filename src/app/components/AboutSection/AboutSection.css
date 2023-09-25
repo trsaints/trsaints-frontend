@@ -17,3 +17,9 @@
     padding-inline: 3rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .about {
+    padding-inline: 5rem;
+  }
+}

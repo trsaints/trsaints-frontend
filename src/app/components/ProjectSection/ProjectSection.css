@@ -23,4 +23,17 @@
   .projects {
     padding-inline: 3rem;
   }
+
+  .projects__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .projects {
+    padding-inline: 5rem;
+  }
+
+  .projects__list {
+    grid-template-columns: repeat(3, 1fr)
+  }
 }

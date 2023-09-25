@@ -5,6 +5,8 @@
   isolation: isolate;
   z-index: 2;
   overflow: hidden;
+  display: grid;
+  grid-template-areas: "title" "banner" "desc" "option";
 }
 
 .hero::before {
@@ -16,9 +18,7 @@
   top: 0;
   left: 0;
   z-index: -2;
-  background-image: linear-gradient(
-    var(--c-raisin-ds), var(--c-raisin-ls)
-  );
+  background-image: linear-gradient(var(--c-raisin-ds), var(--c-raisin-ls));
 }
 
 .hero::after {
@@ -43,6 +43,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
+  grid-area: title;
 }
 
 .hero__banner.window {
@@ -62,10 +63,16 @@
 .hero__banner {
   box-shadow: 16px 16px var(--c-raisin-ds);
   position: relative;
+  grid-area: banner;
 }
 
 .hero__description {
   font-size: 1.5rem;
+  grid-area: desc;
+}
+
+.hero__navbar {
+  grid-area: option;
 }
 
 .hero__item {
@@ -84,7 +91,32 @@
     padding-inline: 3rem;
   }
 
+  .hero::after {
+    width: 420px;
+    height: 420px;
+  }
+
   .hero__banner.window {
     padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-inline: 5rem;
+    grid-template-areas: "title title" "desc banner" "option banner";
+    column-gap: 2rem;
+  }
+
+  .hero__banner {
+    width: 25rem;
+  }
+
+  .hero__description {
+    align-self: flex-end;
+  }
+
+  .hero__navbar {
+    align-self: flex-start;
   }
 }
