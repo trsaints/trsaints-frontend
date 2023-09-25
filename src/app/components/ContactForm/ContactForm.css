@@ -84,3 +84,9 @@
   background-image: linear-gradient(to top, var(--c-sky-l), var(--c-sky-ds));
   box-shadow: 0 0 8px var(--c-gray-ds);
 }
+
+@media screen and (min-width: 728px) {
+  .form {
+    width: fit-content;
+  }
+}

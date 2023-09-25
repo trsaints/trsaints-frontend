@@ -2,3 +2,14 @@
   padding: 5rem 1.5rem;
   scroll-margin-top: 6rem;
 }
+
+
+@media screen and (min-width: 728px) {
+  .contact {
+    padding-inline: 3rem;
+    background-image: url("/trsaints_illustration.svg");
+    background-size: 18rem;
+    background-repeat: no-repeat;
+    background-position: 30rem 40rem;
+  }
+}

@@ -54,7 +54,7 @@ function ContactForm() {
       </fieldset>
 
       <button className="form__submit" type="submit">
-        Enviar Mensagem
+        Fale Comigo
       </button>
     </form>
   );

@@ -6,7 +6,7 @@ function ProjectCard({ content }) {
   const deployButton = deploy ? (
     <li className="project__option">
       <a className="project__link" href={deployURL}>
-        Ver Projeto
+        Teste Agora
       </a>
     </li>
   ) : (
@@ -24,7 +24,7 @@ function ProjectCard({ content }) {
       <nav className="project__nav">
         <li className="project__option">
           <a className="project__link" href={repoUrl}>
-            Ver Códgo-Fonte
+            Veja o Código
           </a>
         </li>
 

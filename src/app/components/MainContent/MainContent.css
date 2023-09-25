@@ -14,3 +14,12 @@
   border: 4px outset var(--c-gray);
   box-shadow: 0 0 8px var(--c-raisin-ds);
 }
+
+
+@media screen and (min-width: 728px) {
+  .main__top-scroll {
+    top: calc(100vh - 6rem);
+    left: calc(100vw - 6rem);
+    padding: 1rem;
+  }
+}

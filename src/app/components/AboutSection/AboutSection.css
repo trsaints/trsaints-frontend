@@ -10,3 +10,10 @@
   padding: 0.5rem 1rem;
   color: var(--c-raisin);
 }
+
+
+@media screen and (min-width: 728px) {
+  .about {
+    padding-inline: 3rem;
+  }
+}

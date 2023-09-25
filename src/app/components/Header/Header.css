@@ -36,3 +36,9 @@
 .header__navbar .header__item::before {
   content: "~/";
 }
+
+@media screen and (min-width: 728px) {
+  .header {
+    padding: 1.5rem 3rem;
+  }
+}

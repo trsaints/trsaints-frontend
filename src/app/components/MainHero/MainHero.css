@@ -46,12 +46,22 @@
 }
 
 .hero__banner.window {
-  padding: 0;
+  padding: 2rem;
   margin-bottom: 3rem;
+  background-color: var(--c-raisin);
+}
+
+.hero__banner::before {
+  content: "~/Projects/trs.exe";
+  position: absolute;
+  top: -1.75rem;
+  left: 0;
+  color: var(--c-raisin-ds);
 }
 
 .hero__banner {
   box-shadow: 16px 16px var(--c-raisin-ds);
+  position: relative;
 }
 
 .hero__description {
@@ -67,4 +77,14 @@
 
 .hero__link {
   color: var(--c-raisin-ds);
+}
+
+@media screen and (min-width: 728px) {
+  .hero {
+    padding-inline: 3rem;
+  }
+
+  .hero__banner.window {
+    padding: 4rem;
+  }
 }

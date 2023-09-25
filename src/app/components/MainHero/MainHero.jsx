@@ -12,7 +12,7 @@ function MainHeader() {
       <h1 className="hero__title" lang="en">trsaints</h1>
 
       <figure className="hero__banner window">
-        <img className="hero__img" src="/trs_logo.png" />
+        <img className="hero__img" src="/trsaints_programming.svg" />
       </figure>
 
       <p className="hero__description">

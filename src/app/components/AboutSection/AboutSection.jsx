@@ -11,7 +11,7 @@ function AboutSection() {
       </p>
 
       <a className="about__link" target="_blank" rel="noopener" href="/resume_trsaints.pdf">
-        ver currículo
+        baixe meu currículo
       </a>
     </section>
   );
