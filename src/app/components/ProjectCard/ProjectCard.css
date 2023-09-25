@@ -22,7 +22,7 @@
   list-style: none;
   display: flex;
   flex-flow: column nowrap;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .project__option {
@@ -33,11 +33,17 @@
 .project__option:nth-child(even) {
   border: 4px outset var(--c-gray);
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  box-shadow: 0 0 8px var(--c-gray-ls);
 }
 
 .project__option:nth-child(odd) {
-  border: 4px outset var(--c-mardi);
-  background-image: linear-gradient(to top, var(--c-mardi), var(--c-mardi-ds));
+  border: 4px outset var(--c-raisin-ls);
+  background-image: linear-gradient(
+    to top,
+    var(--c-raisin-ls),
+    var(--c-raisin)
+  );
+  box-shadow: 0 0 8px var(--c-raisin-ls);
 }
 
 .project__option:nth-child(even) .project__link {

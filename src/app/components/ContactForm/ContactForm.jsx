@@ -27,7 +27,7 @@ function ContactForm() {
         </div>
 
         <div className="form__field" role="group">
-          <label className="form__label" htmlFor="name">
+          <label className="form__label" htmlFor="subjectField">
             Assunto:
           </label>
 
@@ -54,7 +54,7 @@ function ContactForm() {
       </fieldset>
 
       <button className="form__submit" type="submit">
-        Fale Comigo
+        Enviar Mensagem
       </button>
     </form>
   );

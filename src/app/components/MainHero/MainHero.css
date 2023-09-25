@@ -27,8 +27,9 @@
   display: block;
   width: 320px;
   height: 320px;
-  background-image: linear-gradient(var(--c-pink-ds), var(--c-pink-ls));
+  background-image: linear-gradient(var(--c-pink-ds), var(--c-yellow-l));
   border-radius: 50%;
+  box-shadow: 0 0 8px var(--c-raisin);
   bottom: -100px;
   right: -50px;
   z-index: -1;
@@ -36,11 +37,11 @@
 
 .hero__title {
   font-size: 3rem;
-  /* background-image: linear-gradient(var(--c-gray-ls), var(--c-gray-d), var(--c-gray-l), var(--c-gray-ds));
+  background-image: linear-gradient(var(--c-gray-ls), var(--c-gray-ds));
   background-clip: text;
   text-shadow: none;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
 

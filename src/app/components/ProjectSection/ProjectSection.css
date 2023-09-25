@@ -2,6 +2,11 @@
   padding: 5rem 1.5rem;
   scroll-margin-top: 6rem;
   box-shadow: 0 0 16px var(--c-raisin-ls);
+  background-image: linear-gradient(
+    var(--c-raisin),
+    var(--c-raisin-ls),
+    var(--c-raisin)
+  );
 }
 
 .projects__button {

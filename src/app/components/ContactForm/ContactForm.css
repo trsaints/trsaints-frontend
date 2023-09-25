@@ -1,11 +1,19 @@
 .form {
   padding: 1.5rem;
-  background-color: var(--c-raisin-ls);
+  background-color: var(--c-gray);
+  border: 4px outset var(--c-gray-ls);
 }
 
 .form__legend {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  font-weight: bold;
+  color: var(--c-raisin);
+}
+
+.form__legend::after {
+  content: ".html";
+  color: var(--c-gray-ls);
 }
 
 .form__field {
@@ -30,13 +38,17 @@
 .form__textarea,
 .form__output,
 .form__output--textarea {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .form__label,
 .form__output,
 .form__output--textarea {
-  background-color: var(--c-raisin-ds);
+  background-color: var(--c-raisin-ls);
+}
+
+.form__label::before {
+  content: "> ";
 }
 
 .form__label {
@@ -48,8 +60,8 @@
 .form__textarea {
   grid-area: input;
   color: var(--c-raisin-ds);
-  border: 4px inset var(--c-gray-l);
-  background-color: var(--c-gray);
+  border: 4px inset var(--c-gray-ls);
+  background-color: var(--c-gray-l);
   width: 100%;
 }
 
@@ -68,10 +80,7 @@
 
 .form__submit {
   font-weight: bold;
-  border-color: var(--c-sky-ls);
-  background-image: linear-gradient(
-    to top,
-    var(--c-sky-ls),
-    var(--c-sky-ds)
-  );
+  border-color: var(--c-sky);
+  background-image: linear-gradient(to top, var(--c-sky-l), var(--c-sky-ds));
+  box-shadow: 0 0 8px var(--c-gray-ds);
 }

@@ -14,6 +14,11 @@
   --c-pink: hsl(340, 45%, 50%);
   --c-pink-d: hsl(340, 45%, 45%);
   --c-pink-ds: hsl(340, 45%, 40%);
+  --c-yellow-ls: hsl(51, 85%, 80%);
+  --c-yellow-l: hsl(51, 85%, 70%);
+  --c-yellow: hsl(51, 85%, 60%);
+  --c-yellow-d: hsl(51, 85%, 50%);
+  --c-yellow-ds: hsl(51, 85%, 40%);
   --c-sky-ds: hsl(191, 90%, 35%);
   --c-sky-d: hsl(191, 90%, 40%);
   --c-sky: hsl(191, 90%, 50%);

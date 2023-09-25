@@ -143,3 +143,11 @@ textarea {
   position: relative;
 }
 
+::selection {
+  background-color: var(--c-raisin-ds);
+}
+
+a::selection,
+button::selection {
+  background-color: var(--c-gray-ls);
+}
