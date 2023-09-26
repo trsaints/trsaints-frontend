@@ -1,7 +1,7 @@
 import "./ProjectCard.css";
 
 function ProjectCard({ content }) {
-  const { name, imageUrl, description, repoUrl, deploy, deployURL } = content;
+  const { name, imageURL, description, repoURL, deploy, deployURL } = content;
 
   const deployButton = deploy ? (
     <li className="project__option">
@@ -17,13 +17,13 @@ function ProjectCard({ content }) {
     <details className="project window">
       <summary className="project__title">{name}</summary>
 
-      <img className="project__banner" src={imageUrl} />
+      <img className="project__banner" src={imageURL} />
 
       <p className="project__description">{description}</p>
 
       <nav className="project__nav">
         <li className="project__option">
-          <a className="project__link" href={repoUrl}>
+          <a className="project__link" href={repoURL}>
             Veja o Código
           </a>
         </li>
