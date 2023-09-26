@@ -79,7 +79,6 @@
 .hero__item {
   border: 4px outset var(--c-gray);
   background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
-  padding: 0.5rem 1rem;
   color: var(--c-raisin);
   width: 8rem;
   text-align: center;
@@ -87,6 +86,9 @@
 
 .hero__link {
   color: var(--c-raisin-ds);
+  padding: 0.5rem;
+  width: 100%;
+  display: inline-block;
 }
 
 @media screen and (min-width: 728px) {
@@ -126,4 +128,16 @@
   .hero__navbar {
     align-self: flex-start;
   }
+}
+
+.hero__item:hover,
+.hero__item:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--c-gray-ls);
+}
+
+.hero__item:active {
+  transform: scale(1);
+  box-shadow: none;
+  border-style: inset;
 }

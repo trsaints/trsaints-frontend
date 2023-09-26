@@ -151,3 +151,14 @@ a::selection,
 button::selection {
   background-color: var(--c-gray-ls);
 }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
