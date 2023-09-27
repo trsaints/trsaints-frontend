@@ -37,3 +37,17 @@
     grid-template-columns: repeat(3, 1fr)
   }
 }
+
+.projects__button:hover,
+.projects__button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--c-gray);
+}
+
+.projects__button:active {
+  transform: scale(1);
+  border-style: inset;
+  box-shadow: none;
+  background-image: none;
+  background-color: var(--c-gray-d);
+}

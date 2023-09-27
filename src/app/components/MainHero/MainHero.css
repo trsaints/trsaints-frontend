@@ -140,4 +140,6 @@
   transform: scale(1);
   box-shadow: none;
   border-style: inset;
+  background-image: none;
+  background-color: var(--c-gray-d);
 }

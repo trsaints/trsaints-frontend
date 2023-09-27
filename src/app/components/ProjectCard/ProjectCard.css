@@ -41,11 +41,11 @@
 }
 
 .project__option:nth-child(odd) {
-  border: 4px outset var(--c-raisin-ls);
+  border: 4px outset var(--c-raisin-l);
   background-image: linear-gradient(
     to top,
     var(--c-raisin-ls),
-    var(--c-raisin)
+    var(--c-raisin-ds)
   );
 }
 
@@ -80,8 +80,17 @@
   box-shadow: 0 0 8px var(--c-raisin-ls);
 }
 
+.project__option:nth-child(even):active {
+  background-color: var(--c-gray-d);
+}
+
+.project__option:nth-child(odd):active {
+  background-color: var(--c-raisin);
+}
+
 .project__option:nth-child(n):active {
   transform: scale(1);
   box-shadow: none;
   border-style: inset;
+  background-image: none;
 }
