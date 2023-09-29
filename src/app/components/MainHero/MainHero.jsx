@@ -9,7 +9,10 @@ function MainHeader() {
 
   return (
     <header className="hero">
-      <h1 className="hero__title" lang="en">trsaints</h1>
+      <h1 className="hero__title">
+        <span lang="en">trsaints</span>
+        <span className="sr-only">, programador Web</span>
+      </h1>
 
       <figure className="hero__banner window">
         <img className="hero__img" src="/trsaints_programming.svg" />
