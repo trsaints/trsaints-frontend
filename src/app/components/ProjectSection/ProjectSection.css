@@ -1,7 +1,7 @@
 .projects {
   padding: 5rem 1.5rem;
   scroll-margin-top: 6rem;
-  box-shadow: 0 0 16px var(--c-raisin-ls);
+  box-shadow: 0 0 16px 4px var(--c-raisin-ls);
   background-color: var(--c-raisin-l);
   opacity: 1;
   background-image: linear-gradient(var(--c-raisin-l) 4px, transparent 4px),

@@ -3,6 +3,11 @@
   background-color: var(--c-raisin-ds);
   padding: 1.5rem;
   text-align: center;
+  box-shadow: 0 -2px 8px var(--c-raisin-ds);
+}
+
+.footer__title {
+  color: var(--c-yellow-ls);
 }
 
 .footer__description {

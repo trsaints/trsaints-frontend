@@ -6,6 +6,7 @@
   grid-template-areas: "logo option" "navbar navbar";
   scroll-margin-bottom: 4rem;
   background-color: var(--c-raisin-ds);
+  box-shadow: 0 2px 8px var(--c-raisin-ds);
   padding: 1.5rem;
 }
 
