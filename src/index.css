@@ -49,7 +49,7 @@ h2 {
 }
 
 h1::before {
-  content: "> ";
+  content: "> " / "";
 }
 
 h1 {
@@ -57,7 +57,7 @@ h1 {
 }
 
 h2::before {
-  content: "~/";
+  content: "~/" / "";
 }
 
 h2 {
@@ -68,7 +68,7 @@ h2 {
 
 h1::after,
 h2::after {
-  content: "_";
+  content: "_" / "";
 }
 
 p {

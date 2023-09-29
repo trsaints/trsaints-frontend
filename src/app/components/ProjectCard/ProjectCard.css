@@ -7,7 +7,7 @@
 }
 
 .project__title::marker {
-  content: "./";
+  content: "./" / "";
   font-weight: bold;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .project__title::after {
-  content: "_";
+  content: "_" / "";
   font-weight: bold;
 }
 

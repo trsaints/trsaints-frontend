@@ -62,7 +62,7 @@ function ProjectSection() {
   });
 
   return (
-    <section className="projects" id="myProjects">
+    <article className="projects" id="myProjects">
       <h2 className="projects__title">Projetos</h2>
 
       <p className="projects__description">
@@ -84,7 +84,7 @@ function ProjectSection() {
       >
         {projectCards}
       </div>
-    </section>
+    </article>
   );
 }
 

@@ -4,7 +4,7 @@ import ContactForm from "../ContactForm/ContactForm";
 
 function ContactSection() {
   return (
-    <section className="contact" id="contactMe">
+    <article className="contact" id="contactMe">
       <h2 className="contact__title">Contato</h2>
 
       <p className="contact__description">
@@ -16,7 +16,7 @@ function ContactSection() {
       </p>
 
       <ContactForm />
-    </section>
+    </article>
   );
 }
 

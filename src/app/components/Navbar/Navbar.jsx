@@ -11,7 +11,7 @@ function Navbar({
   const links = items.map((item) => {
     return (
       <>
-        <li className={`${parentSelector}__item`}>
+        <li role="presentation" className={`${parentSelector}__item`}>
           <a
             className={`${parentSelector}__link`}
             onClick={handleToggle}

@@ -53,7 +53,7 @@
 }
 
 .hero__banner::before {
-  content: "~/Projects/trs.exe";
+  content: "~/Projects/trs.exe" / "";
   position: absolute;
   top: -1.75rem;
   left: 0;

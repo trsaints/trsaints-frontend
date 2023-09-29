@@ -102,7 +102,7 @@
 .form__label:hover::before,
 .form__field:focus-within .form__label::before,
 .form__field--textarea:focus-within .form__label::before {
-  content: "> ";
+  content: "> " / "";
 }
 
 .form__input:focus,
