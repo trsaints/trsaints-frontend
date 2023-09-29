@@ -27,7 +27,7 @@ function Navbar({
   return (
     <>
       <nav className={toggle ? `${navbarClass} toggle` : navbarClass}>
-        {links}
+        <ul>{links}</ul>
       </nav>
     </>
   );
