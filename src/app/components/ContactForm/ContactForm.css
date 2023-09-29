@@ -47,10 +47,6 @@
   background-color: var(--c-raisin-ls);
 }
 
-.form__label::before {
-  content: "> ";
-}
-
 .form__label {
   grid-area: fieldLabel;
   width: fit-content;
@@ -89,4 +85,43 @@
   .form {
     width: fit-content;
   }
+}
+
+.form__field:focus-within .form__label,
+.form__field--textarea:focus-within .form__label,
+.form__field:focus-within .form__output,
+.form__field--textarea:focus-within .form__output--textarea {
+  background-color: var(--c-raisin);
+}
+
+.form__label:hover {
+  background-color: var(--c-raisin);
+}
+
+.form__label:hover::before,
+.form__label:hover::before,
+.form__field:focus-within .form__label::before,
+.form__field--textarea:focus-within .form__label::before {
+  content: "> ";
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border-style: solid;
+  border-color: var(--c-raisin);
+  background-color: var(--c-gray-ls);
+}
+
+.form__submit:hover,
+.form__submit:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--c-sky-ds);
+}
+
+.form__submit:active {
+  transform: scale(1);
+  box-shadow: none;
+  border-style: inset;
+  background-image: none;
+  background-color: var(--c-sky-d);
 }

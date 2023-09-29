@@ -45,7 +45,7 @@
   background-image: linear-gradient(
     to top,
     var(--c-raisin-ls),
-    var(--c-raisin-ds)
+    var(--c-raisin)
   );
 }
 

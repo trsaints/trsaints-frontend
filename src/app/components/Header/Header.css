@@ -33,8 +33,12 @@
   grid-area: navbar;
 }
 
-.header__navbar .header__item::before {
+.header__link::before {
   content: "~/";
+}
+
+.header__link {
+  padding: 0.25rem;
 }
 
 @media screen and (min-width: 728px) {
@@ -55,13 +59,24 @@
 
   .header__navbar.toggle {
     padding-top: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-self: flex-end;
     width: fit-content;
     height: auto;
     list-style: none;
+    align-self: center;
+    justify-self: flex-end;
+  }
+  
+  .header__navbar ul {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
   }
+}
+
+.header__item:hover {
+  background-color: var(--c-sky);
+}
+
+.header__link:hover {
+  color: var(--c-raisin);
 }

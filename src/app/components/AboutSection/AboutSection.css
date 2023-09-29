@@ -23,3 +23,17 @@
     padding-inline: 5rem;
   }
 }
+
+.about__link:hover,
+.about__link:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--c-gray);
+}
+
+.about__link:active {
+  transform: scale(1);
+  box-shadow: none;
+  background-image: none;
+  background-color: var(--c-gray-d);
+  border-style: inset;
+}
