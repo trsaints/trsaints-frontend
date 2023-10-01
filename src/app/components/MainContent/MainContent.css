@@ -10,7 +10,7 @@
   color: var(--c-honeydrew);
   font-size: 80%;
   font-weight: bold;
-  background-image: linear-gradient(to top, var(--c-sky-l), var(--c-sky-ds));
+  background-image: linear-gradient(to top, var(--c-sky-l), var(--c-sky-d));
   border: 4px outset var(--c-sky);
   box-shadow: 0 0 8px var(--c-raisin-ds);
 }

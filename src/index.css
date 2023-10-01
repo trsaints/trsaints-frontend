@@ -113,7 +113,7 @@ a {
 }
 
 button {
-  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-d));
   border: 4px outset var(--c-gray);
   color: var(--c-raisin);
 }
@@ -138,7 +138,7 @@ textarea {
 .window {
   border: 4px outset var(--c-gray);
   border-top-width: 2rem;
-  background-color: var(--c-raisin-ds);
+  background-color: var(--c-raisin-xds);
   padding: 1.5rem;
   position: relative;
 }

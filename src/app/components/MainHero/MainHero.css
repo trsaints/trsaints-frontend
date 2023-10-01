@@ -1,5 +1,5 @@
 .hero {
-  padding: 8rem 1.5rem 5rem 1.5rem;
+  padding: 11.75rem 1.5rem 5rem 1.5rem;
   background-color: transparent;
   position: relative;
   isolation: isolate;
@@ -18,7 +18,7 @@
   top: 0;
   left: 0;
   z-index: -2;
-  background-image: linear-gradient(var(--c-raisin-ds), var(--c-raisin-ls));
+  background-image: linear-gradient(var(--c-raisin-xd), var(--c-raisin-xls));
 }
 
 .hero::after {
@@ -29,7 +29,7 @@
   height: 320px;
   background-image: linear-gradient(var(--c-pink-ds), var(--c-yellow-l));
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--c-raisin);
+  box-shadow: 0 0 8px var(--c-raisin-xds);
   bottom: -100px;
   right: -50px;
   z-index: -1;
@@ -78,7 +78,7 @@
 
 .hero__item {
   border: 4px outset var(--c-gray);
-  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-d));
   color: var(--c-raisin);
   width: 8rem;
   text-align: center;

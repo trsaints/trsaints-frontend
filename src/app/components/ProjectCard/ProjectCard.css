@@ -37,7 +37,7 @@
 
 .project__option:nth-child(even) {
   border: 4px outset var(--c-gray);
-  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-ds));
+  background-image: linear-gradient(to top, var(--c-gray-ls), var(--c-gray-d));
 }
 
 .project__option:nth-child(odd) {

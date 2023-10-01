@@ -2,12 +2,17 @@
   position: fixed;
   z-index: 100;
   width: 100vw;
+  height: fit-content;
   display: grid;
   grid-template-areas: "logo option" "navbar navbar";
   scroll-margin-bottom: 4rem;
   background-color: var(--c-raisin-ds);
-  box-shadow: 0 2px 8px var(--c-raisin-ds);
+  box-shadow: 0 2px 8px var(--c-raisin-xds);
   padding: 1.5rem;
+}
+
+.header.toggle {
+  height: 6.75rem;
 }
 
 .header__icon {
@@ -29,9 +34,13 @@
 
 .header__navbar {
   padding-top: 3rem;
+  grid-area: navbar;
+}
+
+.header__navbar ul {
+  display: flex ;
   flex-direction: column;
   justify-content: center;
-  grid-area: navbar;
 }
 
 .header__link::before {
@@ -50,6 +59,7 @@
 
 @media screen and (min-width: 1024px) {
   .header {
+    height: 5.625rem;
     padding-inline: 5rem;
     grid-template-areas: "logo option navbar";
   }
@@ -68,7 +78,6 @@
   }
 
   .header__navbar ul {
-    display: flex;
     flex-direction: row;
     gap: 1rem;
   }
