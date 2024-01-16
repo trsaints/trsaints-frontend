@@ -1,0 +1,32 @@
+.header {
+  background-image: linear-gradient(
+    to bottom,
+    var(--black-2),
+    var(--raisin-black)
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px black;
+}
+
+.header__banner {
+  width: 2rem;
+}
+
+.header-nav {
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.header-nav__link {
+  color: white;
+  text-shadow: 0 0 8px white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.header-nav__link::before {
+  content: "~/";
+}

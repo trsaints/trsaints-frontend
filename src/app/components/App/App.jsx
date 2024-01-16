@@ -1,9 +1,14 @@
 import "./App.css";
 
+import { MainHeader } from "../MainHeader";
+
 function App() {
   return (
     <>
-     <h1>himom</h1>
+      <MainHeader.Root>
+        <MainHeader.Banner srcPath="/computer_logo.svg" />
+        <MainHeader.Nav />
+      </MainHeader.Root>
     </>
   );
 }

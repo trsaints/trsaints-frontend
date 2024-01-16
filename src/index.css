@@ -9,4 +9,9 @@ body {
   background-color: var(--raisin-black);
   font-family: "JetBrains Mono";
   color: var(--lavender-web-2);
+  font-size: 18px;
+}
+
+a {
+  color: var(--rose);
 }
