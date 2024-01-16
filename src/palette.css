@@ -1,0 +1,38 @@
+:root {
+  /* MAIN COLOR */
+  --black: #050307ff;
+  --black-2: #0c0712ff;
+  --raisin-black: #130b1dff;
+  --dark-purple: #1a0f27ff;
+  --dark-purple-2: #211332ff;
+  --russian-violet: #28173dff;
+  --russian-violet-2: #2f1b48ff;
+  --russian-violet-3: #361f52ff;
+  --russian-violet-4: #3d235dff;
+  --russian-violet-5: #442768ff;
+
+  /* HIGHLIGHT COLOR */
+  --rose: #f72587ff;
+  --deep-pink: #f8328eff;
+  --rose-bonbon: #f93f95ff;
+  --rose-bonbon-2: #fa4b9cff;
+  --brilliant-rose: #fb58a3ff;
+  --hot-pink: #fb65aaff;
+  --hot-pink-2: #fc72b1ff;
+  --persian-pink: #fd7eb8ff;
+  --persian-pink-2: #fe8bbfff;
+  --carnation-pink: #ff98c6ff;
+
+  /* SECONDARY COLORS */
+  /* CSS HEX */
+  --onyx: #464349ff;
+  --davys-gray: #58545bff;
+  --dim-gray: #69656eff;
+  --taupe-gray: #7b7680ff;
+  --taupe-gray-2: #8d8792ff;
+  --rose-quartz: #9e99a5ff;
+  --rose-quartz-2: #b0aab7ff;
+  --french-gray: #c2bbc9ff;
+  --lavender-web: #d3ccdcff;
+  --lavender-web-2: #e5ddeeff;
+}
