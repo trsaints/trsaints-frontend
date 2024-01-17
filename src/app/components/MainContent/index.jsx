@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { projectService, skillService } from "../../services/db-service";
+import {
+  projectService,
+  skillService,
+  socialMediaService,
+} from "../../services/db-service";
+import { About } from "./About/About";
 import Hero from "./Hero/Hero";
 import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
@@ -10,6 +15,17 @@ function Root({ children }) {
 
 function HeroSection() {
   return <Hero />;
+}
+
+function AboutSection() {
+  const links = socialMediaService.getAllSocialLinks();
+
+  return (
+    <About.Root>
+      <About.Header links={links} />
+      <About.Pitch srcPath="" />
+    </About.Root>
+  );
 }
 
 function SkillsSection() {
@@ -40,4 +56,10 @@ function ProjectsSection() {
   );
 }
 
-export const MainContent = { Root, HeroSection, SkillsSection, ProjectsSection };
+export const MainContent = {
+  Root,
+  HeroSection,
+  AboutSection,
+  SkillsSection,
+  ProjectsSection,
+};

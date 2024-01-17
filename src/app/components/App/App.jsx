@@ -13,6 +13,7 @@ function App() {
 
       <MainContent.Root>
         <MainContent.HeroSection />
+        <MainContent.AboutSection />
         <MainContent.SkillsSection />
         <MainContent.ProjectsSection />
       </MainContent.Root>
