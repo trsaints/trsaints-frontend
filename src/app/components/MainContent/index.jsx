@@ -1,11 +1,15 @@
-import { Projects } from "./Projects/Projects";
 import { useState } from "react";
-import { projectService } from "../../services/db-service";
-import { skillService } from "../../services/db-service";
+import { projectService, skillService } from "../../services/db-service";
+import Hero from "./Hero/Hero";
+import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
+}
+
+function HeroSection() {
+  return <Hero />;
 }
 
 function SkillsSection() {
@@ -36,4 +40,4 @@ function ProjectsSection() {
   );
 }
 
-export const MainContent = { Root, SkillsSection, ProjectsSection };
+export const MainContent = { Root, HeroSection, SkillsSection, ProjectsSection };
