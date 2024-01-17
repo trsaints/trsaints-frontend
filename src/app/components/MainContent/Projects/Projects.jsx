@@ -5,16 +5,16 @@ function Root({ children }) {
 function Header({ onHandleClick }) {
   return (
     <header className="projects__header">
-      <h2 className="projects__header-title">meus projetos</h2>
+      <h2 className="projects__title">meus projetos</h2>
 
-      <p>
+      <p className="projects__desc">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
         perferendis eveniet eius odit tenetur mollitia accusamus totam,
         aspernatur obcaecati assumenda consectetur reiciendis magni
         necessitatibus veniam sunt ab suscipit ea. Nam.
       </p>
 
-      <button className="projects__header-button" onClick={onHandleClick}>
+      <button className="projects__button" onClick={onHandleClick}>
         ver projetos
       </button>
     </header>
@@ -24,28 +24,35 @@ function Header({ onHandleClick }) {
 function Filter() {
   return (
     <form className="filter">
-      <fieldset>
-        <legend>filtro</legend>
+      <fieldset className="filter__fieldset">
+        <legend className="filter__legend">filtro</legend>
 
-        <label htmlFor="">
+        <label className="filter__label" htmlFor="filter-select">
           Ordenar por:
-          <select name="" id="">
+          <select className="filter__select" name="" id="filter-select">
+            <option value="" disabled>
+              Selecione
+            </option>
             <option value="">Nome</option>
             <option value="">Ano</option>
             <option value="">Deploy</option>
-            <option value="" defaultChecked disabled>
-              Selecione
-            </option>
           </select>
         </label>
 
-        <label htmlFor="">
+        <label className="filter__label" htmlFor="filter-search">
           insira um texto
-          <input type="text" placeholder="api" />
+          <input
+            className="filter__search"
+            type="search"
+            placeholder="api"
+            id="filter-search"
+          />
         </label>
-
-        <button type="submit">buscar</button>
       </fieldset>
+
+      <button className="filter__submit" type="submit">
+        buscar
+      </button>
     </form>
   );
 }
@@ -53,7 +60,7 @@ function Filter() {
 function ProjectsList({ projects }) {
   const projectCards = projects.map((project) => <li>{project}</li>);
 
-  return <ul>{projectCards}</ul>;
+  return <ul className="projects__list">{projectCards}</ul>;
 }
 
 function ProjectModal({ project }) {
