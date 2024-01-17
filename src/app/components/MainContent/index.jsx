@@ -1,9 +1,25 @@
 import { Projects } from "./Projects/Projects";
 import { useState } from "react";
-import { projectService } from "../../services/project-service";
+import { projectService } from "../../services/db-service";
+import { skillService } from "../../services/db-service";
+import { Skills } from "./Skills/Skills";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
+}
+
+function SkillsSection() {
+  const [skills, setSkills] = useState(["skill issue"]);
+
+  const loadSkills = () => setSkills(skillService.getAllSkills());
+
+  return (
+    <Skills.Root>
+      <Skills.Header onHandleClick={loadSkills} />
+      <Skills.SkillsList skills={skills} />
+      <Skills.SkillModal skill={skills[0]} />
+    </Skills.Root>
+  );
 }
 
 function ProjectsSection() {
@@ -20,4 +36,4 @@ function ProjectsSection() {
   );
 }
 
-export const MainContent = { Root, ProjectsSection };
+export const MainContent = { Root, SkillsSection, ProjectsSection };

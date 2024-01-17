@@ -12,6 +12,7 @@ function App() {
       </MainHeader.Root>
 
       <MainContent.Root>
+        <MainContent.SkillsSection />
         <MainContent.ProjectsSection />
       </MainContent.Root>
     </>
