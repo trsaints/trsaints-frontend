@@ -43,7 +43,7 @@ function SkillsSection() {
 }
 
 function ProjectsSection() {
-  const [projects, setProjects] = useState(["hi"]);
+  const [projects, setProjects] = useState([]);
 
   const loadProjects = () => setProjects(projectService.getAllProjects());
 
