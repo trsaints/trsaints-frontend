@@ -5,7 +5,10 @@ function getAllProjects() {
       title: "Project Title",
       stack: [{ tech: "HTML" }, { tech: "CSS" }, { tech: "Javascript" }],
       year: 2023,
-      banner: "https://picsum.photos/200/300",
+      banner: {
+        src: "https://picsum.photos/200/300",
+        alt: "Project banner",
+      },
       desc: "Project Description",
       links: [
         {
