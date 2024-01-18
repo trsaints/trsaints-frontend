@@ -1,6 +1,7 @@
 import "./App.css";
 
 import { MainHeader } from "../MainHeader";
+import { MainContent } from "../MainContent";
 
 function App() {
   return (
@@ -9,6 +10,13 @@ function App() {
         <MainHeader.Banner srcPath="/computer_logo.svg" />
         <MainHeader.Nav />
       </MainHeader.Root>
+
+      <MainContent.Root>
+        <MainContent.HeroSection />
+        <MainContent.AboutSection />
+        <MainContent.SkillsSection />
+        <MainContent.ProjectsSection />
+      </MainContent.Root>
     </>
   );
 }
