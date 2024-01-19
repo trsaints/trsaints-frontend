@@ -29,7 +29,7 @@ function AboutSection() {
 }
 
 function SkillsSection() {
-  const [skills, setSkills] = useState(["skill issue"]);
+  const [skills, setSkills] = useState([]);
 
   const loadSkills = () => setSkills(skillService.getAllSkills());
 
@@ -37,13 +37,12 @@ function SkillsSection() {
     <Skills.Root>
       <Skills.Header onHandleClick={loadSkills} />
       <Skills.SkillsList skills={skills} />
-      <Skills.SkillModal skill={skills[0]} />
     </Skills.Root>
   );
 }
 
 function ProjectsSection() {
-  const [projects, setProjects] = useState(["hi"]);
+  const [projects, setProjects] = useState([]);
 
   const loadProjects = () => setProjects(projectService.getAllProjects());
 

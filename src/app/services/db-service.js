@@ -1,9 +1,42 @@
 function getAllProjects() {
-  return ["hi mom"];
+  return [
+    {
+      id: 0,
+      title: "Project Title",
+      stack: [{ tech: "HTML" }, { tech: "CSS" }, { tech: "Javascript" }],
+      year: 2023,
+      banner: {
+        src: "https://picsum.photos/200/300",
+        alt: "Project banner",
+      },
+      desc: "Project Description",
+      links: [
+        {
+          name: "ver código fonte",
+          url: "https://github.com/trsaints",
+        },
+        {
+          name: "deploy",
+          url: "https://www.linkedin.com/in/trsaints2003/",
+        },
+      ],
+    },
+  ];
 }
 
 function getAllSkills() {
-  return ["skill issues", "more skill issues"];
+  return [
+    {
+      id: 0,
+      title: "HTML",
+      type: "hard skill",
+      desc: "lorem ipsum dolor sit amet",
+      banner: {
+        path: "",
+        alt: "",
+      },
+    },
+  ];
 }
 
 function getAllSocialLinks() {
