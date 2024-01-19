@@ -1,3 +1,5 @@
+import { SkillCard } from "./SkillCard/SkillCard";
+
 function Root({ children }) {
   return <article className="skills">{children}</article>;
 }
@@ -34,7 +36,13 @@ function Header({ onHandleClick }) {
 }
 
 function SkillsList({ skills }) {
-  const skillCards = skills.map((skill) => <li>{skill}</li>);
+  const skillCards = skills.map((skill) => (
+    <li key={skill.id}>
+      <SkillCard.Root>
+        <SkillCard.Content skill={skill} />
+      </SkillCard.Root>
+    </li>
+  ));
 
   return <ul className="skills__list">{skillCards}</ul>;
 }
