@@ -9,9 +9,41 @@ body {
   background-color: var(--raisin-black);
   font-family: "JetBrains Mono";
   color: var(--lavender-web-2);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 a {
   color: var(--rose);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.125rem;
+  text-transform: capitalize;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+ul, menu {
+  list-style: none;
+}
+
+.link-btn {
+  color: var(--rose);
+  padding: 8px 16px;
+  border: 0.25rem outset var(--rose);
+  background-color: var(--black);
+  box-shadow: 0 0 0.5rem var(--rose);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.highlight-btn {
+  color: var(--black);
+  padding: 8px 16px;
+  background-image: linear-gradient(to bottom, var(--deep-pink), var(--rose));
+  border: 0.25rem outset var(--rose);
+  box-shadow: 0 0 0.5rem var(--rose);
+  font-weight: 700;
+  text-transform: capitalize;
 }

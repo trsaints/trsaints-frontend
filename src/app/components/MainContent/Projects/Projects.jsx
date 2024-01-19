@@ -17,7 +17,7 @@ function Header({ onHandleClick }) {
         necessitatibus veniam sunt ab suscipit ea. Nam.
       </p>
 
-      <button className="projects__button" onClick={onHandleClick}>
+      <button className="highlight-btn" onClick={onHandleClick}>
         ver projetos
       </button>
     </header>
@@ -31,7 +31,8 @@ function Filter() {
         <legend className="filter__legend">filtro</legend>
 
         <label className="filter__label" htmlFor="filter-select">
-          Ordenar por:
+          <span className="highlight-btn">Ordenar por:</span>
+          
           <select className="filter__select" name="" id="filter-select">
             <option value="" disabled>
               Selecione
@@ -53,7 +54,7 @@ function Filter() {
         </label>
       </fieldset>
 
-      <button className="filter__submit" type="submit">
+      <button className="highlight-btn" type="submit">
         buscar
       </button>
     </form>

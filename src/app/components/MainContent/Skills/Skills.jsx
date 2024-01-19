@@ -21,13 +21,13 @@ function Header({ onHandleClick }) {
 
       <menu className="skills__menu">
         <li className="skills__option">
-          <button className="button" onClick={onHandleClick}>
+          <button className="highlight-btn" onClick={onHandleClick}>
             mostre-me
           </button>
         </li>
 
         <li className="skills__option">
-          <a className="link-button" href="/resume_trsaints.pdf">
+          <a className="link-btn" href="/resume_trsaints.pdf">
             ver currículo
           </a>
         </li>
