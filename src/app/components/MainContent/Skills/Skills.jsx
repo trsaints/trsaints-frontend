@@ -1,3 +1,4 @@
+import { Skill } from "./Skill/Skill";
 import { SkillCard } from "./SkillCard/SkillCard";
 
 function Root({ children }) {
@@ -48,7 +49,12 @@ function SkillsList({ skills }) {
 }
 
 function SkillModal({ skill }) {
-  return <h3>{skill?.name}</h3>;
+  return (
+    <Skill.Root>
+      <Skill.Header skill={skill} />
+      <Skill.Content skill={skill} />
+    </Skill.Root>
+  );
 }
 
 export const Skills = {
