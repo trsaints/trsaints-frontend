@@ -33,7 +33,7 @@ function MainContent({ desc, links }) {
       <nav className="project__links">
         {links.map((link) => (
           <a
-            className="project__link"
+            className="link-btn"
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
