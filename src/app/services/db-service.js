@@ -25,7 +25,14 @@ function getAllProjects() {
 }
 
 function getAllSkills() {
-  return ["skill issues", "more skill issues"];
+  return [
+    {
+      id: 0,
+      title: "HTML",
+      type: "hard skill",
+      desc: "lorem ipsum dolor sit amet",
+    },
+  ];
 }
 
 function getAllSocialLinks() {
