@@ -1,3 +1,6 @@
+import { Project } from "./Project/Project";
+import { ProjectCard } from "./ProjectCard/ProjectCard";
+
 function Root({ children }) {
   return <article className="projects">{children}</article>;
 }
@@ -58,13 +61,30 @@ function Filter() {
 }
 
 function ProjectsList({ projects }) {
-  const projectCards = projects.map((project) => <li>{project}</li>);
+  const projectCards = projects.map((project) => (
+    <li key={project.id}>
+      <ProjectCard.Root>
+        <ProjectCard.Content project={project} />
+      </ProjectCard.Root>
+    </li>
+  ));
 
   return <ul className="projects__list">{projectCards}</ul>;
 }
 
 function ProjectModal({ project }) {
-  return <h3>{project?.name}</h3>;
+  return (
+    <Project.Root>
+      <Project.Header
+        title={project.title}
+        stack={project.stack}
+        year={project.year}
+        banner={project.banner}
+      />
+
+      <Project.MainContent desc={project.desc} links={project.links} />
+    </Project.Root>
+  );
 }
 
 export const Projects = {
