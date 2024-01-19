@@ -31,6 +31,10 @@ function getAllSkills() {
       title: "HTML",
       type: "hard skill",
       desc: "lorem ipsum dolor sit amet",
+      banner: {
+        path: "",
+        alt: "",
+      },
     },
   ];
 }
