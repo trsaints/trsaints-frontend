@@ -9,10 +9,10 @@ function Content({ skill }) {
     <>
       <h3 className="skill-card__title">{skill.title}</h3>
 
-      <dl className="skill-meta">
+      <dl className="meta">
         <dt className="sr-only">skill type</dt>
 
-        <dd className="skill-meta__value">{skill.type}</dd>
+        <dd className="meta__value">{skill.type}</dd>
       </dl>
     </>
   );
