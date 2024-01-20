@@ -1,0 +1,40 @@
+.skills {
+    padding: 5rem 1.5rem;
+    display: grid;
+    background: var(--black-2);
+}
+
+.skills__header {
+    text-align: center;
+}
+
+.skills__desc {
+    margin-bottom: 4rem;
+}
+
+.skills__menu {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10.25rem;
+}
+
+.skills__option {
+    flex: 1;
+    max-width: 200px;
+}
+
+.skills__option > * {
+    width: 100%;
+}
+
+.skills__list {
+    position: relative;
+    padding: 1.25rem;
+}
+
+.skills__list > li {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    width: fit-content;
+}

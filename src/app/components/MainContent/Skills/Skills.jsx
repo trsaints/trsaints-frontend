@@ -1,3 +1,5 @@
+import "./Skills.css";
+
 import { Skill } from "./Skill/Skill";
 import { SkillCard } from "./SkillCard/SkillCard";
 
@@ -7,7 +9,7 @@ function Root({ children }) {
 
 function Header({ onHandleClick }) {
   return (
-    <header className="skills_header">
+    <header className="skills__header">
       <h2 className="skills__title">
         minhas <span lang="en">skills</span>
       </h2>
@@ -19,7 +21,7 @@ function Header({ onHandleClick }) {
         earum assumenda iure dolore pariatur suscipit.
       </p>
 
-      <menu className="skills__menu">
+      <menu className="skills__menu nav">
         <li className="skills__option">
           <button className="highlight-btn" onClick={onHandleClick}>
             mostre-me
@@ -45,7 +47,7 @@ function SkillsList({ skills }) {
     </li>
   ));
 
-  return <ul className="skills__list">{skillCards}</ul>;
+  return <ul className="skills__list window-frame">{skillCards}</ul>;
 }
 
 function SkillModal({ skill }) {
