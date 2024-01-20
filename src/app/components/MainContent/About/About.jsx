@@ -1,3 +1,5 @@
+import "./About.css";
+
 import Navbar from "../../Navbar/Navbar";
 
 function Root({ children }) {
