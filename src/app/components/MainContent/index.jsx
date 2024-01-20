@@ -36,7 +36,7 @@ function SkillsSection() {
   return (
     <Skills.Root>
       <Skills.Header onHandleClick={loadSkills} />
-      <Skills.SkillsList skills={skills} />
+      {skills.length > 0 ? <Skills.SkillsList skills={skills} /> : null}
     </Skills.Root>
   );
 }
