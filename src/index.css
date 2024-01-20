@@ -62,3 +62,41 @@ h2::before {
 h2::after {
   content: "_";
 }
+
+.window-frame {
+  background-color: var(--black-2);
+  border: 16px solid #a59eaf;
+  color: #fff;
+}
+
+.window-frame::before {
+  display: block;
+  content: "";
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  top: -3.25rem;
+  left: -1.25rem;
+  width: calc(100% + 2.5rem);
+  height: calc(100% + 4.5rem);
+  border: 4px outset #d8cee4;
+  box-shadow: 0 0 8px #050307;
+  background-image: url("/window_frame_header.svg");
+  background-size: auto 32px;
+  background-repeat: repeat-x;
+}
+
+.window-frame::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px inset #d8cee4;
+}
