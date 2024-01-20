@@ -1,0 +1,26 @@
+.about {
+  padding: 5rem 1.5rem;
+  display: grid;
+  grid-template-areas: "heading pitch";
+  grid-template-columns: 3fr 4fr;
+  column-gap: 4rem;
+}
+
+.about__desc {
+  margin-bottom: 1rem;
+}
+
+.pitch {
+  position: relative;
+  padding: 1.25rem;
+}
+
+.pitch__video,
+.pitch__controls {
+  position: inherit;
+  z-index: 2;
+}
+
+.about__link {
+    text-transform: uppercase;
+}
