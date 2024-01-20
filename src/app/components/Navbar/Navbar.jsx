@@ -7,5 +7,5 @@ export default function Navbar({ element, links }) {
     </a>
   ));
 
-  return <nav className={`${element} nav`}>{linkItems}</nav>;
+  return <nav className={`${element}__nav nav`}>{linkItems}</nav>;
 }

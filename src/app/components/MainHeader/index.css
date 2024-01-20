@@ -15,18 +15,18 @@
   width: 2rem;
 }
 
-.header-nav {
+.header__nav {
   justify-content: flex-end;
   gap: 1.5rem;
 }
 
-.header-nav__link {
+.header__link {
   color: white;
   text-shadow: 0 0 8px white;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-.header-nav__link::before {
+.header__link::before {
   content: "~/";
 }
