@@ -1,0 +1,74 @@
+.skill-card {
+  background-color: var(--russian-violet);
+  width: 13rem;
+  height: 13.75rem;
+  clip-path: polygon(00% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%);
+  position: relative;
+  padding-inline: 1.125rem;
+}
+
+.skill-card::before {
+  width: 9.375rem;
+  height: 3rem;
+  background-color: var(--raisin-black);
+  content: "";
+  display: block;
+  position: relative;
+  border: 0.25rem inset var(--black-2);
+}
+
+.skill-card::after {
+  width: 7.75rem;
+  height: 2.625rem;
+  background-color: var(--lavender-web-2);
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 1.375rem;
+}
+
+.skill-card__title,
+.skill-card__desc {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.skill-card__title::before {
+  width: 1.5rem;
+  height: 2.1875rem;
+  content: "";
+  display: block;
+  background-color: var(--black);
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 1.75rem;
+}
+
+.skill-card__title {
+  padding: 0.5rem;
+  margin-top: 48px;
+  background-color: var(--onyx);
+  color: #fff;
+}
+
+.skill-card__desc {
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--black),
+    var(--black) 0.125rem,
+    transparent 0.125rem,
+    transparent
+  );
+  background-size: 1.5rem 1.5rem;
+  background-color: var(--lavender-web);
+  font-size: 1.5rem;
+  border: 0.25rem inset var(--black-2);
+  padding-top: 1.5rem;
+  color: var(--black);
+  line-height: 1.5rem;
+}
