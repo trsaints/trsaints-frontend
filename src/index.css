@@ -19,15 +19,23 @@ a {
   text-transform: capitalize;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
-ul, menu {
+ul,
+menu {
   list-style: none;
 }
 
+.link-btn,
+.highlight-btn {
+  text-transform: uppercase;
+}
+
 .link-btn {
+  display: block;
   color: var(--rose);
   padding: 8px 16px;
   border: 0.25rem outset var(--rose);
@@ -35,7 +43,6 @@ ul, menu {
   box-shadow: 0 0 0.5rem var(--rose);
   text-decoration: none;
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .highlight-btn {
@@ -45,7 +52,6 @@ ul, menu {
   border: 0.25rem outset var(--rose);
   box-shadow: 0 0 0.5rem var(--rose);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 h2 {
@@ -61,6 +67,10 @@ h2::before {
 
 h2::after {
   content: "_";
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 .window-frame {
