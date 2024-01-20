@@ -19,7 +19,7 @@ function Nav() {
     { name: "contato", url: "#contact" },
   ];
 
-  return <Navbar element={"header-nav"} links={mainLinks} />;
+  return <Navbar element={"header"} links={mainLinks} />;
 }
 
 export const MainHeader = { Root, Banner, Nav };
