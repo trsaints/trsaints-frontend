@@ -25,7 +25,7 @@ function Header({ title, stack, year, banner }) {
   );
 }
 
-function MainContent({ desc, links }) {
+function Content({ desc, links }) {
   return (
     <>
       <p className="project__desc">{desc}</p>
@@ -50,5 +50,5 @@ function MainContent({ desc, links }) {
 export const Project = {
   Root,
   Header,
-  MainContent,
+  Content,
 };
