@@ -1,8 +1,15 @@
+import "./Projects.css";
+
 import { Project } from "./Project/Project";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
+import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
 
 function Root({ children }) {
-  return <article className="projects">{children}</article>;
+  return (
+    <article className="projects" id="projects">
+      {children}
+    </article>
+  );
 }
 
 function Header({ onHandleClick }) {
@@ -24,43 +31,6 @@ function Header({ onHandleClick }) {
   );
 }
 
-function Filter() {
-  return (
-    <form className="filter">
-      <fieldset className="filter__fieldset">
-        <legend className="filter__legend">filtro</legend>
-
-        <label className="filter__label" htmlFor="filter-select">
-          <span className="highlight-btn">Ordenar por:</span>
-          
-          <select className="filter__select" name="" id="filter-select">
-            <option value="" disabled>
-              Selecione
-            </option>
-            <option value="">Nome</option>
-            <option value="">Ano</option>
-            <option value="">Deploy</option>
-          </select>
-        </label>
-
-        <label className="filter__label" htmlFor="filter-search">
-          insira um texto
-          <input
-            className="filter__search"
-            type="search"
-            placeholder="api"
-            id="filter-search"
-          />
-        </label>
-      </fieldset>
-
-      <button className="highlight-btn" type="submit">
-        buscar
-      </button>
-    </form>
-  );
-}
-
 function ProjectsList({ projects }) {
   const projectCards = projects.map((project) => (
     <li key={project.id}>
@@ -73,7 +43,22 @@ function ProjectsList({ projects }) {
   return <ul className="projects__list">{projectCards}</ul>;
 }
 
-function ProjectModal({ project }) {
+function Content({ projects }) {
+  return (
+    <article className="projects__content">
+      <h3 className="projects__subtitle sr-only">portfolio</h3>
+
+      <ProjectFilter.Root>
+        <ProjectFilter.Select options={["nome", "data"]} />
+        <ProjectFilter.SearchBar />
+      </ProjectFilter.Root>
+
+      {projects.length > 0 && <ProjectsList projects={projects} />}
+    </article>
+  );
+}
+
+function Modal({ project }) {
   return (
     <Project.Root>
       <Project.Header
@@ -83,7 +68,7 @@ function ProjectModal({ project }) {
         banner={project.banner}
       />
 
-      <Project.MainContent desc={project.desc} links={project.links} />
+      <Project.Content desc={project.desc} links={project.links} />
     </Project.Root>
   );
 }
@@ -91,7 +76,6 @@ function ProjectModal({ project }) {
 export const Projects = {
   Root,
   Header,
-  Filter,
-  ProjectsList,
-  ProjectModal,
+  Content,
+  Modal,
 };

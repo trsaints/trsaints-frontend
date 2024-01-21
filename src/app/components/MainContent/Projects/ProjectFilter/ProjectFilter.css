@@ -1,0 +1,32 @@
+.filter {
+  display: flex;
+  background-image: linear-gradient(
+    to bottom,
+    var(--dark-purple),
+    var(--dark-purple-2)
+  );
+  padding: 1rem;
+  box-shadow: 0 0 8px var(--black);
+  position: relative;
+  margin-bottom: 10rem;
+}
+
+.filter__fieldset {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.filter__select > .filter__input {
+  background: var(--russian-violet);
+  padding: 0.75rem 1rem;
+  box-shadow: 4px 0 8px var(--black);
+  text-transform: uppercase;
+}
+
+.filter__search {
+  margin-left: auto;
+  background-color: var(--lavender-web-2);
+  padding: 0.75rem 1rem;
+  color: var(--black);
+}
