@@ -43,14 +43,17 @@ function SkillsSection() {
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
+  const [filteredProjects, setFilteredProjects] = useState([]);
 
-  const loadProjects = () => setProjects(projectService.getAllProjects());
+  const loadProjects = () => {
+    setProjects(projectService.getAllProjects());
+    setFilteredProjects(projects);
+  };
 
   return (
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
-      <Projects.Filter />
-      <Projects.ProjectsList projects={projects} />
+      <Projects.Content projects={filteredProjects} />
     </Projects.Root>
   );
 }
