@@ -4,9 +4,7 @@ function Root({ children, onHandleSubmit }) {
   return (
     <form
       className="filter"
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
+      onSubmit={onHandleSubmit}
     >
       <fieldset className="filter__fieldset">
         <legend className="filter__legend sr-only">filtro</legend>
@@ -20,14 +18,14 @@ function Root({ children, onHandleSubmit }) {
   );
 }
 
-function Select({ options }) {
+function Select({ options, onHandleChange }) {
   return (
     <div className="filter__select">
       <label className="highlight-btn" htmlFor="filter-select">
         Ordenar por:
       </label>
 
-      <select className="filter__input" name="" id="filter-select">
+      <select className="filter__input" name="" id="filter-select" onChange={onHandleChange}>
         <option value="" aria-readonly disabled>
           Selecione
         </option>
@@ -40,7 +38,7 @@ function Select({ options }) {
   );
 }
 
-function SearchBar() {
+function SearchBar({ onHandleChange }) {
   return (
     <div className="filter__search">
       <label className="filter__label sr-only" htmlFor="filter-search">
@@ -52,6 +50,7 @@ function SearchBar() {
         type="search"
         placeholder="api"
         id="filter-search"
+        onChange={onHandleChange}
       />
     </div>
   );

@@ -43,14 +43,17 @@ function ProjectsList({ projects }) {
   return <ul className="projects__list">{projectCards}</ul>;
 }
 
-function Content({ projects }) {
+function Content({ projects, onHandleSort, onHandleSearch, onHandleSubmit }) {
   return (
     <article className="projects__content">
       <h3 className="projects__subtitle sr-only">portfolio</h3>
 
-      <ProjectFilter.Root>
-        <ProjectFilter.Select options={["nome", "data"]} />
-        <ProjectFilter.SearchBar />
+      <ProjectFilter.Root onHandleSubmit={onHandleSubmit}>
+        <ProjectFilter.Select
+          options={["nome", "data"]}
+          onHandleChange={onHandleSort}
+        />
+        <ProjectFilter.SearchBar onHandleChange={onHandleSearch} />
       </ProjectFilter.Root>
 
       {projects.length > 0 && <ProjectsList projects={projects} />}
