@@ -43,20 +43,20 @@ function ProjectsList({ projects }) {
   return <ul className="projects__list">{projectCards}</ul>;
 }
 
-function Content({ projects, onHandleSort, onHandleSearch, onHandleSubmit }) {
+function Content(props) {
   return (
     <article className="projects__content">
       <h3 className="projects__subtitle sr-only">portfolio</h3>
 
-      <ProjectFilter.Root onHandleSubmit={onHandleSubmit}>
+      <ProjectFilter.Root onHandleSubmit={props?.onHandleSubmit}>
         <ProjectFilter.Select
           options={["nome", "data"]}
-          onHandleChange={onHandleSort}
+          onHandleChange={props?.onHandleSort}
         />
-        <ProjectFilter.SearchBar onHandleChange={onHandleSearch} />
+        <ProjectFilter.SearchBar onHandleChange={props?.onHandleSearch} />
       </ProjectFilter.Root>
 
-      {projects.length > 0 && <ProjectsList projects={projects} />}
+      {props?.projects.length > 0 && <ProjectsList projects={props?.projects} />}
     </article>
   );
 }
@@ -64,14 +64,9 @@ function Content({ projects, onHandleSort, onHandleSearch, onHandleSubmit }) {
 function Modal({ project }) {
   return (
     <Project.Root>
-      <Project.Header
-        title={project.title}
-        stack={project.stack}
-        year={project.year}
-        banner={project.banner}
-      />
+      <Project.Header {...project} />
 
-      <Project.Content desc={project.desc} links={project.links} />
+      <Project.Content {...project} />
     </Project.Root>
   );
 }

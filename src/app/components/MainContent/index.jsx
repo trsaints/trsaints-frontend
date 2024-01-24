@@ -43,23 +43,22 @@ function SkillsSection() {
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
 
   const loadProjects = () => {
     setProjects(projectService.getAllProjects());
-    setFilteredProjects(projects);
   };
 
-  const filterProjects = (e, keyword) => {
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const filterProjects = (e) => {
     e.preventDefault();
 
-    setFilteredProjects(
-      projects.filter((project) =>
-        project.title.toLowerCase().includes(keyword.toLowerCase())
-      )
-    );
+    setSearch(e.target.elements["search"].value);
+    setSort(e.target.elements["sort"].value);
   };
 
   return (
@@ -67,9 +66,7 @@ function ProjectsSection() {
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
         projects={filteredProjects}
-        onHandleSearch={(e) => setSearch(e.target.value)}
-        onHandleSort={(e) => setSearch(e.target.value)}
-        onHandleSubmit={(e) => filterProjects(e, search)}
+        onHandleSubmit={filterProjects}
       />
     </Projects.Root>
   );

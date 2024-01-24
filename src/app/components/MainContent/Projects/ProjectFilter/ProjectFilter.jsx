@@ -2,10 +2,7 @@ import "./ProjectFilter.css";
 
 function Root({ children, onHandleSubmit }) {
   return (
-    <form
-      className="filter"
-      onSubmit={onHandleSubmit}
-    >
+    <form className="filter" onSubmit={onHandleSubmit}>
       <fieldset className="filter__fieldset">
         <legend className="filter__legend sr-only">filtro</legend>
         {children}
@@ -18,14 +15,14 @@ function Root({ children, onHandleSubmit }) {
   );
 }
 
-function Select({ options, onHandleChange }) {
+function Select({ options }) {
   return (
     <div className="filter__select">
       <label className="highlight-btn" htmlFor="filter-select">
         Ordenar por:
       </label>
 
-      <select className="filter__input" name="" id="filter-select" onChange={onHandleChange}>
+      <select className="filter__input" name="sort" id="filter-select">
         <option value="" aria-readonly disabled>
           Selecione
         </option>
@@ -38,7 +35,7 @@ function Select({ options, onHandleChange }) {
   );
 }
 
-function SearchBar({ onHandleChange }) {
+function SearchBar() {
   return (
     <div className="filter__search">
       <label className="filter__label sr-only" htmlFor="filter-search">
@@ -47,10 +44,10 @@ function SearchBar({ onHandleChange }) {
 
       <input
         className="filter__input"
+        name="search"
         type="search"
         placeholder="api"
         id="filter-search"
-        onChange={onHandleChange}
       />
     </div>
   );
