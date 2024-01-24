@@ -24,9 +24,13 @@ function Header({ onHandleClick }) {
         necessitatibus veniam sunt ab suscipit ea. Nam.
       </p>
 
-      <button className="highlight-btn" onClick={onHandleClick}>
+      <a
+        href="#projects-content"
+        className="projects__button highlight-btn"
+        onClick={onHandleClick}
+      >
         ver projetos
-      </button>
+      </a>
     </header>
   );
 }
@@ -45,18 +49,17 @@ function ProjectsList({ projects }) {
 
 function Content(props) {
   return (
-    <article className="projects__content">
+    <article id="projects-content" className="projects__content">
       <h3 className="projects__subtitle sr-only">portfolio</h3>
 
       <ProjectFilter.Root onHandleSubmit={props?.onHandleSubmit}>
-        <ProjectFilter.Select
-          options={["nome", "data"]}
-          onHandleChange={props?.onHandleSort}
-        />
-        <ProjectFilter.SearchBar onHandleChange={props?.onHandleSearch} />
+        <ProjectFilter.Select options={["nome", "data"]} />
+        <ProjectFilter.SearchBar />
       </ProjectFilter.Root>
 
-      {props?.projects.length > 0 && <ProjectsList projects={props?.projects} />}
+      {props?.projects.length > 0 && (
+        <ProjectsList projects={props?.projects} />
+      )}
     </article>
   );
 }
