@@ -60,9 +60,9 @@
   display: block;
   content: "";
   position: absolute;
-  background: repeating-linear-gradient(0deg, transparent, var(--raisin-black));
+  background: repeating-linear-gradient(0deg, transparent, var(--black));
   background-size: 4em 4em;
-  background-color: var(--dark-purple);
+  background-color: var(--black-2);
   opacity: 1;
   clip-path: polygon(
     0% 60%,
@@ -85,13 +85,13 @@
 }
 
 .hero::after {
-  width: 200px;
-  height: 200px;
+  width: 256px;
+  height: 256px;
   display: block;
   content: "";
   position: absolute;
-  top: 2.5rem;
-  left: 80vw;
+  top: 6.5rem;
+  left: calc(100vw - 18.75rem);
   border-radius: 50%;
   background-image: linear-gradient(to bottom, var(--jasmine), var(--rose));
   box-shadow: 0 0 8px var(--rose);

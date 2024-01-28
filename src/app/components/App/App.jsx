@@ -2,6 +2,7 @@ import "./App.css";
 
 import { MainHeader } from "../MainHeader";
 import { MainContent } from "../MainContent";
+import { MainFooter } from "../MainFooter/MainFooter";
 
 function App() {
   return (
@@ -16,7 +17,12 @@ function App() {
         <MainContent.AboutSection />
         <MainContent.SkillsSection />
         <MainContent.ProjectsSection />
+        <MainContent.ContactSection />
       </MainContent.Root>
+
+      <MainFooter.Root>
+        <MainFooter.Content />
+      </MainFooter.Root>
     </>
   );
 }

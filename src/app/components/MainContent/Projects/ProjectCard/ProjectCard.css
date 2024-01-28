@@ -1,0 +1,90 @@
+.project-card {
+  background-image: url("/folder_bg.svg");
+  background-size: 400px;
+  background-repeat: no-repeat;
+  width: 25rem;
+  height: 15.625rem;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+.project-card::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 3rem;
+  left: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: #a59eaf;
+  border: 4px outset #d8cee4;
+  box-shadow: 0 0 8px #050307, -1rem -1rem #28173d, -1rem -1rem 8px #050307;
+}
+
+.project-card::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 4.25rem;
+  left: 3.25rem;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  background-color: #050307;
+  border: 4px inset #d8cee4;
+}
+
+.project-card__title,
+.project-card .meta-data {
+  position: inherit;
+  z-index: 10;
+}
+.project-card__title,
+.project-card .meta-data:first-of-type {
+  margin-left: 4.5rem;
+}
+
+.project-card__title {
+  padding-top: 5.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  font-weight: 700;
+  grid-area: heading;
+}
+
+.project-card__title::before {
+  content: "./";
+}
+
+.project-card__title::after {
+  content: "_";
+}
+
+.project-card .meta-data {
+  display: inline-block;
+  max-width: calc(50% - 3rem);
+}
+
+.project-card .meta-data:first-of-type {
+    margin-right: 1rem;
+}
+
+.project-card .meta-data__key {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px dashed;
+  width: fit-content;
+}
+
+.project-card .meta-data__key::after {
+  content: ":";
+}
+
+.project-card .meta-data__value {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

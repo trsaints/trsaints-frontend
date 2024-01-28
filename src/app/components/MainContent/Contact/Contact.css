@@ -1,0 +1,68 @@
+.contact {
+  padding: 5rem 1.5rem;
+}
+
+.contact__desc {
+  margin-bottom: 66px;
+}
+
+.form {
+  position: relative;
+  padding: 22px;
+  width: fit-content;
+}
+
+.form__fieldset {
+  position: inherit;
+  z-index: 2;
+  padding-bottom: 2.5rem;
+}
+
+.form__legend {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed;
+  margin-bottom: 2rem;
+}
+
+.form__field + .form__field, .form__field--textarea {
+  margin-top: 1rem;
+}
+
+.form__field {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form__label {
+  display: block;
+  background-color: var(--lavender-web-2);
+  color: var(--black);
+  padding: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.form__label::after {
+  content: ":";
+}
+
+.form__input {
+  padding: 0.5rem;
+  border-bottom: 2px dashed;
+  flex: 1;
+}
+
+.form__textarea {
+    margin-top: .5rem;
+    border: 2px dashed;
+    width: 100%;
+    padding: .5rem;
+}
+
+.form__submit {
+    position: inherit;
+    z-index: 2;
+}

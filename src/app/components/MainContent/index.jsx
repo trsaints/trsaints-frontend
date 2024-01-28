@@ -8,6 +8,7 @@ import { About } from "./About/About";
 import Hero from "./Hero/Hero";
 import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
+import { Contact } from "./Contact/Contact";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
@@ -36,22 +37,47 @@ function SkillsSection() {
   return (
     <Skills.Root>
       <Skills.Header onHandleClick={loadSkills} />
-      {skills.length > 0 ? <Skills.SkillsList skills={skills} /> : null}
+      {skills.length > 0 && <Skills.SkillsList skills={skills} />}
     </Skills.Root>
   );
 }
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]);
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
 
-  const loadProjects = () => setProjects(projectService.getAllProjects());
+  const loadProjects = () =>
+    projects.length === 0 && setProjects(projectService.getAllProjects());
+
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const filterProjects = (e) => {
+    e.preventDefault();
+
+    setSearch(e.target.elements["search"].value);
+    setSort(e.target.elements["sort"].value);
+  };
 
   return (
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
-      <Projects.Filter />
-      <Projects.ProjectsList projects={projects} />
+      <Projects.Content
+        projects={filteredProjects}
+        onHandleSubmit={filterProjects}
+      />
     </Projects.Root>
+  );
+}
+
+function ContactSection() {
+  return (
+    <Contact.Root>
+      <Contact.Header />
+      <Contact.Form />
+    </Contact.Root>
   );
 }
 
@@ -61,4 +87,5 @@ export const MainContent = {
   AboutSection,
   SkillsSection,
   ProjectsSection,
+  ContactSection,
 };

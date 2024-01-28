@@ -1,0 +1,22 @@
+.projects {
+  padding: 5rem 1.5rem;
+  background-color: var(--black);
+}
+
+.projects__desc {
+  margin-bottom: 4rem;
+  max-width: 50%;
+}
+
+.projects__header {
+  margin-bottom: 5rem;
+}
+
+.projects__content {
+  background-color: var(--dark-purple);
+  background-image: linear-gradient(var(--dark-purple) 2px, transparent 2px),
+    linear-gradient(to right, var(--dark-purple) 2px, var(--black-2) 2px);
+  background-size: 48px 48px;
+  padding: 1.5rem 1.5rem 4.25rem 1.5rem;
+  box-shadow: inset 0 0 8px var(--black);
+}

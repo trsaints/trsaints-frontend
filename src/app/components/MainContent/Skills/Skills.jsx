@@ -4,7 +4,7 @@ import { Skill } from "./Skill/Skill";
 import { SkillCard } from "./SkillCard/SkillCard";
 
 function Root({ children }) {
-  return <article className="skills">{children}</article>;
+  return <article className="skills" id="skills">{children}</article>;
 }
 
 function Header({ onHandleClick }) {
