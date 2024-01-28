@@ -16,6 +16,7 @@ function App() {
         <MainContent.AboutSection />
         <MainContent.SkillsSection />
         <MainContent.ProjectsSection />
+        <MainContent.ContactSection />
       </MainContent.Root>
     </>
   );

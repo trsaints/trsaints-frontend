@@ -8,6 +8,7 @@ import { About } from "./About/About";
 import Hero from "./Hero/Hero";
 import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
+import { Contact } from "./Contact/Contact";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
@@ -71,10 +72,20 @@ function ProjectsSection() {
   );
 }
 
+function ContactSection() {
+  return (
+    <Contact.Root>
+      <Contact.Header />
+      <Contact.Form />
+    </Contact.Root>
+  );
+}
+
 export const MainContent = {
   Root,
   HeroSection,
   AboutSection,
   SkillsSection,
   ProjectsSection,
+  ContactSection,
 };
