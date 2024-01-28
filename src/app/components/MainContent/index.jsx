@@ -46,9 +46,8 @@ function ProjectsSection() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
 
-  const loadProjects = () => {
-    setProjects(projectService.getAllProjects());
-  };
+  const loadProjects = () =>
+    projects.length === 0 && setProjects(projectService.getAllProjects());
 
   const filteredProjects = projects.filter((project) =>
     project.title.toLowerCase().includes(search.toLowerCase())
