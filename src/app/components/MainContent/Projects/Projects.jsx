@@ -35,6 +35,42 @@ function Header({ onHandleClick }) {
   );
 }
 
+function Filter() {
+  return (
+    <form className="filter">
+      <fieldset className="filter__fieldset">
+        <legend className="filter__legend">filtro</legend>
+
+        <label className="filter__label" htmlFor="filter-select">
+          <span className="highlight-btn">Ordenar por:</span>
+          
+          <select className="filter__select" name="" id="filter-select">
+            <option value="" disabled>
+              Selecione
+            </option>
+            <option value="">Nome</option>
+            <option value="">Ano</option>
+            <option value="">Deploy</option>
+          </select>
+        </label>
+
+        <label className="filter__label" htmlFor="filter-search">
+          insira um texto
+          <input
+            className="filter__search"
+            type="search"
+            placeholder="api"
+            id="filter-search"
+          />
+        </label>
+      </fieldset>
+
+      <button className="highlight-btn" type="submit">
+        buscar
+      </button>
+    </form>
+  );
+}
 function ProjectsList({ projects }) {
   const projectCards = projects.map((project) => (
     <li key={project.id}>
