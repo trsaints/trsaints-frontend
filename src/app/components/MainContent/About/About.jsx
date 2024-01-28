@@ -3,7 +3,7 @@ import "./About.css";
 import Navbar from "../../Navbar/Navbar";
 
 function Root({ children }) {
-  return <article className="about">{children}</article>;
+  return <article className="about" id="about">{children}</article>;
 }
 
 function Header({ links }) {
