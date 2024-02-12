@@ -1,4 +1,4 @@
-import Navbar from "../Navbar/Navbar";
+import { HeaderMenu } from "./HeaderMenu/HeaderMenu";
 
 import "./index.css";
 
@@ -10,28 +10,13 @@ function Banner({ srcPath }) {
   return <img className="header__banner" src={srcPath} alt="" />;
 }
 
-function Nav() {
-  const mainLinks = [
-    { name: "início", url: "#" },
-    { name: "sobre", url: "#about" },
-    { name: "skills", url: "#skills" },
-    { name: "projetos", url: "#projects" },
-    { name: "contato", url: "#contact" },
-  ];
-
-  return <Navbar element={"header"} links={mainLinks} />;
-}
-
-function Menu({ onHandleClick }) {
+function Menu() {
   return (
-    <menu className="header__menu">
-      <li className="header__option">
-        <button className="header__button" onClick={onHandleClick}>
-          Menu
-        </button>
-      </li>
-    </menu>
+    <HeaderMenu.Root>
+      <HeaderMenu.Button />
+      <HeaderMenu.Nav />
+    </HeaderMenu.Root>
   );
 }
 
-export const MainHeader = { Root, Banner, Menu, Nav };
+export const MainHeader = { Root, Banner, Menu };
