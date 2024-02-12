@@ -14,6 +14,11 @@ body {
   font-family: "JetBrains Mono";
   color: var(--lavender-web-2);
   font-size: 1.125rem;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
 }
 
 .about,
@@ -31,7 +36,8 @@ a {
 }
 
 a,
-button {
+button,
+label {
   cursor: pointer;
 }
 
@@ -48,6 +54,7 @@ li {
 .highlight-btn {
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
 }
 
 .link-btn {
