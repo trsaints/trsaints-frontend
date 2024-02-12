@@ -60,12 +60,14 @@
     display: none;
   }
 
-  .header__nav {
+  .header__nav,
+  .header__menu:focus-within .header__nav {
     display: flex;
     gap: 1.5rem;
+    padding: 0;
     position: static;
-    justify-content: flex-end;
     flex-direction: row;
+    justify-content: flex-end;
     background-image: linear-gradient(
       to bottom,
       var(--black-2),
