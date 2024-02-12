@@ -22,4 +22,16 @@ function Nav() {
   return <Navbar element={"header"} links={mainLinks} />;
 }
 
-export const MainHeader = { Root, Banner, Nav };
+function Menu({ onHandleClick }) {
+  return (
+    <menu className="header__menu">
+      <li className="header__option">
+        <button className="header__button" onClick={onHandleClick}>
+          Menu
+        </button>
+      </li>
+    </menu>
+  );
+}
+
+export const MainHeader = { Root, Banner, Menu, Nav };

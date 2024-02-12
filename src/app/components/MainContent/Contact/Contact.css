@@ -9,7 +9,7 @@
 .form {
   position: relative;
   padding: 22px;
-  width: fit-content;
+  width: calc(100vw - 3rem);
 }
 
 .form__fieldset {
@@ -28,12 +28,12 @@
 }
 
 .form__field + .form__field, .form__field--textarea {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .form__field {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
 }
 
 .form__label {
@@ -43,6 +43,7 @@
   padding: 0.5rem;
   cursor: pointer;
   text-transform: uppercase;
+  width: fit-content;
 }
 
 .form__label::after {

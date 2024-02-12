@@ -18,7 +18,7 @@ function Root({ children, onHandleSubmit }) {
 function Select({ options }) {
   return (
     <div className="filter__select">
-      <label className="highlight-btn" htmlFor="filter-select">
+      <label className="filter__label highlight-btn" htmlFor="filter-select">
         Ordenar por:
       </label>
 

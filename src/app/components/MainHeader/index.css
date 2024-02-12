@@ -11,7 +11,8 @@
   box-shadow: 0 0 8px black;
   position: fixed;
   z-index: 100;
-  width: calc(100dvw - 1.25rem);
+  width: 100vw;
+  height: 72px;
 }
 
 .header__banner {
@@ -19,8 +20,19 @@
 }
 
 .header__nav {
+  position: absolute;
+  top: 72px;
+  right: 0;
+  padding: 1.5rem;
   justify-content: flex-end;
+  flex-direction: column;
+  text-align: right;
   gap: 1.5rem;
+  background-image: linear-gradient(
+    to top,
+    var(--black-2),
+    var(--raisin-black)
+  );
 }
 
 .header__link {

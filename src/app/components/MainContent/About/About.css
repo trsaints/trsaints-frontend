@@ -1,11 +1,13 @@
 .about {
   padding: 5rem 1.5rem;
   display: grid;
-  grid-template-areas: "heading pitch";
-  grid-template-columns: 3fr 4fr;
-  column-gap: 4rem;
+  grid-template-areas: "heading" "pitch";
+  row-gap: 4rem;
   box-shadow: inset 0 0 8px var(--black);
+}
 
+.about__header {
+  grid-area: heading;
 }
 
 .about__desc {
@@ -15,6 +17,7 @@
 .pitch {
   position: relative;
   padding: 1.25rem;
+  grid-area: pitch;
 }
 
 .pitch__video,
