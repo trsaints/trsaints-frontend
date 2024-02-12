@@ -20,9 +20,14 @@
 }
 
 .header__nav {
+  display: none;
   position: absolute;
   top: 72px;
   right: 0;
+}
+
+.header__menu:focus-within .header__nav {
+  display: flex;
   padding: 1.5rem;
   justify-content: flex-end;
   flex-direction: column;
@@ -44,4 +49,34 @@
 
 .header__link::before {
   content: "~/";
+}
+
+@media screen and (min-width: 728px) {
+  .header {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 1.5rem;
+    position: static;
+    justify-content: flex-end;
+    flex-direction: row;
+    background-image: linear-gradient(
+      to bottom,
+      var(--black-2),
+      var(--raisin-black)
+    );
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    padding: 1.5rem 4rem;
+    width: calc(100vw - 1rem);
+  }
 }
