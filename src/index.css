@@ -5,6 +5,10 @@
   src: url("./assets/fonts/JetBrainsMono/JetBrainsMono-VariableFont_wght.ttf");
 }
 
+:root {
+  color-scheme: only light;
+}
+
 html {
   scroll-behavior: smooth;
 }
