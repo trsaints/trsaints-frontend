@@ -2,7 +2,6 @@
   padding: 5rem 1.5rem;
   display: grid;
   grid-template-areas: "heading" "pitch";
-  row-gap: 4rem;
   box-shadow: inset 0 0 8px var(--black);
 }
 
@@ -12,6 +11,10 @@
 
 .about__desc {
   margin-bottom: 1rem;
+}
+
+.about__nav {
+  margin-bottom: 6rem;
 }
 
 .pitch {
@@ -27,5 +30,23 @@
 }
 
 .about__link {
-    text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 720px) {
+  .about {
+    padding: 5rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about {
+    padding: 5rem 4rem;
+    grid-template-areas: "heading pitch";
+    grid-template-columns: 4fr 3fr;
+  }
+
+  .about__nav {
+    margin-bottom: 0;
+  }
 }
