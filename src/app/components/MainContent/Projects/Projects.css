@@ -4,6 +4,7 @@
 
 .projects__header {
   padding: 5rem 1.5rem;
+  position: relative;
 }
 
 .projects__desc {
@@ -15,7 +16,7 @@
   background-image: linear-gradient(var(--dark-purple) 2px, transparent 2px),
     linear-gradient(to right, var(--dark-purple) 2px, var(--black-2) 2px);
   background-size: 48px 48px;
-  box-shadow: inset 0 0 8px var(--black);
+  box-shadow: 0 4px 8px var(--black);
 }
 
 .projects__list {
@@ -34,9 +35,50 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .projects__header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: calc(50% + 2rem);
+    width: calc(50% + 2rem);
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("/projects_banner.jpg");
+    background-size: cover;
+  }
+
+  .projects__header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: calc(50% + 2rem);
+    width: calc(50% + 2rem);
+    height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    background-size: cover;
+    background-size: 100% 3px, 4px 100%;
+  }
+
   .projects__header,
   .projects__list {
     padding-inline: 4rem;
+  }
+
+  .projects__desc {
+    max-width: 50%;
   }
 
   .projects__list {
