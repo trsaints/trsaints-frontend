@@ -21,6 +21,8 @@
 .skills__list {
   position: relative;
   padding: 1.25rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .skills__list > li {
@@ -28,4 +30,25 @@
   z-index: 2;
   cursor: pointer;
   width: fit-content;
+}
+
+@media screen and (min-width: 720px) {
+  .skills {
+    padding: 5rem 2.5rem;
+  }
+
+  .skills__title,
+  .skills__desc {
+    text-align: center;
+  }
+
+  .skills__menu {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .skills {
+    padding: 5rem 4rem;
+  }
 }
