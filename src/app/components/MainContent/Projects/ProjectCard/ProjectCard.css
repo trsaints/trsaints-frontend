@@ -1,6 +1,6 @@
 .project-card {
   background-image: url("/folder_bg.svg");
-  background-size: calc(100vw - 3rem);
+  background-size: calc(100% - 3rem);
   background-repeat: no-repeat;
   width: calc(100vw - 4rem);
   height: 198px;
@@ -89,4 +89,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media screen and (min-width: 720px) {
+  .project-card {
+    width: calc(100vw - 6rem);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .project-card {
+    width: calc(50vw - 7rem);
+  }
 }

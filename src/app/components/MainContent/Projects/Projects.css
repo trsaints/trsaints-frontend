@@ -19,6 +19,28 @@
 }
 
 .projects__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
   padding-inline: 1.5rem;
   padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 720px) {
+  .projects__header,
+  .projects__list {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .projects__header,
+  .projects__list {
+    padding-inline: 4rem;
+  }
+
+  .projects__list {
+    flex-direction: row;
+    gap: 4rem;
+  }
 }

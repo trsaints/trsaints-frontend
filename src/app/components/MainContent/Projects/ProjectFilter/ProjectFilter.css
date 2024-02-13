@@ -41,3 +41,29 @@
   color: var(--black);
   width: 100%;
 }
+
+@media screen and (min-width: 720px) {
+  .filter {
+    padding-inline: 2.5rem;
+  }
+
+  .filter,
+  .filter__fieldset {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .filter__fieldset {
+    column-gap: 1.5rem;
+  }
+
+  .filter__select {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filter {
+    padding-inline: 4rem;
+  }
+}
