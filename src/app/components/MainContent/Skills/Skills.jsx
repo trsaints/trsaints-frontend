@@ -29,7 +29,7 @@ function Header({ onHandleClick }) {
         </li>
 
         <li className="skills__option">
-          <a className="link-btn" href="/resume_trsaints.pdf">
+          <a className="link-btn" href="/resume_20240205_045938_0000.pdf">
             ver currículo
           </a>
         </li>
