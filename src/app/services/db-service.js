@@ -45,6 +45,12 @@ function getAllProjects() {
   ];
 }
 
+function filterProjects(projects, search) {
+  return projects.filter((project) => projectTitleHas(project, search));
+}
+function projectTitleHas(project, search) {
+  return project.title.toLowerCase().includes(search.toLowerCase());
+}
 function getAllSkills() {
   return [
     {
@@ -85,6 +91,7 @@ function getAllSocialLinks() {
 
 export const projectService = {
   getAllProjects,
+  filterProjects,
 };
 
 export const skillService = {

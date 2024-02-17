@@ -5,10 +5,10 @@ import {
   socialMediaService,
 } from "../../services/db-service";
 import { About } from "./About/About";
+import { Contact } from "./Contact/Contact";
 import Hero from "./Hero/Hero";
 import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
-import { Contact } from "./Contact/Contact";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
@@ -47,27 +47,26 @@ function ProjectsSection() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
 
-  const loadProjects = () =>
-    projects.length === 0 && setProjects(projectService.getAllProjects());
+  const loadProjects = () => {
+    if (projects.length === 0) setProjects(projectService.getAllProjects());
+  };
 
-  const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const filterProjects = (e) => {
+  const searchProjects = (e) => {
     e.preventDefault();
 
     setSearch(e.target.elements["search"].value);
     setSort(e.target.elements["sort"].value);
   };
 
+  const filteredProjects = projectService.filterProjects(projects, search);
+
   return (
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
+        onHandleSubmit={searchProjects}
         baseProjectsLength={projects.length}
         projects={filteredProjects}
-        onHandleSubmit={filterProjects}
       />
     </Projects.Root>
   );
