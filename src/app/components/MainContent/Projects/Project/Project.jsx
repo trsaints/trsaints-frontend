@@ -1,3 +1,5 @@
+import "./Project.css";
+
 function Root({ children }) {
   return <article className="project">{children}</article>;
 }
