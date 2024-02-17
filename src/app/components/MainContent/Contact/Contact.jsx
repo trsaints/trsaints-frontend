@@ -31,6 +31,7 @@ function Form() {
           <label className="form__label" htmlFor="name">
             nome
           </label>
+
           <input
             className="form__input"
             type="text"
@@ -43,6 +44,7 @@ function Form() {
           <label className="form__label" htmlFor="email">
             <span lang="en">e-mail</span>
           </label>
+
           <input
             className="form__input"
             type="email"
@@ -55,11 +57,15 @@ function Form() {
           <label className="form__label" htmlFor="subject">
             assunto
           </label>
+
           <input className="form__input" type="text" id="subject" />
         </div>
 
         <div className="form__field--textarea">
-          <label className="form__label" htmlFor="message">mensagem</label>
+          <label className="form__label" htmlFor="message">
+            mensagem
+          </label>
+
           <textarea
             className="form__textarea"
             placeholder="Mensagem"
@@ -68,7 +74,9 @@ function Form() {
         </div>
       </fieldset>
 
-      <button className="form__submit link-btn" type="submit">Enviar</button>
+      <button className="form__submit link-btn" type="submit">
+        Enviar
+      </button>
     </form>
   );
 }

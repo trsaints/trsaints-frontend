@@ -38,12 +38,12 @@
 }
 
 .project-card__title,
-.project-card .meta-data {
+.project-card .project__meta {
   position: inherit;
   z-index: 10;
 }
 .project-card__title,
-.project-card .meta-data:first-of-type {
+.project-card .project__meta:first-of-type {
   margin-left: 3.5rem;
 }
 
@@ -64,28 +64,28 @@
   content: "_";
 }
 
-.project-card .meta-data {
+.project-card .project__meta {
   display: inline-block;
   max-width: calc(50% - 3rem);
 }
 
-.project-card .meta-data:first-of-type {
+.project-card .project__meta:first-of-type {
   margin-right: 1rem;
 }
 
-.project-card .meta-data__key {
+.project-card .project__meta__key {
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   border-bottom: 2px dashed;
   width: fit-content;
 }
 
-.project-card .meta-data__key::after {
+.project-card .project__meta__key::after {
   content: ":";
 }
 
 .project-card__title,
-.project-card .meta-data__value {
+.project-card .project__meta__value {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

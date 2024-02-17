@@ -5,7 +5,9 @@ export default function Hero() {
     <header className="hero">
       <h1 className="hero__title">Thiago Rodrigues Santos</h1>
 
-      <p className="hero__subtitle">web developer</p>
+      <p className="hero__subtitle">
+        <span lang="en">web developer</span>
+      </p>
 
       <a className="hero__anchor" href="#about">
         desça a página
