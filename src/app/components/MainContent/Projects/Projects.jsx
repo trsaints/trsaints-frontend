@@ -35,7 +35,6 @@ function Header({ onHandleClick }) {
   );
 }
 
-
 function ProjectsList({ projects }) {
   const projectCards = projects.map((project) => (
     <li key={project.id}>
@@ -49,19 +48,34 @@ function ProjectsList({ projects }) {
 }
 
 function Content(props) {
+  const hasProjectsFound = props?.projects.length > 0,
+    hasProjectsLoaded = props?.baseProjectsLength > 0;
+
+  const renderFilter = () => {
+    if (hasProjectsLoaded)
+      return <Filter onHandleSubmit={props?.onHandleSubmit} />;
+  };
+
+  const renderProjects = () => {
+    if (hasProjectsFound) return <ProjectsList projects={props?.projects} />;
+  };
+
   return (
     <article id="projects-content" className="projects__content">
       <h3 className="projects__subtitle sr-only">portfolio</h3>
 
-      <ProjectFilter.Root onHandleSubmit={props?.onHandleSubmit}>
-        <ProjectFilter.Select options={["nome", "data"]} />
-        <ProjectFilter.SearchBar />
-      </ProjectFilter.Root>
-
-      {props?.projects.length > 0 && (
-        <ProjectsList projects={props?.projects} />
-      )}
+      {renderFilter()}
+      {renderProjects()}
     </article>
+  );
+}
+
+function Filter({ onHandleSubmit }) {
+  return (
+    <ProjectFilter.Root onHandleSubmit={onHandleSubmit}>
+      <ProjectFilter.Select options={["nome", "data"]} />
+      <ProjectFilter.SearchBar />
+    </ProjectFilter.Root>
   );
 }
 
@@ -69,8 +83,8 @@ function Modal({ project }) {
   return (
     <Project.Root>
       <Project.Header {...project} />
-
-      <Project.Content {...project} />
+      <Project.Desc desc={project?.desc} />
+      <Project.Links links={project?.links} />
     </Project.Root>
   );
 }

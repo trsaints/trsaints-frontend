@@ -30,7 +30,7 @@
 }
 
 .skill-card__title,
-.skill-card__desc {
+.skill-card__meta {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -55,7 +55,7 @@
   color: #fff;
 }
 
-.skill-card__desc {
+.skill-card__meta {
   height: 100%;
   background-image: repeating-linear-gradient(
     0deg,

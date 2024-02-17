@@ -65,6 +65,7 @@ function ProjectsSection() {
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
+        baseProjectsLength={projects.length}
         projects={filteredProjects}
         onHandleSubmit={filterProjects}
       />

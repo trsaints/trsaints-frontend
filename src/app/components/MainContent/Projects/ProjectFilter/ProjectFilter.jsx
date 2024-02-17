@@ -16,6 +16,10 @@ function Root({ children, onHandleSubmit }) {
 }
 
 function Select({ options }) {
+  const optionItems = options.map(
+    (option) => option && <option key={option}>{option}</option>
+  );
+
   return (
     <div className="filter__select">
       <label className="filter__label highlight-btn" htmlFor="filter-select">
@@ -27,9 +31,7 @@ function Select({ options }) {
           Selecione
         </option>
 
-        {options.map(
-          (option) => option && <option key={option}>{option}</option>
-        )}
+        {optionItems}
       </select>
     </div>
   );

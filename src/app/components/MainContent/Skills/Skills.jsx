@@ -4,7 +4,11 @@ import { Skill } from "./Skill/Skill";
 import { SkillCard } from "./SkillCard/SkillCard";
 
 function Root({ children }) {
-  return <article className="skills" id="skills">{children}</article>;
+  return (
+    <article className="skills" id="skills">
+      {children}
+    </article>
+  );
 }
 
 function Header({ onHandleClick }) {
@@ -21,20 +25,26 @@ function Header({ onHandleClick }) {
         earum assumenda iure dolore pariatur suscipit.
       </p>
 
-      <menu className="skills__menu nav">
-        <li className="skills__option">
-          <button className="highlight-btn" onClick={onHandleClick}>
-            mostre-me
-          </button>
-        </li>
-
-        <li className="skills__option">
-          <a className="link-btn" href="/resume_20240205_045938_0000.pdf">
-            ver currículo
-          </a>
-        </li>
-      </menu>
+      <HeaderMenu onHandleClick={onHandleClick} />
     </header>
+  );
+}
+
+function HeaderMenu({ onHandleClick }) {
+  return (
+    <menu className="skills__menu nav">
+      <li className="skills__option">
+        <button className="highlight-btn" onClick={onHandleClick}>
+          mostre-me
+        </button>
+      </li>
+
+      <li className="skills__option">
+        <a className="link-btn" href="/resume_20240205_045938_0000.pdf">
+          ver currículo
+        </a>
+      </li>
+    </menu>
   );
 }
 

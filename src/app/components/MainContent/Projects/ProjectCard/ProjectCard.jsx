@@ -9,20 +9,35 @@ function Content({ project }) {
     <>
       <h3 className="project-card__title">{project.title}</h3>
 
-      <dl className="meta-data">
-        <dt className="meta-data__key">stack</dt>
-        <dd className="meta-data__value">
-          {project.stack.map((tech) => tech.tech).join(", ")}
-        </dd>
-      </dl>
-
-      <dl className="meta-data">
-        <dt className="meta-data__key">deploy</dt>
-        <dd className="meta-data__value">
-          {project.links[1]["url"] !== "" && project.links[1]["url"]}
-        </dd>
-      </dl>
+      <MetaStack stack={project.stack} />
+      <MetaDeploy links={project.links} />
     </>
+  );
+}
+
+function MetaStack({ stack }) {
+  const mainStack = stack.map((tech) => tech.tech).join(", ");
+
+  return (
+    <dl className="project__meta">
+      <dt className="project__meta__key">
+        <span lang="en">stack</span>
+      </dt>
+
+      <dd className="project__meta__value">{mainStack}</dd>
+    </dl>
+  );
+}
+
+function MetaDeploy({ links }) {
+  const deployLink = links[1]["url"] !== "" && links[1]["url"];
+
+  return (
+    <dl className="project__meta">
+      <dt className="project__meta__key">deploy</dt>
+
+      <dd className="project__meta__value">{deployLink}</dd>
+    </dl>
   );
 }
 

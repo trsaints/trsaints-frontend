@@ -9,9 +9,10 @@ function Header({ skill }) {
     <header className="skill__header">
       <h3 className="skill__title">{skill?.title}</h3>
 
-      <dl className="meta">
+      <dl className="skill__meta">
         <dt className="sr-only">tipo:</dt>
-        <dd className="meta__value" lang="en">
+
+        <dd className="skill__meta__value" lang="en">
           {skill?.type}
         </dd>
       </dl>
