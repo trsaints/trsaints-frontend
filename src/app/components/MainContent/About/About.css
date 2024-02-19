@@ -1,8 +1,9 @@
 .about {
-  padding: 5rem 1.5rem;
   display: grid;
   grid-template-areas: "heading" "pitch";
+  
   box-shadow: inset 0 0 8px var(--black);
+  padding: 5rem 1.5rem;
 }
 
 .about__header {
@@ -18,9 +19,10 @@
 }
 
 .pitch {
-  position: relative;
-  padding: 1.25rem;
   grid-area: pitch;
+  position: relative;
+
+  padding: 1.25rem;
 }
 
 .pitch__video,
@@ -42,6 +44,7 @@
 @media screen and (min-width: 1280px) {
   .about {
     padding: 5rem 4rem;
+    
     grid-template-areas: "heading pitch";
     grid-template-columns: 4fr 3fr;
   }

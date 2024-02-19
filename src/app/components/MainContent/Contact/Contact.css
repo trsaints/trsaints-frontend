@@ -8,12 +8,14 @@
 
 .form {
   position: relative;
+
   padding: 22px;
 }
 
 .form__fieldset {
   position: inherit;
   z-index: 2;
+
   padding-bottom: 2.5rem;
 }
 
@@ -21,9 +23,10 @@
   font-size: 1.25rem;
   text-transform: uppercase;
   font-weight: bold;
-  padding-bottom: 0.5rem;
+
   border-bottom: 2px dashed;
   margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 .form__field + .form__field,
@@ -38,12 +41,15 @@
 
 .form__label {
   display: block;
+
   background-color: var(--lavender-web-2);
   color: var(--black);
+  
   padding: 0.5rem;
+  width: fit-content;
+  
   cursor: pointer;
   text-transform: uppercase;
-  width: fit-content;
 }
 
 .form__label::after {
@@ -51,17 +57,19 @@
 }
 
 .form__input {
-  padding: 0.5rem;
-  border-bottom: 2px dashed;
   flex: 1;
+
+  border-bottom: 2px dashed;
+  padding: 0.5rem;
+  
 }
 
 .form__textarea {
-  margin-top: 0.5rem;
   border: 2px dashed;
-  width: 100%;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   resize: vertical;
+  width: 100%;
 }
 
 .form__submit {
@@ -82,10 +90,11 @@
 @media screen and (min-width: 1280px) {
   .contact {
     padding-inline: 4rem;
+
     background-image: url("/trsaints_programming.svg");
+    background-position: calc(100% - 4rem) 50%;
     background-repeat: no-repeat;
     background-size: 40%;
-    background-position: calc(100% - 4rem) 50%;
   }
 
   .form {

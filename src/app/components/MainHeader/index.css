@@ -1,18 +1,20 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+
+  padding: 1rem 1.5rem;
+  height: 72px;
+  width: 100vw;
+
   background-image: linear-gradient(
     to bottom,
     var(--black-2),
     var(--raisin-black)
   );
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
   box-shadow: 0 0 8px black;
-  position: fixed;
-  z-index: 100;
-  width: 100vw;
-  height: 72px;
 }
 
 .header__banner {
@@ -22,28 +24,31 @@
 .header__nav {
   display: none;
   position: absolute;
-  top: 72px;
+
+  top: 4.5rem;
   right: 0;
 }
 
 .header__menu:focus-within .header__nav {
   display: flex;
-  padding: 1.5rem;
-  justify-content: flex-end;
   flex-direction: column;
-  text-align: right;
+  justify-content: flex-end;
+
   gap: 1.5rem;
+  padding: 1.5rem;
+
   background-image: linear-gradient(
     to top,
     var(--black-2),
     var(--raisin-black)
   );
+  text-align: right;
 }
 
 .header__link {
   color: white;
-  text-shadow: 0 0 8px white;
   cursor: pointer;
+  text-shadow: 0 0 8px white;
   text-transform: uppercase;
 }
 
@@ -63,11 +68,13 @@
   .header__nav,
   .header__menu:focus-within .header__nav {
     display: flex;
-    gap: 1.5rem;
-    padding: 0;
-    position: static;
     flex-direction: row;
     justify-content: flex-end;
+    position: static;
+
+    gap: 1.5rem;
+    padding: 0;
+
     background-image: linear-gradient(
       to bottom,
       var(--black-2),
