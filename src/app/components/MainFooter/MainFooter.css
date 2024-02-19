@@ -1,17 +1,20 @@
 .footer {
-    background-color: var(--black);
     padding: 2.5rem 1.5rem;
-    text-align: center;
+
+    background-color: var(--black);
     box-shadow: 0 0 8px var(--black);
+    text-align: center;
 }
 
 .footer__title {
-    font-size: 1.25rem;
     margin-bottom: 1rem;
+
+    font-size: 1.25rem;
 }
 
 .footer__time {
     display: block;
+    
     margin-bottom: 1rem;
 }
 
