@@ -37,7 +37,7 @@ function Header({ onHandleClick }) {
 
 function ProjectsList({ projects }) {
   const projectCards = projects.map((project) => (
-    <li key={project.id}>
+    <li key={project?.id} data-id={project?.id}>
       <ProjectCard.Root>
         <ProjectCard.Content project={project} />
       </ProjectCard.Root>
@@ -61,7 +61,11 @@ function Content(props) {
   };
 
   return (
-    <article id="projects-content" className="projects__content">
+    <article
+      id="projects-content"
+      className="projects__content"
+      onClick={props?.onHandleClick}
+    >
       <h3 className="projects__subtitle sr-only">portfolio</h3>
 
       {renderFilter()}

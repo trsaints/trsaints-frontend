@@ -43,9 +43,10 @@ function SkillsSection() {
 }
 
 function ProjectsSection() {
-  const [projects, setProjects] = useState([]);
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState("");
+  const [projects, setProjects] = useState([]),
+    [selectedProject, setSelectedProject] = useState(-1),
+    [search, setSearch] = useState(""),
+    [sort, setSort] = useState("");
 
   const loadProjects = () => {
     if (projects.length === 0) setProjects(projectService.getAllProjects());
@@ -58,16 +59,33 @@ function ProjectsSection() {
     setSort(e.target.elements["sort"].value);
   };
 
+  const selectProject = (e) => {
+    const parentID = e?.target.closest("[data-id]");
+
+    if (parentID === null) return;
+
+    const { id } = parentID.dataset;
+
+    setSelectedProject(id);
+  };
+
+  const renderProject = () => {
+    if (selectedProject > -1)
+      return <Projects.Modal project={filteredProjects[selectedProject]} />;
+  };
+
   const filteredProjects = projectService.filterProjects(projects, search);
 
   return (
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
+        onHandleClick={(e) => selectProject(e)}
         onHandleSubmit={searchProjects}
         baseProjectsLength={projects.length}
         projects={filteredProjects}
       />
+      {renderProject()}
     </Projects.Root>
   );
 }
