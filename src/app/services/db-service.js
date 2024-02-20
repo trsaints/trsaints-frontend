@@ -23,8 +23,8 @@ function getAllProjects() {
     },
     {
       id: 1,
-      title: "Project Title",
-      stack: [{ tech: "HTML" }, { tech: "CSS" }, { tech: "Javascript" }],
+      title: "Project Title 2",
+      stack: [{ tech: "HTML" }, { tech: "CSS" }, { tech: "React" }],
       year: 2023,
       banner: {
         src: "https://picsum.photos/200/300",
