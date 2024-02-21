@@ -83,13 +83,27 @@ function Filter({ onHandleSubmit }) {
   );
 }
 
-function Modal({ project }) {
+function Modal(props) {
   return (
-    <Project.Root>
-      <Project.Header {...project} />
-      <Project.Desc desc={project?.desc} />
-      <Project.Links links={project?.links} />
-    </Project.Root>
+    <dialog className="modal" onKeydown={props?.onHandleKeydown}>
+      <menu className="modal__menu">
+        <li>
+          <button
+            className="modal__close link-btn"
+            onClick={props?.onHandleClick}
+          >
+            <span className="sr-only">fechar</span>
+            <span aria-hidden>X</span>
+          </button>
+        </li>
+      </menu>
+
+      <Project.Root>
+        <Project.Header {...props?.project} />
+        <Project.Desc desc={props?.project?.desc} />
+        <Project.Links links={props?.project?.links} />
+      </Project.Root>
+    </dialog>
   );
 }
 
