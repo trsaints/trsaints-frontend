@@ -1,7 +1,7 @@
 import "./Project.css";
 
 function Root({ children }) {
-  return <article className="project">{children}</article>;
+  return <article className="project window-frame">{children}</article>;
 }
 
 function Header(props) {
@@ -9,7 +9,6 @@ function Header(props) {
     <header className="project__header">
       <h2 className="project__title">{props?.title}</h2>
 
-      <Stacks stack={props?.stack} />
       <DateDisplay year={props?.year} />
       <Stacks stack={props?.stack} />
     </header>
@@ -40,17 +39,26 @@ function Desc({ desc }) {
 }
 
 function Links({ links }) {
-  const navLinks = links.map((link) => (
-    <a
-      className="link-btn"
-      href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      key={link.url}
-    >
-      {link.name}
-    </a>
-  ));
+  let buttonSelector = "";
+
+  const navLinks = links.map((link) => {
+    const hasDeploy = link?.name == "deploy" && link?.url !== "";
+
+    if (hasDeploy) buttonSelector = "highlight-btn";
+    else buttonSelector = "link-btn";
+
+    return (
+      <a
+        className={buttonSelector}
+        href={link?.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={link?.url}
+      >
+        {link?.name}
+      </a>
+    );
+  });
 
   return <nav className="project__links">{navLinks}</nav>;
 }
