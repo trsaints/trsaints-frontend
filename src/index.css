@@ -21,7 +21,8 @@ body {
   overflow-x: hidden;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
 }
 
@@ -56,31 +57,30 @@ li {
 
 .link-btn,
 .highlight-btn {
+  display: block;
+
+  padding: 8px 16px;
+
+  cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  font-weight: 700;
+  box-shadow: 0 0 0.5rem var(--rose);
 }
 
 .link-btn {
-  display: block;
-
   border: 0.25rem outset var(--rose);
-  padding: 8px 16px;
 
   background-color: var(--black);
-  box-shadow: 0 0 0.5rem var(--rose);
   color: var(--rose);
-  font-weight: 700;
 }
 
 .highlight-btn {
   border: 0.25rem outset var(--rose);
-  padding: 8px 16px;
 
   background-image: linear-gradient(to bottom, var(--deep-pink), var(--rose));
-  box-shadow: 0 0 0.5rem var(--rose);
   color: var(--black);
-  font-weight: 700;
 }
 
 h2 {
@@ -115,16 +115,16 @@ p {
   position: absolute;
   z-index: 1;
 
-  border: .25rem outset #d8cee4;
+  border: 0.25rem outset #d8cee4;
   height: calc(100% + 4.5rem);
   padding-top: 0.5rem;
   padding-left: 1rem;
   width: calc(100% + 2.5rem);
-  
+
   top: -3.25rem;
   left: -1.25rem;
 
-  box-shadow: 0 0 .5rem #050307;
+  box-shadow: 0 0 0.5rem #050307;
   background-image: url("/window_frame_header.svg");
   background-size: auto 2rem;
   background-repeat: repeat-x;
@@ -168,7 +168,7 @@ p {
   border: 4px outset #d9d9d9;
   height: 3rem;
   width: 100%;
-  
+
   background-color: #a59eaf;
 }
 
@@ -176,6 +176,34 @@ p {
   border: 4px outset #d8cee4;
   height: 6rem;
   width: 100%;
-  
+
   background-color: #a59eaf;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 101;
+
+  top: calc(72px + 4rem);
+  left: 4.5rem;
+}
+
+.modal__menu {
+  position: absolute;
+  z-index: 102;
+
+  top: calc(20px + 1rem);
+  left: calc(100% - 4rem - 0.25rem - 1rem);
+}
+
+.modal__close {
+  display: block;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+dialog::backdrop {
+  background-color: black;
 }
