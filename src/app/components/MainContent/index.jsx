@@ -44,9 +44,11 @@ function SkillsSection() {
 
 function ProjectsSection() {
   const [projects, setProjects] = useState([]),
-    [selectedProject, setSelectedProject] = useState(-1),
+    [index, setIndex] = useState(-1),
     [search, setSearch] = useState(""),
     [sort, setSort] = useState("");
+
+  const projectsFound = projectService.filterProjects(projects, search);
 
   const loadProjects = () => {
     if (projects.length === 0) setProjects(projectService.getAllProjects());
@@ -66,15 +68,20 @@ function ProjectsSection() {
 
     const { id } = parentID.dataset;
 
-    setSelectedProject(id);
+    setIndex(id);
   };
 
   const renderProject = () => {
-    if (selectedProject > -1)
-      return <Projects.Modal project={filteredProjects[selectedProject]} />;
+    if (index > -1)
+      return (
+        <Projects.Modal
+          project={projectsFound[index]}
+          onHandleClick={closeOnClick}
+        />
+      );
   };
 
-  const filteredProjects = projectService.filterProjects(projects, search);
+  const closeOnClick = () => setIndex(-1);
 
   return (
     <Projects.Root>
@@ -83,7 +90,7 @@ function ProjectsSection() {
         onHandleClick={(e) => selectProject(e)}
         onHandleSubmit={searchProjects}
         baseProjectsLength={projects.length}
-        projects={filteredProjects}
+        projects={projectsFound}
       />
       {renderProject()}
     </Projects.Root>
