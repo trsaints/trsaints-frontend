@@ -11,7 +11,7 @@ function Header(props) {
 
       <Stacks stack={props?.stack} />
       <DateDisplay year={props?.year} />
-      <img src={props?.banner.src} alt={props?.banner.alt} />
+      <Stacks stack={props?.stack} />
     </header>
   );
 }
