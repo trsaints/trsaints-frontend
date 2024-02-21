@@ -20,6 +20,10 @@
   box-shadow: 0 4px 8px var(--black);
 }
 
+.projects__button {
+  width: fit-content;
+}
+
 .projects__list {
   display: flex;
 
