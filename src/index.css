@@ -98,7 +98,8 @@ h2::before {
   content: "~/";
 }
 
-h2::after, h3::after {
+h2::after,
+h3::after {
   content: "_";
 }
 
@@ -226,4 +227,18 @@ p {
 
 dialog::backdrop {
   background-color: black;
+}
+
+@media screen and (min-width: 720px) {
+  .modal {
+    width: calc(100vw - 5.5rem);
+
+    top: calc(72px + 4rem);
+    left: 2.75rem;
+  }
+
+  .modal__menu {
+    top: 1.5rem;
+    left: calc(100% - 5.5rem);
+  }
 }
