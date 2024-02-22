@@ -85,7 +85,7 @@ function Filter({ onHandleSubmit }) {
 
 function Modal(props) {
   return (
-    <dialog className="modal" onKeydown={props?.onHandleKeydown}>
+    <dialog className="modal window-frame">
       <menu className="modal__menu">
         <li>
           <button
@@ -102,6 +102,7 @@ function Modal(props) {
         <Project.Header {...props?.project} />
         <Project.Desc desc={props?.project?.desc} />
         <Project.Links links={props?.project?.links} />
+        <Project.Banner banner={props?.project?.banner} />
       </Project.Root>
     </dialog>
   );
