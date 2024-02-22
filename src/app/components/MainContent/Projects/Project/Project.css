@@ -114,3 +114,47 @@
     flex-direction: row;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .project {
+    display: grid;
+    grid-template-areas: "head banner" "desc banner" "links banner";
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 4rem;
+  }
+
+  .project__header,
+  .project__desc,
+  .project__links {
+    align-self: flex-start;
+  }
+
+  .project__header {
+    grid-area: head;
+  }
+
+  .project__desc {
+    grid-area: desc;
+    height: calc(100% - 2rem);
+  }
+
+  .project__links {
+    grid-area: links;
+  }
+
+  .project__banner {
+    grid-area: banner;
+  }
+
+  .project__banner-title {
+    margin-bottom: 1rem;
+  }
+
+  .project__figure {
+    height: calc(100vh - 5.5rem - 72px);
+  }
+
+  .project__img {
+    max-height: 100%;
+  }
+}
