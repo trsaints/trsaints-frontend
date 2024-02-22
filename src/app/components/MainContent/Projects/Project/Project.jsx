@@ -7,7 +7,7 @@ function Root({ children }) {
 function Header(props) {
   return (
     <header className="project__header">
-      <h2 className="project__title">{props?.title}</h2>
+      <h3 className="project__title">{props?.title}</h3>
 
       <DateDisplay year={props?.year} />
       <Stacks stack={props?.stack} />
@@ -63,9 +63,26 @@ function Links({ links }) {
   return <nav className="project__links">{navLinks}</nav>;
 }
 
+function Banner({ banner }) {
+  return (
+    <aside className="project__banner">
+      <h4 className="project__banner-title">
+        <span lang="en">Preview</span>
+      </h4>
+
+      <figure className="project__figure">
+        <img className="project__img" src={banner?.src} alt={banner?.alt} />
+
+        <figcaption className="project__figcaption">{banner?.alt}</figcaption>
+      </figure>
+    </aside>
+  );
+}
+
 export const Project = {
   Root,
   Header,
   Desc,
   Links,
+  Banner,
 };

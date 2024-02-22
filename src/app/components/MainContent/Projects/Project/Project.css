@@ -1,71 +1,99 @@
-.project {
-  position: relative;
-  z-index: 101;
-  padding: 2rem;
-
-  height: calc(100vh - 8rem - 72px);
-  width: calc(100vw - 9rem);
-
+.projects {
   background-color: var(--black);
 }
 
-.project__header,
-.project__desc,
-.project__links {
-  position: inherit;
-  z-index: inherit;
+.projects__header {
+  padding: 5rem 1.5rem;
+
+  position: relative;
 }
 
-.project__header {
-  display: grid;
-
-  border-bottom: 4px dashed var(--lavender-web);
-  padding-bottom: 3rem;
-  margin-bottom: 3rem;
-
-  grid-template-columns: auto auto;
-  grid-template-areas: "heading time" "stack stack";
+.projects__desc {
+  margin-bottom: 4rem;
 }
 
-.project__title {
+.projects__content {
+  background-color: var(--dark-purple);
+  background-image: linear-gradient(var(--dark-purple) 2px, transparent 2px),
+    linear-gradient(to right, var(--dark-purple) 2px, var(--black-2) 2px);
+  background-size: 48px 48px;
+  box-shadow: 0 4px 8px var(--black);
+}
+
+.projects__button {
   width: fit-content;
-  margin-bottom: 1rem;
 }
 
-.project__date::before {
-  content: "• ";
-  font-weight: bold;
-}
-
-.project__date {
-  justify-self: flex-start;
-}
-
-.project__stacks {
+.projects__list {
   display: flex;
 
-  width: fit-content;
-  gap: 0.5rem;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  padding-inline: 1.5rem;
+  row-gap: 4rem;
 }
 
-.project__tech {
-  padding: 0.5rem 1rem;
-
-  background-color: var(--lavender-web);
-  color: var(--black);
-  text-transform: uppercase;
+@media screen and (min-width: 720px) {
+  .projects__header,
+  .projects__list {
+    padding-inline: 2.5rem;
+  }
 }
 
-.project__desc {
-  border: 4px solid var(--lavender-web);
-  padding: 1rem;
-}
+@media screen and (min-width: 1280px) {
+  .projects__header::after {
+    display: block;
+    position: absolute;
+    z-index: 1;
 
-.project__links {
-  display: flex;
-  gap: 1rem;
-}
+    height: 100%;
+    width: calc(50% + 2rem);
 
-.project__links > * {
-  flex: 1;
+    top: 0;
+    left: calc(50% + 2rem);
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("/projects_banner.jpg");
+    background-size: cover;
+    content: "";
+  }
+
+  .projects__header::before {
+    display: block;
+    position: absolute;
+    z-index: 2;
+
+    height: 100%;
+    width: calc(50% + 2rem);
+
+    top: 0;
+    left: calc(50% + 2rem);
+
+    content: "";
+    background-image: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    background-size: 100% 3px, 4px 100%;
+  }
+
+  .projects__header,
+  .projects__list {
+    padding-inline: 4rem;
+  }
+
+  .projects__desc {
+    max-width: 50%;
+  }
+
+  .projects__list {
+    flex-direction: row;
+    gap: 4rem;
+  }
 }
