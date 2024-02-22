@@ -83,20 +83,31 @@ li {
   color: var(--black);
 }
 
-h2 {
+h2,
+h3 {
   margin-bottom: 4rem;
-
-  font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 h2::before {
   content: "~/";
 }
 
-h2::after {
+h2::after, h3::after {
   content: "_";
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h3::before {
+  content: "./";
 }
 
 p {
@@ -113,7 +124,7 @@ p {
 .window-frame::before {
   display: block;
   position: absolute;
-  z-index: 1;
+  z-index: inherit;
 
   border: 0.25rem outset #d8cee4;
   height: calc(100% + 4.5rem);
@@ -136,7 +147,7 @@ p {
 .window-frame::after {
   display: block;
   position: absolute;
-  z-index: 1;
+  z-index: inherit;
 
   border: 4px inset #d8cee4;
   height: 100%;
@@ -146,6 +157,8 @@ p {
   left: 0;
 
   content: "";
+
+  pointer-events: none;
 }
 
 .sr-only {
@@ -185,16 +198,23 @@ p {
   position: fixed;
   z-index: 101;
 
+  height: calc(100vh - 5.5rem - 72px);
+  width: calc(100vw - 3.5rem);
+
   top: calc(72px + 4rem);
-  left: 4.5rem;
+  left: 1.75rem;
+}
+
+.modal::before {
+  box-shadow: 0 0 100vw 50vw var(--black);
 }
 
 .modal__menu {
-  position: absolute;
+  position: fixed;
   z-index: 102;
 
-  top: calc(20px + 1rem);
-  left: calc(100% - 4rem - 0.25rem - 1rem);
+  top: 1rem;
+  left: calc(100% - 4.5rem);
 }
 
 .modal__close {
