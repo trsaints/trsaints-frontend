@@ -1,4 +1,4 @@
-import "./Project.css";
+import "./ProjectModal.css";
 
 function Root({ children }) {
   return <article className="project">{children}</article>;
@@ -79,7 +79,7 @@ function Banner({ banner }) {
   );
 }
 
-export const Project = {
+export const ProjectModal = {
   Root,
   Header,
   Desc,
