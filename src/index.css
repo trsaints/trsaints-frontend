@@ -120,6 +120,10 @@ p {
   border: 1rem solid #a59eaf;
 
   color: #fff;
+
+  box-shadow: 0 0 100vw var(--black);
+
+  position: relative;
 }
 
 .window-frame::before {
