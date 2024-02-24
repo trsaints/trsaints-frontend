@@ -1,7 +1,7 @@
 import "./Project.css";
 
 function Root({ children }) {
-  return <article className="project window-frame">{children}</article>;
+  return <article className="project">{children}</article>;
 }
 
 function Header(props) {

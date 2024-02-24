@@ -4,8 +4,6 @@
   padding: 1.5rem;
   margin-bottom: 10rem;
 
-  position: relative;
-
   background-image: linear-gradient(
     to bottom,
     var(--dark-purple),
