@@ -59,7 +59,7 @@ function getAllSkills() {
       type: "hard skill",
       desc: "lorem ipsum dolor sit amet",
       banner: {
-        path: "",
+        path: "https://picsum.photos/200/300",
         alt: "",
       },
     },
@@ -69,7 +69,7 @@ function getAllSkills() {
       type: "hard skill",
       desc: "lorem ipsum dolor sit amet",
       banner: {
-        path: "",
+        path: "https://picsum.photos/200/300",
         alt: "",
       },
     },
