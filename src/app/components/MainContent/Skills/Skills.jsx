@@ -35,9 +35,9 @@ function HeaderMenu({ onHandleClick }) {
   return (
     <menu className="skills__menu nav">
       <li className="skills__option">
-        <button className="highlight-btn" onClick={onHandleClick}>
+        <a className="highlight-btn" href="#skills-list" onClick={onHandleClick}>
           mostre-me
-        </button>
+        </a>
       </li>
 
       <li className="skills__option">
@@ -59,7 +59,7 @@ function SkillsList({ skills, onHandleClick }) {
   ));
 
   return (
-    <ul className="skills__list window-frame" onClick={onHandleClick}>
+    <ul className="skills__list window-frame" onClick={onHandleClick} id="skills-list" >
       {skillCards}
     </ul>
   );

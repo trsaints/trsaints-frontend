@@ -28,6 +28,8 @@
 
   padding: 1.25rem;
   gap: 2rem;
+
+  scroll-margin-top: 11rem;
 }
 
 .skills__list > li {
