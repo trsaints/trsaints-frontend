@@ -65,17 +65,11 @@ function Links({ links }) {
 
 function Banner({ banner }) {
   return (
-    <aside className="project__banner">
-      <h4 className="project__banner-title">
-        <span lang="en">Preview</span>
-      </h4>
+    <figure className="project__figure">
+      <figcaption className="project__figcaption">{banner?.alt}</figcaption>
 
-      <figure className="project__figure">
-        <img className="project__img" src={banner?.src} alt={banner?.alt} />
-
-        <figcaption className="project__figcaption">{banner?.alt}</figcaption>
-      </figure>
-    </aside>
+      <img className="project__img" src={banner?.src} alt={banner?.alt} />
+    </figure>
   );
 }
 
