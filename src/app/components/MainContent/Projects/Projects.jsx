@@ -3,6 +3,7 @@ import "./Projects.css";
 import { ProjectModal } from "./ProjectModal/ProjectModal";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
+import { Modal } from "../../Modal/Modal";
 
 function Root({ children }) {
   return (
@@ -85,18 +86,8 @@ function Filter({ onHandleSubmit }) {
 
 function Project(props) {
   return (
-    <dialog className="modal window-frame">
-      <menu className="modal__menu">
-        <li>
-          <button
-            className="modal__close link-btn"
-            onClick={props?.onHandleClick}
-          >
-            <span className="sr-only">fechar</span>
-            <span aria-hidden>X</span>
-          </button>
-        </li>
-      </menu>
+    <Modal.Root>
+      <Modal.Menu onHandleClick={props?.onHandleClick} />
 
       <ProjectModal.Root>
         <ProjectModal.Header {...props?.project} />
@@ -104,7 +95,7 @@ function Project(props) {
         <ProjectModal.Links links={props?.project?.links} />
         <ProjectModal.Banner banner={props?.project?.banner} />
       </ProjectModal.Root>
-    </dialog>
+    </Modal.Root>
   );
 }
 
