@@ -87,7 +87,7 @@ function ProjectsSection() {
     <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
-        onHandleClick={(e) => selectProject(e)}
+        onHandleClick={selectProject}
         onHandleSubmit={searchProjects}
         baseProjectsLength={projects.length}
         projects={projectsFound}
