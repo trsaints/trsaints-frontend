@@ -83,7 +83,7 @@ function Filter({ onHandleSubmit }) {
   );
 }
 
-function Modal(props) {
+function Project(props) {
   return (
     <dialog className="modal window-frame">
       <menu className="modal__menu">
@@ -112,5 +112,5 @@ export const Projects = {
   Root,
   Header,
   Content,
-  Modal,
+  Project,
 };
