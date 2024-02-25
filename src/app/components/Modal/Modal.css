@@ -30,6 +30,10 @@
 .modal article {
   position: relative;
   z-index: 102;
+  margin: 0.25rem;
+  padding: 1rem;
+  max-height: calc(100% - 8px);
+  overflow-y: auto;
 }
 
 @media screen and (min-width: 720px) {
