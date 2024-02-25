@@ -198,41 +198,6 @@ p {
   background-color: #a59eaf;
 }
 
-.modal {
-  display: block;
-  position: fixed;
-  z-index: 101;
-
-  height: calc(100vh - 5.5rem - 72px);
-  width: calc(100vw - 3.5rem);
-
-  top: calc(72px + 4rem);
-  left: 1.75rem;
-}
-
-.modal::before {
-  box-shadow: 0 0 100vw 50vw var(--black);
-}
-
-.modal__menu {
-  position: fixed;
-  z-index: 102;
-
-  top: 1rem;
-  left: calc(100% - 4.5rem);
-}
-
-.modal__close {
-  display: block;
-
-  width: 3rem;
-  height: 3rem;
-}
-
-dialog::backdrop {
-  background-color: black;
-}
-
 @media screen and (min-width: 720px) {
   .modal {
     width: calc(100vw - 5.5rem);

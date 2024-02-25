@@ -1,3 +1,5 @@
+import "./Modal.css";
+
 function Root({ children }) {
   return <dialog className="modal window-frame">{children}</dialog>;
 }
