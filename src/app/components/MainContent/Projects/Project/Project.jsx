@@ -79,7 +79,7 @@ function Banner({ banner }) {
   );
 }
 
-export const Project = {
+export const ProjectModal = {
   Root,
   Header,
   Desc,

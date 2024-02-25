@@ -1,6 +1,6 @@
 import "./Projects.css";
 
-import { Project } from "./Project/Project";
+import { ProjectModal } from "./Project/Project";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
 
@@ -98,12 +98,12 @@ function Modal(props) {
         </li>
       </menu>
 
-      <Project.Root>
-        <Project.Header {...props?.project} />
-        <Project.Desc desc={props?.project?.desc} />
-        <Project.Links links={props?.project?.links} />
-        <Project.Banner banner={props?.project?.banner} />
-      </Project.Root>
+      <ProjectModal.Root>
+        <ProjectModal.Header {...props?.project} />
+        <ProjectModal.Desc desc={props?.project?.desc} />
+        <ProjectModal.Links links={props?.project?.links} />
+        <ProjectModal.Banner banner={props?.project?.banner} />
+      </ProjectModal.Root>
     </dialog>
   );
 }
