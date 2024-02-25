@@ -28,3 +28,29 @@
   width: 3rem;
   height: 3rem;
 }
+
+@media screen and (min-width: 720px) {
+  .modal {
+    width: calc(100vw - 5.5rem);
+
+    left: 2.75rem;
+  }
+
+  .modal__menu {
+    top: 1.5rem;
+    left: calc(100% - 5.5rem);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal {
+    width: calc(100vw - 9.5rem);
+
+    left: 4.25rem;
+  }
+
+  .modal__menu {
+    top: 1.5rem;
+    left: calc(100% - 7rem);
+  }
+}
