@@ -47,6 +47,10 @@
     top: 1.5rem;
     left: calc(100% - 5.5rem);
   }
+
+  .modal article {
+    padding: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -59,5 +63,9 @@
   .modal__menu {
     top: 1.5rem;
     left: calc(100% - 7rem);
+  }
+
+  .modal article {
+    padding: 2.5rem;
   }
 }
