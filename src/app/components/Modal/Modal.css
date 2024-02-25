@@ -8,10 +8,8 @@
 
   top: calc(72px + 4rem);
   left: 1.75rem;
-}
 
-.modal::before {
-  box-shadow: 0 0 100vw 50vw var(--black);
+  box-shadow: 0 0 100vw 13rem var(--black);
 }
 
 .modal__menu {

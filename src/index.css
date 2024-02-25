@@ -115,13 +115,13 @@ p {
   margin-bottom: 1rem;
 }
 
-.window-frame {
+:where(.window-frame) {
   background-color: var(--black-2);
   border: 1rem solid #a59eaf;
 
   color: #fff;
 
-  box-shadow: 0 0 100vw var(--black);
+  box-shadow: 0 0 0.5rem var(--black);
 
   position: relative;
 }
