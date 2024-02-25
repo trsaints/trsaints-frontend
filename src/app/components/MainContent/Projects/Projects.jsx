@@ -1,6 +1,6 @@
 import "./Projects.css";
 
-import { ProjectModal } from "./Project/ProjectModal";
+import { ProjectModal } from "./ProjectModal/ProjectModal";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
 
