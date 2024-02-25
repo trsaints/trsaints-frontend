@@ -1,4 +1,4 @@
-import "./Project.css";
+import "./ProjectModal.css";
 
 function Root({ children }) {
   return <article className="project">{children}</article>;
