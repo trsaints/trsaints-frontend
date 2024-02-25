@@ -30,14 +30,37 @@ function AboutSection() {
 }
 
 function SkillsSection() {
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState([]),
+    [index, setIndex] = useState(-1);
 
   const loadSkills = () => setSkills(skillService.getAllSkills());
+
+  const selectSkill = (e) => {
+    const parentID = e?.target.closest("[data-id]");
+
+    if (parentID === null) return;
+
+    const { id } = parentID.dataset;
+
+    setIndex(id);
+  };
+
+  const renderSkill = () => {
+    if (index > -1)
+      return (
+        <Skills.Skill skill={skills[index]} onHandleClick={closeOnClick} />
+      );
+  };
+
+  const closeOnClick = () => setIndex(-1);
 
   return (
     <Skills.Root>
       <Skills.Header onHandleClick={loadSkills} />
-      {skills.length > 0 && <Skills.SkillsList skills={skills} />}
+      {skills.length > 0 && (
+        <Skills.SkillsList skills={skills} onHandleClick={selectSkill} />
+      )}
+      {renderSkill()}
     </Skills.Root>
   );
 }

@@ -1,6 +1,6 @@
 import "./Skills.css";
 
-import { Modal } from "../../Modal/Modal"
+import { Modal } from "../../Modal/Modal";
 import { SkillModal } from "./SkillModal/SkillModal";
 import { SkillCard } from "./SkillCard/SkillCard";
 
@@ -49,16 +49,20 @@ function HeaderMenu({ onHandleClick }) {
   );
 }
 
-function SkillsList({ skills }) {
+function SkillsList({ skills, onHandleClick }) {
   const skillCards = skills.map((skill) => (
-    <li key={skill.id}>
+    <li key={skill?.id} data-id={skill?.id}>
       <SkillCard.Root>
         <SkillCard.Content skill={skill} />
       </SkillCard.Root>
     </li>
   ));
 
-  return <ul className="skills__list window-frame">{skillCards}</ul>;
+  return (
+    <ul className="skills__list window-frame" onClick={onHandleClick}>
+      {skillCards}
+    </ul>
+  );
 }
 
 function Skill(props) {
