@@ -1,6 +1,7 @@
 import "./Skills.css";
 
-import { Skill } from "./Skill/Skill";
+import { Modal } from "../../Modal/Modal"
+import { SkillModal } from "./SkillModal/SkillModal";
 import { SkillCard } from "./SkillCard/SkillCard";
 
 function Root({ children }) {
@@ -60,12 +61,16 @@ function SkillsList({ skills }) {
   return <ul className="skills__list window-frame">{skillCards}</ul>;
 }
 
-function SkillModal({ skill }) {
+function Skill(props) {
   return (
-    <Skill.Root>
-      <Skill.Header skill={skill} />
-      <Skill.Content skill={skill} />
-    </Skill.Root>
+    <Modal.Root>
+      <Modal.Menu onHandleClick={props?.onHandleClick} />
+
+      <SkillModal.Root>
+        <SkillModal.Header skill={props?.skill} />
+        <SkillModal.Content skill={props?.skill} />
+      </SkillModal.Root>
+    </Modal.Root>
   );
 }
 
@@ -73,5 +78,5 @@ export const Skills = {
   Root,
   Header,
   SkillsList,
-  SkillModal,
+  Skill,
 };
