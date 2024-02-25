@@ -27,6 +27,11 @@
   height: 3rem;
 }
 
+.modal article {
+  position: relative;
+  z-index: 102;
+}
+
 @media screen and (min-width: 720px) {
   .modal {
     width: calc(100vw - 5.5rem);
