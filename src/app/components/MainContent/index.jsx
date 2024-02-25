@@ -74,7 +74,7 @@ function ProjectsSection() {
   const renderProject = () => {
     if (index > -1)
       return (
-        <Projects.Modal
+        <Projects.Project
           project={projectsFound[index]}
           onHandleClick={closeOnClick}
         />
