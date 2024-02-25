@@ -1,4 +1,4 @@
-import "./Skill.css";
+import "./SkillModal.css";
 
 function Root({ children }) {
   return <article className="skill">{children}</article>;
@@ -32,7 +32,7 @@ function Content({ skill }) {
   );
 }
 
-export const Skill = {
+export const SkillModal = {
   Root,
   Header,
   Content,
