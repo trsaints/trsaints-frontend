@@ -59,6 +59,7 @@
 }
 
 .skill-card__title {
+  margin-bottom: 0;
   margin-top: 3rem;
   padding: 0.5rem;
 
