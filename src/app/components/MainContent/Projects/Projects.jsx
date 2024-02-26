@@ -26,7 +26,7 @@ function Header({ onHandleClick }) {
       </p>
 
       <a
-        href="#projects-content"
+        href="#projects-list"
         className="projects__button highlight-btn"
         onClick={onHandleClick}
       >
@@ -45,7 +45,14 @@ function ProjectsList({ projects }) {
     </li>
   ));
 
-  return <ul className="projects__list">{projectCards}</ul>;
+  return (
+    <>
+      <p className="projects__count">{projects.length} projetos encontrados</p>
+      <ul className="projects__list" id="projects-list">
+        {projectCards}
+      </ul>
+    </>
+  );
 }
 
 function Content(props) {
