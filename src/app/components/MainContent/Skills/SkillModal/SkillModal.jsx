@@ -9,10 +9,10 @@ function Header({ skill }) {
     <header className="skill__header">
       <h3 className="skill__title">{skill?.title}</h3>
 
-      <dl className="skill__meta">
+      <dl className="skill-meta">
         <dt className="sr-only">tipo:</dt>
 
-        <dd className="skill__meta__value" lang="en">
+        <dd className="skill-meta__value" lang="en">
           {skill?.type}
         </dd>
       </dl>
@@ -25,9 +25,11 @@ function Content({ skill }) {
     <>
       <p className="skill__desc">{skill?.desc}</p>
 
-      <picture className="skill__banner">
-        <img src={skill?.banner.path} alt={skill?.banner.alt} />
-      </picture>
+      <figure className="skill__banner">
+        <figcaption>{skill?.title}</figcaption>
+
+        <img className="skill__img" src={skill?.banner.path} alt={skill?.banner.alt} />
+      </figure>
     </>
   );
 }
