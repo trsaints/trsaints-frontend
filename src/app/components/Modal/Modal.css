@@ -3,6 +3,7 @@
   position: fixed;
   z-index: 101;
 
+  height: calc(100vh - 5.5rem - 72px);
   width: calc(100vw - 3.5rem);
 
   top: calc(72px + 4rem);
@@ -38,12 +39,14 @@
 @media screen and (min-width: 720px) {
   .modal {
     width: calc(100vw - 5.5rem);
+    height: calc(100vh - 15.5rem - 72px);
 
+    top: calc(72px + 9rem);
     left: 2.75rem;
   }
 
   .modal__menu {
-    top: 1.5rem;
+    top: 6.5rem;
     left: calc(100% - 5.5rem);
   }
 
@@ -54,8 +57,10 @@
 
 @media screen and (min-width: 1280px) {
   .modal {
+    height: calc(100vh - 5.5rem - 72px);
     width: calc(100vw - 9.5rem);
 
+    top: calc(72px + 4rem);
     left: 4.25rem;
   }
 
