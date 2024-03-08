@@ -1,9 +1,12 @@
 .skill {
   background-image: linear-gradient(to bottom, var(--black), var(--black-2));
+  display: grid;
+  grid-template-areas: "header" "desc" "banner";
 }
 
 .skill__header {
   margin-bottom: 4rem;
+  grid-area: header;
 }
 
 .skill__title {
@@ -22,6 +25,7 @@
 .skill__desc {
   padding: 1rem;
   position: relative;
+  grid-area: desc;
 }
 
 .skill__desc::before {
@@ -52,6 +56,7 @@
 
 .skill__banner {
   position: relative;
+  grid-area: banner;
 }
 
 .skill__img {
@@ -100,4 +105,18 @@
       rgba(0, 0, 255, 0.06)
     );
   background-size: 100% 3px, 4px 100%;
+}
+
+@media screen and (min-width: 728px) {
+  .skill {
+    grid-template-areas: "header header" "desc banner";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .skill__header,
+  .skill__desc,
+  .skill__banner {
+    align-self: flex-start;
+  }
 }
