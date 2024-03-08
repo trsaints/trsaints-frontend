@@ -41,7 +41,7 @@ function HeaderMenu({ onHandleClick }) {
       </li>
 
       <li className="skills__option">
-        <a className="link-btn" href="/resume_20240205_045938_0000.pdf">
+        <a className="link-btn" href="/curriculo.pdf">
           ver currículo
         </a>
       </li>
