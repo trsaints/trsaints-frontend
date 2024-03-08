@@ -3,7 +3,6 @@
   position: fixed;
   z-index: 101;
 
-  height: calc(100vh - 5.5rem - 72px);
   width: calc(100vw - 3.5rem);
 
   top: calc(72px + 4rem);
