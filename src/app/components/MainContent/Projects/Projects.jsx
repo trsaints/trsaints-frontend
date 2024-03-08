@@ -19,10 +19,7 @@ function Header({ onHandleClick }) {
       <h2 className="projects__title">meus projetos</h2>
 
       <p className="projects__desc">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
-        perferendis eveniet eius odit tenetur mollitia accusamus totam,
-        aspernatur obcaecati assumenda consectetur reiciendis magni
-        necessitatibus veniam sunt ab suscipit ea. Nam.
+        Atualmente, meus projetos consistem, principalmente, em programação Web e automação. Quer vê-los? Clique no botão abaixo.
       </p>
 
       <a

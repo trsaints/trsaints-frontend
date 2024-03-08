@@ -1,8 +1,8 @@
 import "./Skills.css";
 
 import { Modal } from "../../Modal/Modal";
-import { SkillModal } from "./SkillModal/SkillModal";
 import { SkillCard } from "./SkillCard/SkillCard";
+import { SkillModal } from "./SkillModal/SkillModal";
 
 function Root({ children }) {
   return (
@@ -20,10 +20,9 @@ function Header({ onHandleClick }) {
       </h2>
 
       <p className="skills__desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-        expedita at necessitatibus cumque molestias voluptatum exercitationem,
-        adipisci similique cupiditate, voluptate id? Repellat facilis, veritatis
-        earum assumenda iure dolore pariatur suscipit.
+        Para me tornar um profissional, adiquiri algumas habilidades ao longo do
+        tempo. Quer ver o que estou aprendendo? Clique no botão abaixo para
+        saber mais.
       </p>
 
       <HeaderMenu onHandleClick={onHandleClick} />
@@ -35,7 +34,11 @@ function HeaderMenu({ onHandleClick }) {
   return (
     <menu className="skills__menu nav">
       <li className="skills__option">
-        <a className="highlight-btn" href="#skills-list" onClick={onHandleClick}>
+        <a
+          className="highlight-btn"
+          href="#skills-list"
+          onClick={onHandleClick}
+        >
           mostre-me
         </a>
       </li>
@@ -59,7 +62,11 @@ function SkillsList({ skills, onHandleClick }) {
   ));
 
   return (
-    <ul className="skills__list window-frame" onClick={onHandleClick} id="skills-list" >
+    <ul
+      className="skills__list window-frame"
+      onClick={onHandleClick}
+      id="skills-list"
+    >
       {skillCards}
     </ul>
   );

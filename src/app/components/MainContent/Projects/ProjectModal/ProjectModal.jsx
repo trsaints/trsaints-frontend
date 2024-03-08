@@ -28,7 +28,7 @@ function Stacks({ stack }) {
 function DateDisplay({ year }) {
   return (
     <p className="project__date">
-      <span className="sr-only">year:</span>
+      <span className="sr-only" lang="en">year:</span>
       <time dateTime={year}>{year}</time>
     </p>
   );

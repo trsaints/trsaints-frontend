@@ -12,10 +12,7 @@ function Header({ links }) {
       <h2 className="about__title">sobre mim</h2>
 
       <p className="about__desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-        tempore animi, est eaque maiores facere officiis molestiae! Debitis
-        voluptatum maiores, doloremque tempore necessitatibus nesciunt tempora
-        sit dolorum placeat molestias consequuntur.
+        Oi! Eu sou apenas um apaixonado por tecnologia. Estudo programação desde 2021 e, desde então, tenho me dedicado a aprender e aprimorar minhas habilidades. 
       </p>
 
       <Navbar element={"about"} links={links} />

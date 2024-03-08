@@ -19,7 +19,12 @@ function Content() {
 
       <p className="footer__desc">
         feito por{" "}
-        <a rel="noopener" target="_blank" href="https://github.com/trsaints">
+        <a
+          lang="en"
+          rel="noopener"
+          target="_blank"
+          href="https://github.com/trsaints"
+        >
           @trsaints
         </a>
       </p>
