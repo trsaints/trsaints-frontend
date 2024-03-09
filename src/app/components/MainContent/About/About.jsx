@@ -1,9 +1,14 @@
 import "./About.css";
 
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../Navbar/Navbar";
 
 function Root({ children }) {
-  return <article className="about" id="about">{children}</article>;
+  return (
+    <article className="about" id="about">
+      {children}
+    </article>
+  );
 }
 
 function Header({ links }) {
@@ -12,10 +17,12 @@ function Header({ links }) {
       <h2 className="about__title">sobre mim</h2>
 
       <p className="about__desc">
-        Oi! Eu sou apenas um apaixonado por tecnologia. Estudo programação desde 2021 e, desde então, tenho me dedicado a aprender e aprimorar minhas habilidades. 
+        Oi! Eu sou apenas um apaixonado por tecnologia. Estudo programação desde
+        2021 e, desde então, tenho me dedicado a aprender e aprimorar minhas
+        habilidades.
       </p>
 
-      <Navbar element={"about"} links={links} />
+      <Navbar element={"about"} links={links} icon={faUpRightFromSquare} />
     </header>
   );
 }

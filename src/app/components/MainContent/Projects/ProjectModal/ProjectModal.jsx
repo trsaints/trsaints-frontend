@@ -1,5 +1,11 @@
 import "./ProjectModal.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUpRightFromSquare,
+  faGlobe,
+} from "@fortawesome/free-solid-svg-icons";
+
 function Root({ children }) {
   return <article className="project">{children}</article>;
 }
@@ -7,7 +13,7 @@ function Root({ children }) {
 function Header(props) {
   return (
     <header className="project__header">
-      <h3 className="project__title">{props?.title}</h3>
+      <h3 className="project__title">{props?.title} </h3>
 
       <DateDisplay year={props?.year} />
       <Stacks stack={props?.stack} />
@@ -28,7 +34,9 @@ function Stacks({ stack }) {
 function DateDisplay({ year }) {
   return (
     <p className="project__date">
-      <span className="sr-only" lang="en">year:</span>
+      <span className="sr-only" lang="en">
+        year:
+      </span>
       <time dateTime={year}>{year}</time>
     </p>
   );
@@ -42,7 +50,7 @@ function Links({ links }) {
   let buttonSelector = "";
 
   const navLinks = links.map((link) => {
-    const hasDeploy = link?.name == "deploy" && link?.url !== "";
+    const hasDeploy = link?.name === "deploy" && link?.url !== "";
 
     if (hasDeploy) buttonSelector = "highlight-btn";
     else buttonSelector = "link-btn";
@@ -56,11 +64,25 @@ function Links({ links }) {
         key={link?.url}
       >
         {link?.name}
+        <LinkIcon link={link} />
       </a>
     );
   });
 
   return <nav className="project__links">{navLinks}</nav>;
+}
+
+function LinkIcon({ link }) {
+  const icon = (type) => (
+    <FontAwesomeIcon className="suffix-icon" icon={type} />
+  );
+
+  let iconType = {};
+
+  if (link?.name === "deploy") iconType = faGlobe;
+  else if (link?.name === "ver código fonte") iconType = faUpRightFromSquare;
+
+  return icon(iconType);
 }
 
 function Banner({ banner }) {

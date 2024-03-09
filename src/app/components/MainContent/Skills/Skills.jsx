@@ -3,6 +3,11 @@ import "./Skills.css";
 import { Modal } from "../../Modal/Modal";
 import { SkillCard } from "./SkillCard/SkillCard";
 import { SkillModal } from "./SkillModal/SkillModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowDown,
+  faUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Root({ children }) {
   return (
@@ -40,12 +45,14 @@ function HeaderMenu({ onHandleClick }) {
           onClick={onHandleClick}
         >
           mostre-me
+          <FontAwesomeIcon className="suffix-icon" icon={faArrowDown} />
         </a>
       </li>
 
       <li className="skills__option">
         <a className="link-btn" href="/curriculo.pdf">
           ver currículo
+          <FontAwesomeIcon className="suffix-icon" icon={faUpRightFromSquare} />
         </a>
       </li>
     </menu>

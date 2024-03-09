@@ -4,6 +4,8 @@ import { ProjectModal } from "./ProjectModal/ProjectModal";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
 import { Modal } from "../../Modal/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function Root({ children }) {
   return (
@@ -19,7 +21,8 @@ function Header({ onHandleClick }) {
       <h2 className="projects__title">meus projetos</h2>
 
       <p className="projects__desc">
-        Atualmente, meus projetos consistem, principalmente, em programação Web e automação. Quer vê-los? Clique no botão abaixo.
+        Atualmente, meus projetos consistem, principalmente, em programação Web
+        e automação. Quer vê-los? Clique no botão abaixo.
       </p>
 
       <a
@@ -28,6 +31,7 @@ function Header({ onHandleClick }) {
         onClick={onHandleClick}
       >
         ver projetos
+        <FontAwesomeIcon className="suffix-icon" icon={faArrowDown} />
       </a>
     </header>
   );

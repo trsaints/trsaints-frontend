@@ -1,5 +1,8 @@
 import "./ProjectFilter.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 function Root({ children, onHandleSubmit }) {
   return (
     <form className="filter" onSubmit={onHandleSubmit}>
@@ -10,6 +13,7 @@ function Root({ children, onHandleSubmit }) {
 
       <button className="highlight-btn filter__submit" type="submit">
         buscar
+        <FontAwesomeIcon className="suffix-icon" icon={faSearch} />
       </button>
     </form>
   );

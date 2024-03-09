@@ -1,5 +1,8 @@
 import "./Modal.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+
 function Root({ children }) {
   return <dialog className="modal window-frame">{children}</dialog>;
 }
@@ -10,7 +13,7 @@ function Menu({ onHandleClick }) {
       <li>
         <button className="modal__close link-btn" onClick={onHandleClick}>
           <span className="sr-only">fechar</span>
-          <span aria-hidden>X</span>
+          <FontAwesomeIcon icon={faClose} />
         </button>
       </li>
     </menu>

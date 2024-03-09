@@ -1,4 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Contact.css";
+import {
+  faCircleQuestion,
+  faEnvelope,
+  faMessage,
+  faPaperPlane,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Root({ children }) {
   return (
@@ -29,6 +37,7 @@ function Form() {
 
         <div className="form__field">
           <label className="form__label" htmlFor="name">
+            <FontAwesomeIcon className="prefix-icon" icon={faUser} />
             nome
           </label>
 
@@ -42,6 +51,8 @@ function Form() {
 
         <div className="form__field">
           <label className="form__label" htmlFor="email">
+            <FontAwesomeIcon className="prefix-icon" icon={faEnvelope} />
+
             <span lang="en">e-mail</span>
           </label>
 
@@ -55,6 +66,7 @@ function Form() {
 
         <div className="form__field">
           <label className="form__label" htmlFor="subject">
+            <FontAwesomeIcon className="prefix-icon" icon={faCircleQuestion} />
             assunto
           </label>
 
@@ -63,6 +75,7 @@ function Form() {
 
         <div className="form__field--textarea">
           <label className="form__label" htmlFor="message">
+            <FontAwesomeIcon className="prefix-icon" icon={faMessage} />
             mensagem
           </label>
 
@@ -76,6 +89,7 @@ function Form() {
 
       <button className="form__submit link-btn" type="submit">
         Enviar
+        <FontAwesomeIcon className="suffix-icon" icon={faPaperPlane} />
       </button>
     </form>
   );

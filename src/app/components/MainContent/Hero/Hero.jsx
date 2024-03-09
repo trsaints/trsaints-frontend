@@ -1,4 +1,6 @@
 import "./Hero.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
   return (
@@ -11,6 +13,7 @@ export default function Hero() {
 
       <a className="hero__anchor" href="#about">
         desça a página
+        <FontAwesomeIcon className="suffix-icon" icon={faArrowDown} />
       </a>
     </header>
   );
