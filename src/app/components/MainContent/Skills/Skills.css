@@ -19,6 +19,7 @@
 
 .skills__option > * {
   width: 200px;
+  white-space: nowrap;
 }
 
 .skills__list {
