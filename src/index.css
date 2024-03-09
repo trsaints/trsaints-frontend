@@ -197,3 +197,11 @@ p {
 
   background-color: #a59eaf;
 }
+
+.suffix-icon {
+  margin-left: 0.25rem;
+}
+
+.prefix-icon {
+  margin-right: 0.25rem;
+}
