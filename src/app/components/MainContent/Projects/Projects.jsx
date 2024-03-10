@@ -26,7 +26,7 @@ function Header({ onHandleClick }) {
       </p>
 
       <a
-        href="#projects-list"
+        href="#projects-content"
         className="projects__button highlight-btn"
         onClick={onHandleClick}
       >
@@ -49,6 +49,7 @@ function ProjectsList({ projects }) {
   return (
     <>
       <p className="projects__count">{projects.length} projetos encontrados</p>
+
       <ul className="projects__list" id="projects-list">
         {projectCards}
       </ul>

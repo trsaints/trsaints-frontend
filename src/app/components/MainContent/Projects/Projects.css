@@ -18,6 +18,8 @@
     linear-gradient(to right, var(--dark-purple) 2px, var(--black-2) 2px);
   background-size: 48px 48px;
   box-shadow: 0 4px 8px var(--black);
+
+  scroll-margin-top: 72px;
 }
 
 .projects__button {
