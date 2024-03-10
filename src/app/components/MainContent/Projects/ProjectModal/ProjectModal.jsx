@@ -13,7 +13,7 @@ function Root({ children }) {
 function Header(props) {
   return (
     <header className="project__header">
-      <h3 className="project__title">{props?.title} </h3>
+      <h3 className="project__title">{props?.title}</h3>
 
       <DateDisplay year={props?.year} />
       <Stacks stack={props?.stack} />
