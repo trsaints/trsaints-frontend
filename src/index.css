@@ -33,7 +33,7 @@ video {
   scroll-margin-top: 68.97px;
 }
 
-a {
+:where(a) {
   color: var(--rose);
   text-decoration-line: underline;
   text-decoration-thickness: 0.125rem;
@@ -55,8 +55,7 @@ li {
   width: fit-content;
 }
 
-.link-btn,
-.highlight-btn {
+:where(.link-btn, .highlight-btn) {
   display: block;
 
   padding: 8px 16px;
