@@ -13,7 +13,7 @@ function Menu({ onHandleClick }) {
       <li>
         <button className="modal__close link-btn" onClick={onHandleClick}>
           <span className="sr-only">fechar</span>
-          <FontAwesomeIcon icon={faClose} />
+          <FontAwesomeIcon icon={faClose} size="lg" />
         </button>
       </li>
     </menu>
