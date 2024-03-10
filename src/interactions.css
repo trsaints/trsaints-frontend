@@ -1,0 +1,65 @@
+.header__link:hover {
+  color: var(--rose);
+  text-shadow: 0 0 8px var(--rose);
+}
+
+.header__link:active {
+  border-color: var(--rose);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.link-btn:hover,
+.link-btn:focus,
+.highlight-btn:hover,
+.highlight-btn:focus,
+.hero__anchor:hover,
+.hero__anchor:focus {
+  transform: scale(1.03);
+}
+
+.link-btn:active,
+.highlight-btn:active {
+  transform: scale(1);
+  border-style: inset;
+}
+
+.hero__anchor:active {
+  transform: scale(1);
+  text-shadow: none;
+}
+
+.hero__anchor:active,
+.link-btn:active,
+.highlight-btn:active {
+  box-shadow: none;
+}
+
+
+.form__label:hover {
+  background-color: var(--rose);
+}
+
+.form__field:focus-within .form__label,
+.form__field--textarea:focus-within .form__label {
+  background-color: var(--rose);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border-style: solid;
+  border-color: var(--rose);
+}
+
+@media (hover: none) {
+  a:active {
+    text-decoration: none;
+  }
+
+  .header__link:active {
+    color: var(--rose);
+    text-shadow: 0 0 8px var(--rose);
+  }
+}

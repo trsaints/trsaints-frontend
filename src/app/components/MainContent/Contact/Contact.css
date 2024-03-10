@@ -56,13 +56,13 @@
 .form__input {
   flex: 1;
 
-  border-bottom: 2px dashed;
+  border: 2px dashed transparent;
+  border-bottom-color: white;
   padding: 0.5rem;
 }
 
 .form__textarea {
   border: 2px dashed;
-  margin-top: 0.5rem;
   padding: 0.5rem;
   resize: vertical;
   width: 100%;
