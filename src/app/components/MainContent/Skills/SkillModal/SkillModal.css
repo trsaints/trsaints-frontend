@@ -110,7 +110,7 @@
 @media screen and (min-width: 728px) {
   .skill {
     grid-template-areas: "header header" "desc banner";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     column-gap: 2rem;
   }
 
