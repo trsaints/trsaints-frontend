@@ -1,34 +1,66 @@
-.header__link:hover {
-  color: var(--rose);
-  text-shadow: 0 0 8px var(--rose);
+@media (hover: hover) {
+  .header__link:hover {
+    color: var(--rose);
+    text-shadow: 0 0 8px var(--rose);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .link-btn:hover,
+  .link-btn:focus,
+  .highlight-btn:hover,
+  .highlight-btn:focus,
+  .hero__anchor:hover,
+  .hero__anchor:focus {
+    transform: scale(1.03);
+  }
+
+  .skill-card:hover,
+  .project-card:hover {
+    transform: scale(1.03);
+  }
+
+  .skill-card:hover .skill-card__title::after {
+    content: "<";
+  }
+
+  .project-card:hover .project-card__title::before {
+    content: "";
+  }
+
+  .project-card:hover .meta__value {
+    color: white;
+  }
+
+  .form__label:hover {
+    background-color: var(--erin);
+  }
+
+  /* ACTIVE */
+
+  .link-btn:active,
+  .highlight-btn:active {
+    border-style: inset;
+  }
+
+  .hero__anchor:active {
+    text-shadow: none;
+  }
+
+  .link-btn:active,
+  .highlight-btn:active,
+  .hero__anchor:active,
+  .skill-card:active,
+  .project-card:active {
+    transform: scale(1);
+  }
 }
 
-.header__link:active {
-  border-color: var(--rose);
-}
-
-a:hover {
+.header__link:focus-visible {
+  border-color: white;
   text-decoration: none;
-}
-
-.link-btn:hover,
-.link-btn:focus,
-.highlight-btn:hover,
-.highlight-btn:focus,
-.hero__anchor:hover,
-.hero__anchor:focus {
-  transform: scale(1.03);
-}
-
-.link-btn:active,
-.highlight-btn:active {
-  transform: scale(1);
-  border-style: inset;
-}
-
-.hero__anchor:active {
-  transform: scale(1);
-  text-shadow: none;
 }
 
 .hero__anchor:active,
@@ -37,20 +69,23 @@ a:hover {
   box-shadow: none;
 }
 
+.skill-card:active .skill-card__title {
+  background-color: var(--black);
+}
 
-.form__label:hover {
-  background-color: var(--rose);
+.project-card:active .project-card__title {
+  color: var(--erin);
 }
 
 .form__field:focus-within .form__label,
 .form__field--textarea:focus-within .form__label {
-  background-color: var(--rose);
+  background-color: var(--erin);
 }
 
 .form__input:focus,
 .form__textarea:focus {
   border-style: solid;
-  border-color: var(--rose);
+  border-color: var(--erin);
 }
 
 @media (hover: none) {
@@ -61,5 +96,28 @@ a:hover {
   .header__link:active {
     color: var(--rose);
     text-shadow: 0 0 8px var(--rose);
+  }
+
+  .link-btn:active,
+  .highlight-btn:active {
+    transform: scale(1.03);
+    border-style: inset;
+  }
+
+  .skill-card:active,
+  .project-card:active {
+    transform: scale(1.03);
+  }
+
+  .skill-card:active .skill-card__title::after {
+    content: "<";
+  }
+
+  .project-card:active .project-card__title::before {
+    content: "";
+  }
+
+  .project-card:active .meta__value {
+    color: white;
   }
 }
