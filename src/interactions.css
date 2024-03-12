@@ -1,11 +1,7 @@
 @media (hover: hover) {
-  .header__link:hover {
-    color: var(--rose);
+  :where(a:hover) {
+    border-bottom-color: transparent;
     text-shadow: 0 0 8px var(--rose);
-  }
-
-  a:hover {
-    text-decoration: none;
   }
 
   .link-btn:hover,
@@ -14,7 +10,16 @@
   .highlight-btn:focus,
   .hero__anchor:hover,
   .hero__anchor:focus {
-    transform: scale(1.03);
+    transform: scale(1.05);
+  }
+
+  .header__link:hover {
+    color: var(--rose);
+    text-shadow: 0 0 8px var(--rose);
+  }
+
+  .header__link:hover::after {
+    background-color: transparent;
   }
 
   .skill-card:hover,
@@ -58,9 +63,20 @@
   }
 }
 
+:where(a:focus-visible) {
+  text-shadow: 0 0 8px var(--rose);
+  border-color: transparent;
+}
+
 .header__link:focus-visible {
-  border-color: white;
-  text-decoration: none;
+  border-color: var(--rose);
+  color: var(--rose);
+  text-shadow: 0 0 8px var(--rose);
+  box-shadow: 0 0 8px var(--rose);
+}
+
+.header__link:focus-visible::after {
+  background-color: transparent;
 }
 
 .hero__anchor:active,
@@ -88,14 +104,14 @@
   border-color: var(--erin);
 }
 
+.header__link:active {
+  color: var(--rose);
+  text-shadow: 0 0 8px var(--rose);
+}
+
 @media (hover: none) {
   a:active {
     text-decoration: none;
-  }
-
-  .header__link:active {
-    color: var(--rose);
-    text-shadow: 0 0 8px var(--rose);
   }
 
   .link-btn:active,
