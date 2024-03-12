@@ -1,0 +1,12 @@
+a,
+.header__link,
+.hero__anchor,
+.link-btn,
+.highlight-btn,
+.skill-card,
+.project-card,
+.form__label,
+.form__input,
+.form__textarea {
+  transition: all 0.2s ease;
+}
