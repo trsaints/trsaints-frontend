@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  z-index: 100;
+  z-index: 99;
 
   padding: 1rem 1.5rem;
   height: 72px;
@@ -27,6 +27,8 @@
 
   top: 4.5rem;
   right: 0;
+
+  box-shadow: -4px 4px 8px var(--black);
 }
 
 .header__menu:focus-within .header__nav {
@@ -94,6 +96,10 @@
       var(--black-2),
       var(--raisin-black)
     );
+  }
+
+  .header__nav {
+    box-shadow: none;
   }
 }
 
