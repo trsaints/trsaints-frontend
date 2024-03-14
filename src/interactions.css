@@ -6,11 +6,17 @@
 
   .link-btn:hover,
   .link-btn:focus,
+  .scroll-top:hover,
+  .scroll-top:focus,
   .highlight-btn:hover,
   .highlight-btn:focus,
   .hero__anchor:hover,
   .hero__anchor:focus {
     transform: scale(1.05);
+  }
+
+  .scroll-top:hover {
+    box-shadow: 0 0 8px white;
   }
 
   .header__link:hover {
@@ -47,6 +53,7 @@
   /* ACTIVE */
 
   .link-btn:active,
+  .scroll-top:active,
   .highlight-btn:active {
     border-style: inset;
   }
@@ -57,6 +64,7 @@
 
   .link-btn:active,
   .highlight-btn:active,
+  .scroll-top:active,
   .hero__anchor:active,
   .skill-card:active,
   .project-card:active {
