@@ -20,6 +20,7 @@
 
   .header__link:hover::after {
     background-color: transparent;
+    box-shadow: none;
   }
 
   .skill-card:hover,
@@ -77,6 +78,7 @@
 
 .header__link:focus-visible::after {
   background-color: transparent;
+  box-shadow: none;
 }
 
 .hero__anchor:active,
