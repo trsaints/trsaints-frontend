@@ -3,10 +3,13 @@ import "./App.css";
 import { MainContent } from "../MainContent";
 import { MainFooter } from "../MainFooter/MainFooter";
 import { MainHeader } from "../MainHeader";
+import ScrollTop from "../ScrollTop/ScrollTop";
 
 function App() {
   return (
     <>
+      <ScrollTop />
+
       <MainHeader.Root>
         <MainHeader.Banner srcPath="/computer_logo.svg" />
         <MainHeader.Menu />

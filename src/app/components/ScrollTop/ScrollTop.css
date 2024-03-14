@@ -1,0 +1,16 @@
+.scroll-top {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+
+  position: fixed;
+  z-index: 99;
+  top: calc(100vh - 3rem - 1.5rem);
+  left: calc(100vw - 3rem - 1.5rem);
+
+  background-color: var(--french-gray);
+  border: 4px outset var(--rose-quartz-2);
+  box-shadow: 0 0 8px var(--black);
+  text-align: center;
+  color: var(--black);
+}
