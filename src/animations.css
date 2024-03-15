@@ -17,9 +17,15 @@ body {
 }
 
 .hero::after {
-  background-size: 200% 200%;
   transition: background 10s ease-in-out;
   animation: change-gradient 10s infinite alternate;
+}
+
+.typed-out {
+  animation-name: typing;
+  animation-duration: calc(1s * (var(--step-count) / 10));
+  animation-timing-function: steps(var(--step-count), jump-both);
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-in {
@@ -38,5 +44,14 @@ body {
   }
   to {
     background-position: 100% 0%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(1ch * (var(--step-count) + 1));
   }
 }
