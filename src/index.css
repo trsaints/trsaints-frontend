@@ -204,3 +204,11 @@ p {
 .prefix-icon {
   margin-right: 0.25rem;
 }
+
+.typed-out {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+}

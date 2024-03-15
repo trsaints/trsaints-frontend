@@ -34,6 +34,11 @@
   text-transform: uppercase;
 }
 
+.hero__title .typed-out {
+  --step-count: 10;
+  white-space: unset;
+}
+
 .hero__subtitle {
   position: absolute;
   left: 1.5rem;
@@ -113,6 +118,7 @@
   width: 256px;
 
   background-image: linear-gradient(to bottom, var(--jasmine), var(--rose));
+  background-size: 200% 200%;
   border-radius: 50%;
   box-shadow: 0 0 8px var(--rose);
   content: "";
@@ -124,14 +130,18 @@
   }
 
   .hero__title {
-    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero__title .typed-out {
+    --step-count: 23;
   }
 
   .hero__subtitle {
     display: inline-block;
     left: calc(50vw - 140px);
     top: calc(50vh - 72px + 3rem);
-    
+
     margin-inline: auto;
   }
 
@@ -147,7 +157,7 @@
 
   .hero::after {
     left: calc(100vw - 256px - 5rem);
-    
+
     box-shadow: 0 0 16px var(--rose);
   }
 }
