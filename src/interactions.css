@@ -130,6 +130,11 @@
     border-style: inset;
   }
 
+  .header__link:active::after {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
   .skill-card:active,
   .project-card:active {
     transform: scale(1.03);
