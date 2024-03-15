@@ -11,3 +11,32 @@ a,
 .form__textarea {
   transition: all 0.2s ease;
 }
+
+body {
+  animation: fade-in 0.5s ease-in;
+}
+
+.hero::after {
+  background-size: 200% 200%;
+  transition: background 10s ease-in-out;
+  animation: change-gradient 10s infinite alternate;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes change-gradient {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
