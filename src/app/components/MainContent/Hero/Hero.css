@@ -135,6 +135,7 @@
 
   .hero__title .typed-out {
     --step-count: 24;
+    white-space: nowrap;
   }
 
   .hero__subtitle {
