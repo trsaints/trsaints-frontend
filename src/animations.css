@@ -25,17 +25,19 @@ body {
   animation-fill-mode: forwards;
 }
 
-.crt {
-  animation: text-shadow 1.6s infinite;
-}
-
-.crt::after {
-  animation: flicker 0.15s infinite;
-}
-
 @media screen and (hover: hover) {
   .hero::after {
     transition: background 10s ease-in-out;
     animation: change-gradient 10s infinite alternate;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .crt {
+    animation: text-shadow 1.6s infinite;
+  }
+
+  .crt::after {
+    animation: flicker 0.15s infinite;
   }
 }
