@@ -35,7 +35,7 @@
 }
 
 .hero__title .typed-out {
-  --step-count: 10;
+  --step-count: 9;
   white-space: unset;
 }
 
@@ -134,7 +134,7 @@
   }
 
   .hero__title .typed-out {
-    --step-count: 23;
+    --step-count: 24;
   }
 
   .hero__subtitle {
