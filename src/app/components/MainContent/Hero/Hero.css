@@ -16,12 +16,6 @@
   background-size: 4px 4px;
 }
 
-.hero__title,
-.hero__subtitle,
-.hero__anchor {
-  position: inherit;
-}
-
 .hero__title {
   z-index: 3;
 
