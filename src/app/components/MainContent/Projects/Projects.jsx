@@ -52,13 +52,15 @@ function ProjectsList({ projects }) {
   ));
 
   return (
-    <>
-      <p className="projects__count">{projects.length} projetos encontrados</p>
+    <article className="projects__result">
+      <h3 className="projects__count" aria-live="polite">
+        {projects.length} projetos encontrados
+      </h3>
 
       <ul className="projects__list" id="projects-list">
         {projectCards}
       </ul>
-    </>
+    </article>
   );
 }
 
