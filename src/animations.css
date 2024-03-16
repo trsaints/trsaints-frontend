@@ -16,16 +16,18 @@ body {
   animation: fade-in 0.5s ease-in;
 }
 
-.hero::after {
-  transition: background 10s ease-in-out;
-  animation: change-gradient 10s infinite alternate;
-}
-
 .typed-out {
   animation-name: typing;
   animation-duration: calc(1s * (var(--step-count) / 10));
   animation-timing-function: steps(var(--step-count), jump-both);
   animation-fill-mode: forwards;
+}
+
+@media screen and (hover: hover) {
+  .hero::after {
+    transition: background 10s ease-in-out;
+    animation: change-gradient 10s infinite alternate;
+  }
 }
 
 @keyframes fade-in {
