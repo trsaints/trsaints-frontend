@@ -10,7 +10,7 @@ export default function Hero() {
 
   return (
     <header className="hero">
-      <h1 className="hero__title">
+      <h1 className="hero__title crt">
         <span ref={ref}>
           Thiago Rodrigues Santos
           <span aria-hidden>_</span>

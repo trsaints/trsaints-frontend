@@ -77,9 +77,9 @@
   height: 100%;
   width: 100%;
 
+  background-color: var(--black-2);
   background-image: repeating-linear-gradient(0deg, transparent, var(--black));
   background-size: 4em 4em;
-  background-color: var(--black-2);
   content: "";
   clip-path: polygon(
     0% 60%,
