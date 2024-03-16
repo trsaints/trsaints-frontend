@@ -3,7 +3,7 @@
 
   padding: 5rem 1.5rem;
 
-  background: var(--black-2);
+  background-image: linear-gradient(to bottom, var(--black-2), var(--black));
 }
 
 .skills__title {
@@ -65,5 +65,10 @@
 @media screen and (min-width: 1280px) {
   .skills {
     padding: 5rem 4rem;
+  }
+
+  .skills__desc {
+    max-width: 50vw;
+    margin-inline: auto;
   }
 }

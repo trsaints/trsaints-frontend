@@ -9,9 +9,11 @@
 }
 
 .projects__header {
+  position: relative;
+
   padding: 5rem 1.5rem;
 
-  position: relative;
+  box-shadow: 0 0 16px 8px var(--black);
 }
 
 .projects__title {

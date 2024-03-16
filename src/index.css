@@ -66,6 +66,7 @@ li {
   text-align: center;
   font-weight: 700;
   box-shadow: 0 0 0.5rem var(--rose);
+  white-space: nowrap;
 }
 
 .link-btn {
