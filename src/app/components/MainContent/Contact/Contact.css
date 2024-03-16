@@ -2,6 +2,10 @@
   padding: 5rem 1.5rem;
 }
 
+.contact__title {
+  --step-count: 10;
+}
+
 .contact__desc {
   margin-bottom: 66px;
 }

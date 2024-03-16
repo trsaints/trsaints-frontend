@@ -11,7 +11,11 @@ import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
 
 function Root({ children }) {
-  return <main className="main">{children}</main>;
+  return (
+    <main className="main">
+      {children}
+    </main>
+  );
 }
 
 function HeroSection() {

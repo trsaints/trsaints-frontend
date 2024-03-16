@@ -10,6 +10,10 @@
   grid-area: heading;
 }
 
+.about__title {
+  --step-count: 12;
+}
+
 .about__desc {
   margin-bottom: 1rem;
 }

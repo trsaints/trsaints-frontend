@@ -6,6 +6,11 @@
   background: var(--black-2);
 }
 
+.skills__title {
+  margin-inline: auto;
+  --step-count: 16;
+}
+
 .skills__desc {
   margin-bottom: 4rem;
 }

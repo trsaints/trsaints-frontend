@@ -7,6 +7,7 @@ import {
   faPaperPlane,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { intersectionService } from "../../../services/intersection-service";
 
 function Root({ children }) {
   return (
@@ -17,9 +18,11 @@ function Root({ children }) {
 }
 
 function Header() {
+  const ref = intersectionService.useIntersectionObserver(0.5, "typed-out");
+
   return (
     <header className="contact__header">
-      <h2 className="contact__title">contato</h2>
+      <h2 className="contact__title" ref={ref}>contato</h2>
 
       <p className="contact__desc">
         Precisa falar comigo? <br /> Mande uma mensagem que, em breve, entrarei

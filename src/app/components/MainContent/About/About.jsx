@@ -1,6 +1,7 @@
 import "./About.css";
 
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { intersectionService } from "../../../services/intersection-service";
 import Navbar from "../../Navbar/Navbar";
 
 function Root({ children }) {
@@ -12,9 +13,13 @@ function Root({ children }) {
 }
 
 function Header({ links }) {
+  const ref = intersectionService.useIntersectionObserver(0.5, "typed-out");
+
   return (
     <header className="about__header">
-      <h2 className="about__title">sobre mim</h2>
+      <h2 className="about__title" ref={ref}>
+        sobre mim
+      </h2>
 
       <p className="about__desc">
         Oi! Eu sou apenas um apaixonado por tecnologia. Estudo programação desde

@@ -8,6 +8,10 @@
   position: relative;
 }
 
+.projects__title {
+  --step-count: 16;
+}
+
 .projects__desc {
   margin-bottom: 4rem;
 }

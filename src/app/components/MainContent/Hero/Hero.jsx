@@ -1,12 +1,17 @@
 import "./Hero.css";
+
+import { intersectionService } from "../../../services/intersection-service";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
+  const ref = intersectionService.useIntersectionObserver(1, "typed-out");
+
   return (
     <header className="hero">
       <h1 className="hero__title">
-        <span className="typed-out">
+        <span ref={ref}>
           Thiago Rodrigues Santos
           <span aria-hidden>_</span>
         </span>

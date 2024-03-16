@@ -1,13 +1,14 @@
 import "./Skills.css";
 
-import { Modal } from "../../Modal/Modal";
-import { SkillCard } from "./SkillCard/SkillCard";
-import { SkillModal } from "./SkillModal/SkillModal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown,
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Modal } from "../../Modal/Modal";
+import { SkillCard } from "./SkillCard/SkillCard";
+import { SkillModal } from "./SkillModal/SkillModal";
+import { intersectionService } from "../../../services/intersection-service";
 
 function Root({ children }) {
   return (
@@ -18,9 +19,11 @@ function Root({ children }) {
 }
 
 function Header({ onHandleClick }) {
+  const ref = intersectionService.useIntersectionObserver(0.5, "typed-out");
+
   return (
     <header className="skills__header">
-      <h2 className="skills__title">
+      <h2 className="skills__title" ref={ref}>
         minhas <span lang="en">skills</span>
       </h2>
 
