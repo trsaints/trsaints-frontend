@@ -28,7 +28,7 @@ body {
 @media screen and (hover: hover) {
   .hero::after {
     transition: background 10s ease-in-out;
-    animation: change-gradient 10s infinite alternate;
+    animation: change-gradient 10s forwards;
   }
 }
 
