@@ -1,8 +1,16 @@
 @import url("./keyframes.css");
 
-a, .scroll-top, .header__link, .hero__anchor,
-  .link-btn, .highlight-btn, .skill-card, .project-card, .form__label,
-  .form__input, .form__textarea {
+a,
+.scroll-top,
+.header__link,
+.hero__anchor,
+.link-btn,
+.highlight-btn,
+.skill-card,
+.project-card,
+.form__label,
+.form__input,
+.form__textarea {
   transition: all 0.2s ease;
 }
 
@@ -15,6 +23,14 @@ body {
   animation-duration: calc(1s * (var(--step-count) / 10));
   animation-timing-function: steps(var(--step-count), jump-both);
   animation-fill-mode: forwards;
+}
+
+.crt {
+  animation: text-shadow 1.6s infinite;
+}
+
+.crt::after {
+  animation: flicker 0.15s infinite;
 }
 
 @media screen and (hover: hover) {
