@@ -46,17 +46,19 @@ function Desc({ desc }) {
   return <p className="project__desc">{desc}</p>;
 }
 
-function Links({ links }) {
+function Links({ title, links }) {
   let buttonSelector = "";
 
   const navLinks = links.map((link) => {
     const hasDeploy = link?.name === "deploy" && link?.url !== "";
+    const ariaMessage = hasDeploy ? `Acessar o site ${title}` : `Ver código-fonte de ${title}`;
 
     if (hasDeploy) buttonSelector = "highlight-btn";
     else buttonSelector = "link-btn";
 
     return (
       <a
+        aria-label={ariaMessage}
         className={buttonSelector}
         href={link?.url}
         target="_blank"
@@ -64,6 +66,7 @@ function Links({ links }) {
         key={link?.url}
       >
         {link?.name}
+
         <LinkIcon link={link} />
       </a>
     );
