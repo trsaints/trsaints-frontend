@@ -108,7 +108,7 @@ function Project(props) {
       <ProjectModal.Root>
         <ProjectModal.Header {...props?.project} />
         <ProjectModal.Desc desc={props?.project?.desc} />
-        <ProjectModal.Links links={props?.project?.links} />
+        <ProjectModal.Links title={props?.project?.title} links={props?.project?.links} />
         <ProjectModal.Banner banner={props?.project?.banner} />
       </ProjectModal.Root>
     </Modal.Root>
