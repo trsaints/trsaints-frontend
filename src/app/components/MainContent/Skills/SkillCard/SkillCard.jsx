@@ -7,7 +7,7 @@ function Root({ children }) {
 function Content({ skill }) {
   return (
     <>
-      <h3 className="skill-card__title">{skill?.title}</h3>
+      <button className="skill-card__button"><span className="sr-only">Ver: </span>{skill?.title}</button>
 
       <dl className="skill-card__meta">
         <dt className="sr-only" lang="en">skill type:</dt>
