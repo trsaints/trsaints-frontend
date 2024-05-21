@@ -23,7 +23,6 @@
 }
 
 .skills__option > * {
-  width: 200px;
   white-space: nowrap;
 }
 
@@ -59,6 +58,12 @@
 
   .skills__menu {
     flex-direction: row;
+    max-width: calc(100vw - 5rem);
+    gap: 2rem;
+  }
+
+  .skills__option {
+    flex: 1;
   }
 }
 
@@ -70,5 +75,14 @@
   .skills__desc {
     max-width: 50vw;
     margin-inline: auto;
+  }
+
+  .skills__menu {
+    margin-inline: auto;
+    max-width: 30vw;
+  }
+
+  .skills__option {
+    width: max-content;
   }
 }
