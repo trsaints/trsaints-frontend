@@ -13,16 +13,17 @@
 
 .project-card::before {
   display: block;
+
   position: absolute;
   z-index: 1;
   top: 2rem;
   left: 1rem;
 
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 1rem);
+  height: calc(100% + 2rem);
 
   background-color: #a59eaf;
-  border: 4px outset #d8cee4;
+  border: 0.25rem outset #d8cee4;
   box-shadow: 0 0 8px #050307, -0.5rem -0.5rem #28173d,
     -0.5rem -0.5rem 8px #050307;
   content: "";
@@ -35,9 +36,9 @@
   top: 3.25rem;
   left: 2.25rem;
 
-  border: 4px inset #d8cee4;
-  height: calc(100% - 40px);
-  width: calc(100% - 40px);
+  border: 0.25rem inset #d8cee4;
+  height: calc(100% - 0.5rem);
+  width: calc(100% - 3.5rem);
 
   background-color: #050307;
   content: "";
@@ -74,7 +75,7 @@
 .project-card .meta {
   display: inline-block;
 
-  width: calc(50% - 3rem);
+  width: calc(50% - 3.5rem);
 }
 
 .project-card .meta:first-of-type {
