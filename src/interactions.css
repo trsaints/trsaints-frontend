@@ -34,7 +34,7 @@
     transform: scale(1.03);
   }
 
-  .skill-card:hover .skill-card__title::after {
+  .skill-card:hover .skill-card__button::after {
     content: "<";
   }
 
@@ -70,6 +70,15 @@
   .project-card:active {
     transform: scale(1);
   }
+
+  .skill-card:has(.skill-card__button:active) {
+    transform: scale(1);
+  }
+
+  .skill-card:active .skill-card__button {
+    border-style: inset;
+    color: var(--hot-pink);
+  }
 }
 
 :where(a:focus-visible) {
@@ -95,8 +104,13 @@
   box-shadow: none;
 }
 
-.skill-card:active .skill-card__title {
-  background-color: var(--black);
+.skill-card:focus-within {
+  transform: scale(1.03);
+}
+
+
+.skill-card__button:focus-visible::after {
+  content: "<";
 }
 
 .project-card:active .project-card__title {
@@ -140,7 +154,7 @@
     transform: scale(1.03);
   }
 
-  .skill-card:active .skill-card__title::after {
+  .skill-card:active .skill-card__button::after {
     content: "<";
   }
 
