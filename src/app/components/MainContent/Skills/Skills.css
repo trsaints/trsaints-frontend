@@ -6,10 +6,6 @@
   background-image: linear-gradient(to bottom, var(--black-2), var(--black));
 }
 
-.skills__title {
-  margin-inline: auto;
-}
-
 .skills__desc {
   margin-bottom: 4rem;
 }
@@ -74,6 +70,10 @@
 @media screen and (min-width: 1280px) {
   .skills {
     padding: 5rem 4rem;
+  }
+
+  .skills__title {
+    margin-inline: auto;
   }
 
   .skills__desc {
