@@ -9,7 +9,7 @@
   left: calc(100vw - 3rem - 1.5rem);
 
   background-color: var(--french-gray);
-  border: 4px outset var(--rose-quartz-2);
+  border: 0.25rem outset var(--rose-quartz-2);
   box-shadow: 0 0 8px var(--black);
   text-align: center;
   color: var(--black);
