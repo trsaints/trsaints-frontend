@@ -20,6 +20,7 @@
   z-index: 3;
 
   margin-top: calc(50vh - 72px - 5rem);
+  height: min-content;
 
   font-size: 3rem;
   font-weight: 900;
@@ -41,7 +42,7 @@
 
   border-block: 4px solid;
   padding-inline: 0.5rem;
-  width: 280px;
+  width: max-content;
 
   -webkit-text-stroke: 2px var(--carnation-pink);
   color: var(--rose);
@@ -108,8 +109,10 @@
   top: calc(72px + 5rem);
   z-index: 0;
 
-  height: 256px;
-  width: 256px;
+  min-width: 200px;
+  min-height: 200px;
+  height: 20vw;
+  width: 20vw;
 
   background-image: linear-gradient(to bottom, var(--jasmine), var(--rose));
   background-size: 200% 200%;
