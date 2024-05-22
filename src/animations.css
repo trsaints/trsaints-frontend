@@ -25,9 +25,13 @@ body {
   animation-fill-mode: forwards;
 }
 
-.hero__title .typed-out {
+.hero__title {
   --step-count: 9;
-  white-space: unset;
+}
+
+.about__title,
+.contact__title {
+  white-space: nowrap;
 }
 
 .about__title {
@@ -35,24 +39,33 @@ body {
 }
 
 .skills__title {
-  --step-count: 16;
+  --step-count: 8;
 }
 
 .projects__title {
-  --step-count: 16;
+  --step-count: 8;
 }
 
 .contact__title {
   --step-count: 10;
 }
 
-@media screen and (min-width: 720px) {
-  .hero__title .typed-out {
-    --step-count: 24;
+@media screen and (min-width: 1280px) {
+  .hero__title,
+  .skills__title,
+  .projects__title {
     white-space: nowrap;
   }
-}
 
+  .hero__title .typed-out {
+    --step-count: 24;
+  }
+
+  .skills__title,
+  .projects__title {
+    --step-count: 15;
+  }
+}
 
 @media screen and (hover: hover) {
   .hero::after {

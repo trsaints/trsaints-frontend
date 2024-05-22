@@ -29,7 +29,6 @@
   text-transform: uppercase;
 }
 
-
 .hero__subtitle {
   position: absolute;
   left: 1.5rem;
@@ -129,7 +128,6 @@
   .hero__subtitle {
     display: inline-block;
     left: calc(50vw - 140px);
-    top: calc(50vh - 72px + 3rem);
 
     margin-inline: auto;
   }
@@ -142,6 +140,15 @@
 @media screen and (min-width: 1280px) {
   .hero {
     padding: 5rem 4rem;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.75rem;
+    top: calc(50vh - 72px);
   }
 
   .hero::after {
