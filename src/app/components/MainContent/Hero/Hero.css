@@ -55,7 +55,7 @@
   justify-self: center;
   z-index: 2;
 
-  border: 4px solid;
+  border: 0.25rem solid;
   box-shadow: 0 0 8px var(--rose), inset 0 0 8px var(--rose);
   padding: 0.5rem 1rem;
 

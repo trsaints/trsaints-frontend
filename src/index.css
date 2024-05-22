@@ -116,12 +116,12 @@ p {
 }
 
 :where(.window-frame) {
-  background-color: var(--black-2);
   border: 1rem solid #a59eaf;
+  margin-left: 0.25rem;
 
-  color: #fff;
-
+  background-color: var(--black-2);
   box-shadow: 0 0 0.5rem var(--black);
+  color: #fff;
 
   position: relative;
 }
@@ -154,7 +154,7 @@ p {
   position: absolute;
   z-index: inherit;
 
-  border: 4px inset #d8cee4;
+  border: 0.25rem inset #d8cee4;
   height: 100%;
   width: 100%;
 
@@ -183,7 +183,7 @@ p {
 }
 
 ::-webkit-scrollbar-button {
-  border: 4px outset #d9d9d9;
+  border: 0.25rem outset #d9d9d9;
   height: 3rem;
   width: 100%;
 
@@ -191,7 +191,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 4px outset #d8cee4;
+  border: 0.25rem outset #d8cee4;
   height: 6rem;
   width: 100%;
 
