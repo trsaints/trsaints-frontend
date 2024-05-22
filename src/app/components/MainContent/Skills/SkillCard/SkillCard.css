@@ -3,7 +3,6 @@
 
   height: 12.75rem;
   padding-inline: 1.125rem;
-  width: calc(100vw - 8rem);
 
   background-color: var(--russian-violet);
   clip-path: polygon(00% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%);
@@ -30,7 +29,7 @@
 
   height: 2.75rem;
   width: calc(100% - 3.25rem);
-  
+
   background-color: var(--lavender-web-2);
   content: "";
 }
@@ -86,4 +85,10 @@
   color: var(--black);
   font-size: 1.25rem;
   line-height: 1.5rem;
+}
+
+@media screen and (min-width: 720px){
+  .skill-card__meta {
+    padding-inline: 0.5rem;
+  }
 }
