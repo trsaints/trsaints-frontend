@@ -19,10 +19,10 @@
 .hero__title {
   z-index: 3;
 
-  margin-top: calc(50vh - 72px - 5rem);
+  margin-top: calc(50vh - 72px - 8rem);
   height: min-content;
 
-  font-size: 3rem;
+  font-size: 2.625rem;
   font-weight: 900;
   line-height: 3rem;
   text-shadow: 0 4px 8px var(--black);
@@ -33,7 +33,7 @@
 .hero__subtitle {
   position: absolute;
   left: 1.5rem;
-  top: calc(50vh - 72px + 8rem);
+  top: calc(50vh - 72px + 6rem);
   z-index: 2;
 
   border-block: 4px solid;
@@ -42,7 +42,7 @@
 
   -webkit-text-stroke: 2px var(--carnation-pink);
   color: var(--rose);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
   text-shadow: 0 0 8px var(--rose);
