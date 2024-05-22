@@ -77,6 +77,17 @@
     padding: 1.5rem 2.5rem;
   }
 
+  .header__nav {
+    box-shadow: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    padding: 1.5rem 4rem;
+    width: calc(100vw - 1rem);
+  }
+
   .header__button {
     display: none;
   }
@@ -96,16 +107,5 @@
       var(--black-2),
       var(--raisin-black)
     );
-  }
-
-  .header__nav {
-    box-shadow: none;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .header {
-    padding: 1.5rem 4rem;
-    width: calc(100vw - 1rem);
   }
 }
