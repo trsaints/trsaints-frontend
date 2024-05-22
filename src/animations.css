@@ -25,6 +25,35 @@ body {
   animation-fill-mode: forwards;
 }
 
+.hero__title .typed-out {
+  --step-count: 9;
+  white-space: unset;
+}
+
+.about__title {
+  --step-count: 12;
+}
+
+.skills__title {
+  --step-count: 16;
+}
+
+.projects__title {
+  --step-count: 16;
+}
+
+.contact__title {
+  --step-count: 10;
+}
+
+@media screen and (min-width: 720px) {
+  .hero__title .typed-out {
+    --step-count: 24;
+    white-space: nowrap;
+  }
+}
+
+
 @media screen and (hover: hover) {
   .hero::after {
     transition: background 10s ease-in-out;

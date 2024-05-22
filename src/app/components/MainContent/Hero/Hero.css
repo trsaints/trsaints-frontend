@@ -29,10 +29,6 @@
   text-transform: uppercase;
 }
 
-.hero__title .typed-out {
-  --step-count: 9;
-  white-space: unset;
-}
 
 .hero__subtitle {
   position: absolute;
@@ -128,11 +124,6 @@
 
   .hero__title {
     margin-inline: auto;
-  }
-
-  .hero__title .typed-out {
-    --step-count: 24;
-    white-space: nowrap;
   }
 
   .hero__subtitle {
