@@ -31,6 +31,7 @@
   justify-content: center;
 
   padding: 1.25rem;
+  width: min-content;
   gap: 2rem;
 
   scroll-margin-top: 11rem;
