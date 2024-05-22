@@ -36,8 +36,10 @@ body {
   .crt {
     animation: text-shadow 1.6s infinite;
   }
+}
 
+@media screen and (prefers-reduced-motion: no-preference) and (hover: hover) {
   .crt::after {
-    animation: flicker 0.15s infinite;
+    animation: flicker 0.25s infinite;
   }
 }
