@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { intersectionService } from "../../../services/intersection-service";
 
-function Root({ children }) {
+function Root({ children, onHandleKeyDown }) {
   return (
-    <article className="projects" id="projects">
+    <article className="projects" id="projects" onKeyDown={onHandleKeyDown} >
       {children}
     </article>
   );
@@ -102,13 +102,16 @@ function Filter({ onHandleSubmit }) {
 
 function Project(props) {
   return (
-    <Modal.Root>
+    <Modal.Root onHandleKeyDown={props?.onHandleKeyDown}>
       <Modal.Menu onHandleClick={props?.onHandleClick} />
 
       <ProjectModal.Root>
         <ProjectModal.Header {...props?.project} />
         <ProjectModal.Desc desc={props?.project?.desc} />
-        <ProjectModal.Links title={props?.project?.title} links={props?.project?.links} />
+        <ProjectModal.Links
+          title={props?.project?.title}
+          links={props?.project?.links}
+        />
         <ProjectModal.Banner banner={props?.project?.banner} />
       </ProjectModal.Root>
     </Modal.Root>
