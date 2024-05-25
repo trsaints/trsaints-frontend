@@ -51,9 +51,10 @@ function SkillsSection() {
   };
 
   const closeModal = () => setIndex(-1);
+  const closeOnEscape = (e) => e.key === "Escape" && closeModal();
 
   return (
-    <Skills.Root>
+    <Skills.Root onHandleKeyDown={closeOnEscape}>
       <Skills.Header onHandleClick={loadSkills} />
       {skills.length > 0 && (
         <Skills.SkillsList skills={skills} onHandleClick={selectSkill} />
