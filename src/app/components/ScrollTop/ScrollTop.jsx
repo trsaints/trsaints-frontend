@@ -5,7 +5,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollTop = () => {
   return (
-    <a className="scroll-top" href="#">
+    <a className="scroll-top" href="#" tabIndex={0}>
       <span className="sr-only">Voltar ao início</span>
       <FontAwesomeIcon icon={faArrowUp} />
     </a>
