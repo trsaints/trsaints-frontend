@@ -11,7 +11,10 @@
   .highlight-btn:hover,
   .highlight-btn:focus,
   .hero__anchor:hover,
-  .hero__anchor:focus {
+  .hero__anchor:focus,
+  .filter__select > .filter__input:hover,
+  .skill-card:hover,
+  .project-card:hover {
     transform: scale(1.05);
   }
 
@@ -29,9 +32,14 @@
     box-shadow: none;
   }
 
-  .skill-card:hover,
-  .project-card:hover {
-    transform: scale(1.03);
+  .filter__select > .filter__input:hover {
+    background-color: var(--russian-violet-3);
+    border-color: var(--russian-violet-3);
+  }
+
+  .filter__search:hover {
+    border-color: var(--rose);
+    box-shadow: 0 0 0.5rem var(--rose);
   }
 
   .skill-card:hover .skill-card__button::after {
@@ -104,13 +112,32 @@
   box-shadow: none;
 }
 
+.filter__select > .filter__input:focus {
+  background-color: var(--russian-violet-3);
+  border-color: var(--russian-violet-3);
+  transform: scale(1.05);
+}
+
+.filter__search:focus-within {
+  border-color: var(--rose);
+  box-shadow: 0 0 0.5rem var(--rose);
+}
+
 .skill-card:focus-within,
 .project-card:focus-within {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
+
+.skill-card:focus-within .skill-card__button {
+  color: var(--hot-pink);
+}
+
 
 .project-card:focus-within .project-card__title::before {
   content: "";
+}
+.project-card:focus-within .project-card__title{
+  color: var(--erin);
 }
 
 .project-card:focus-within .meta__value {
