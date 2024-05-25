@@ -89,6 +89,10 @@
   }
 }
 
+.scroll-top:focus-visible {
+  box-shadow: 0 0 8px white;
+}
+
 :where(a:focus-visible) {
   text-shadow: 0 0 8px var(--rose);
   border-color: transparent;
@@ -132,11 +136,10 @@
   color: var(--hot-pink);
 }
 
-
 .project-card:focus-within .project-card__title::before {
   content: "";
 }
-.project-card:focus-within .project-card__title{
+.project-card:focus-within .project-card__title {
   color: var(--erin);
 }
 
