@@ -42,7 +42,8 @@ video {
 
 a,
 button,
-label {
+label,
+select {
   cursor: pointer;
 }
 
@@ -58,7 +59,7 @@ li {
 :where(.link-btn, .highlight-btn) {
   display: block;
 
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
 
   cursor: pointer;
   text-transform: uppercase;
