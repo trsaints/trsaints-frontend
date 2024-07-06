@@ -1,7 +1,8 @@
-import "./ProjectFilter.css";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+import "./ProjectFilter.css";
 
 function Root({ children, onHandleSubmit }) {
   return (

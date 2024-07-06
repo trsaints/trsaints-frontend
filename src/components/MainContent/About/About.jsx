@@ -1,8 +1,9 @@
-import "./About.css";
-
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { intersectionService } from "../../../services/intersection-service";
-import Navbar from "../../Navbar/Navbar";
+
+import {Navbar} from "../../Navbar/Navbar";
+
+import "./About.css";
 
 function Root({ children }) {
   return (
