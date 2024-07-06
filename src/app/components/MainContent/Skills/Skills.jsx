@@ -10,9 +10,9 @@ import { SkillCard } from "./SkillCard/SkillCard";
 import { SkillModal } from "./SkillModal/SkillModal";
 import { intersectionService } from "../../../services/intersection-service";
 
-function Root({ children, onHandleKeyDown }) {
+function Root({ children }) {
   return (
-    <article className="skills" id="skills" onKeyDown={onHandleKeyDown}>
+    <article className="skills" id="skills">
       {children}
     </article>
   );
