@@ -11,7 +11,11 @@ import { Projects } from "./Projects/Projects";
 import { Skills } from "./Skills/Skills";
 
 function Root({ children }) {
-  return <main className="main">{children}</main>;
+  return (
+    <main className="main">
+      {children}
+    </main>
+  );
 }
 
 function HeroSection() {
@@ -47,10 +51,12 @@ function SkillsSection() {
 
   const renderSkill = () => {
     if (index > -1)
-      return <Skills.Skill skill={skills[index]} onHandleClick={closeModal} />;
+      return (
+        <Skills.Skill skill={skills[index]} onHandleClick={closeOnClick} />
+      );
   };
 
-  const closeModal = () => setIndex(-1);
+  const closeOnClick = () => setIndex(-1);
 
   return (
     <Skills.Root>
@@ -70,9 +76,6 @@ function ProjectsSection() {
     [sort, setSort] = useState("");
 
   const projectsFound = projectService.filterProjects(projects, search);
-
-  const closeModal = () => setIndex(-1);
-  const closeOnEscape = (e) => e.key === "Escape" && closeModal();
 
   const loadProjects = () => {
     if (projects.length === 0) setProjects(projectService.getAllProjects());
@@ -100,13 +103,15 @@ function ProjectsSection() {
       return (
         <Projects.Project
           project={projectsFound[index]}
-          onHandleClick={closeModal}
+          onHandleClick={closeOnClick}
         />
       );
   };
 
+  const closeOnClick = () => setIndex(-1);
+
   return (
-    <Projects.Root onHandleKeyDown={closeOnEscape}>
+    <Projects.Root>
       <Projects.Header onHandleClick={loadProjects} />
       <Projects.Content
         onHandleClick={selectProject}
