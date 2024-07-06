@@ -1,14 +1,15 @@
-import "./Skills.css";
-
+import { intersectionService } from "../../../services/intersection-service";
 import {
   faArrowDown,
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "../../Modal/Modal";
 import { SkillCard } from "./SkillCard/SkillCard";
 import { SkillModal } from "./SkillModal/SkillModal";
-import { intersectionService } from "../../../services/intersection-service";
+
+import "./Skills.css";
 
 function Root({ children, onHandleKeyDown }) {
   return (

@@ -1,12 +1,13 @@
-import "./Projects.css";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { intersectionService } from "../../../services/intersection-service";
 
 import { ProjectModal } from "./ProjectModal/ProjectModal";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
 import { Modal } from "../../Modal/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { intersectionService } from "../../../services/intersection-service";
+
+import "./Projects.css";
 
 function Root({ children, onHandleKeyDown }) {
   return (

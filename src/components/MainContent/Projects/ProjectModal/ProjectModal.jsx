@@ -1,10 +1,11 @@
-import "./ProjectModal.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUpRightFromSquare,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "./ProjectModal.css";
 
 function Root({ children }) {
   return <article className="project">{children}</article>;

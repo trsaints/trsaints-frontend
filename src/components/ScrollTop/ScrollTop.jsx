@@ -1,8 +1,8 @@
-import "./ScrollTop.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "./ScrollTop.css";
 const ScrollTop = () => {
   return (
     <a className="scroll-top" href="#" tabIndex={0}>
@@ -12,4 +12,4 @@ const ScrollTop = () => {
   );
 };
 
-export default ScrollTop;
+export {ScrollTop};
