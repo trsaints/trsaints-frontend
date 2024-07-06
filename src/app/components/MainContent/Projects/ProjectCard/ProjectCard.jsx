@@ -11,8 +11,6 @@ function Content({ project }) {
 
       <MetaStack stack={project.stack} />
       <MetaDeploy links={project.links} />
-
-      <button className="sr-only" type="button">ver projeto: {project.title}</button>
     </>
   );
 }
