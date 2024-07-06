@@ -34,7 +34,6 @@
 
 .filter__select > .filter__input {
   padding: 0.75rem 1rem;
-  border: 0.25rem outset var(--russian-violet);
 
   background-color: var(--russian-violet);
   box-shadow: 4px 0 8px var(--black);
@@ -45,12 +44,11 @@
   width: 100%;
 
   background-color: var(--lavender-web-2);
-  border: 0.25rem outset var(--french-gray);
   color: var(--black);
 }
 
 .filter__search .filter__input {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   width: 100%;
 }
 
