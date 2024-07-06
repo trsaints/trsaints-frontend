@@ -104,18 +104,10 @@
   box-shadow: none;
 }
 
-.skill-card:focus-within,
-.project-card:focus-within {
+.skill-card:focus-within {
   transform: scale(1.03);
 }
 
-.project-card:focus-within .project-card__title::before {
-  content: "";
-}
-
-.project-card:focus-within .meta__value {
-  color: white;
-}
 
 .skill-card__button:focus-visible::after {
   content: "<";
