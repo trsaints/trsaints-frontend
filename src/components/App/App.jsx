@@ -1,9 +1,9 @@
-import "./App.css";
-
-import { MainContent } from "../MainContent";
+import { MainContent } from "../MainContent/MainContent.jsx";
 import { MainFooter } from "../MainFooter/MainFooter";
-import { MainHeader } from "../MainHeader";
-import ScrollTop from "../ScrollTop/ScrollTop";
+import { MainHeader } from "../MainHeader/MainHeader.jsx";
+import {ScrollTop} from "../ScrollTop/ScrollTop";
+
+import "./App.css";
 
 function App() {
   return (
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export {App};
