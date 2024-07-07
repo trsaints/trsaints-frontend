@@ -1,11 +1,14 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Navbar.css'
+import {INavbar} from './INavbar'
 
-function Navbar({element, links, icon = null}) {
+function Navbar(props: INavbar) {
+    const {element, links, icon = null} = props
+    
     const linkItems = links.map((link) => (
-        <a key={`${link.name}-link`} className={`${element}__link`} href={link.url}>
-            {link.name}
+        <a key={`${link.label}-link`} className={`${element}__link`} href={link.url}>
+            {link.label}
             {icon !== null && <FontAwesomeIcon className='suffix-icon' icon={icon}/>}
         </a>
     ))
