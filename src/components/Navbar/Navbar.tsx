@@ -6,8 +6,8 @@ import {INavbar} from './INavbar'
 function Navbar(props: INavbar) {
     const {element, links, icon = null} = props
     
-    const linkItems = links.map((link) => (
-        <a key={`${link.label}-link`} className={`${element}__link`} href={link.url}>
+    const linkItems = links.map((link, index) => (
+        <a key={`${index}-link`} className={`${element}__link`} href={link.url}>
             {link.label}
             {icon !== null && <FontAwesomeIcon className='suffix-icon' icon={icon}/>}
         </a>
