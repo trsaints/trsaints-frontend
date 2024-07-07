@@ -29,6 +29,11 @@ function getPlaceholderSkills(): Skill[] {
     ]
 }
 
+function getSkillById(skills: Skill[], id: number) {
+    return skills.find(skill => skill.id === id)
+}
+
 export const skillService = {
-    getPlaceholderSkills
+    getPlaceholderSkills,
+    getSkillById
 }
