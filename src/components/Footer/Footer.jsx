@@ -1,6 +1,6 @@
-import "./MainFooter.css"
+import "./Footer.css"
 
-function MainFooter() {
+function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
@@ -30,4 +30,4 @@ function MainFooter() {
     )
 }
 
-export {MainFooter}
+export {Footer}

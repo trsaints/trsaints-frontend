@@ -1,8 +1,8 @@
 import {HeaderMenu} from "../HeaderMenu"
 
-import "./MainHeader.css"
+import "./Header.css"
 
-function MainHeader({srcPath}) {
+function Header({srcPath}) {
     return (
         <header className="header">
             <img className="header__banner" src={srcPath} alt=""/>
@@ -12,4 +12,4 @@ function MainHeader({srcPath}) {
     )
 }
 
-export {MainHeader}
+export {Header}
