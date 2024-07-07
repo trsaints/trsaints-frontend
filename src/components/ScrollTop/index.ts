@@ -1,1 +1,1 @@
-export * from './ScrollTop.tsx'
+export * from './ScrollTop'
