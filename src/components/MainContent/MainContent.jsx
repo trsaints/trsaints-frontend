@@ -3,7 +3,7 @@ import {
   projectService,
   skillService,
   socialMediaService,
-} from "../../services/db-service";
+} from "../../services";
 
 import { Hero, About, Contact, Projects, Skills } from "../../components";
 
