@@ -1,4 +1,3 @@
-import {intersectionService} from '../../services'
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -6,12 +5,10 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import './Hero.css'
 
 function Hero() {
-    const ref = intersectionService.useIntersectionObserver(1, 'typed-out')
-
     return (
         <header className='hero'>
             <h1 className='hero__title crt'>
-                <span ref={ref}>
+                <span>
                   Thiago Rodrigues Santos <span aria-hidden>_</span>
                 </span>
             </h1>
