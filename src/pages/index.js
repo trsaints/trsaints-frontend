@@ -1,0 +1,5 @@
+export * from './Hero'
+export * from './Skills'
+export * from './About'
+export * from './Contact'
+export * from './Projects'
