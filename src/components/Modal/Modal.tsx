@@ -2,31 +2,26 @@ import {faClose} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+import {IModal} from './IModal'
+
 import './Modal.css'
 
-function Root({children}) {
-    return <dialog className='modal window-frame'>{children}</dialog>
-}
+function Modal(props: IModal) {
+    const {children, onHandleClick} = props
 
-function Menu({onHandleClick}) {
     return (
-        <menu className='modal__menu'>
-            <li>
-                <button className='modal__close link-btn' onClick={onHandleClick}>
-                    <span className='sr-only'>fechar</span>
-                    <FontAwesomeIcon icon={faClose} size='lg'/>
-                </button>
-            </li>
-        </menu>
-    )
-}
-
-function Modal({children, onHandleClick}) {
-    return (
-        <Root>
-            <Menu onHandleClick={onHandleClick}/>
+        <dialog className='modal window-frame'>
+            <menu className='modal__menu'>
+                <li>
+                    <button className='modal__close link-btn' onClick={onHandleClick}>
+                        <span className='sr-only'>fechar</span>
+                        <FontAwesomeIcon icon={faClose} size='lg'/>
+                    </button>
+                </li>
+            </menu>
+            
             {children}
-        </Root>
+        </dialog>
     )
 }
 

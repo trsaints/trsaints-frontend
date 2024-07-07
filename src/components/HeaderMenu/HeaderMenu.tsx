@@ -15,7 +15,7 @@ function HeaderMenu() {
                 <button className='header__button'>Menu</button>
             </li>
 
-            <li>
+            <li className='hader__option'>
                 <Navbar element={'header'} links={mainLinks}/>
             </li>
         </menu>
