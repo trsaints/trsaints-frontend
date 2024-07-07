@@ -100,9 +100,7 @@ function Filter({ onHandleSubmit }) {
 
 function Project(props) {
   return (
-    <Modal.Root onHandleKeyDown={props?.onHandleKeyDown}>
-      <Modal.Menu onHandleClick={props?.onHandleClick} />
-
+    <Modal onHandleClick={props?.onHandleClick}>
       <ProjectModal.Root>
         <ProjectModal.Header {...props?.project} />
         <ProjectModal.Desc desc={props?.project?.desc} />
@@ -112,7 +110,7 @@ function Project(props) {
         />
         <ProjectModal.Banner banner={props?.project?.banner} />
       </ProjectModal.Root>
-    </Modal.Root>
+    </Modal>
   );
 }
 
