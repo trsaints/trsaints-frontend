@@ -1,1 +1,1 @@
-export * from './ProjectModal.tsx'
+export * from './ProjectModal'

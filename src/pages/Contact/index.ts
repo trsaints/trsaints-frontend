@@ -1,1 +1,1 @@
-export * from './Contact.tsx'
+export * from './Contact'

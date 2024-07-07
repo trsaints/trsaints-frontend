@@ -1,35 +1,35 @@
-import {useState} from "react";
-import {projectService, skillService, socialMediaService,} from "../../services";
+import {useState} from 'react'
+import {projectService, skillService, socialMediaService,} from '../../services'
 
-import {About, Contact, Hero, Projects, Skills} from "../../pages";
+import {About, Contact, Hero, Projects, Skills} from '../../pages'
 
 function Root({children}) {
-    return <main className="main">{children}</main>;
+    return <main className='main'>{children}</main>
 }
 
 function SkillsSection() {
     const [skills, setSkills] = useState([]),
-        [index, setIndex] = useState(-1);
+        [index, setIndex] = useState(-1)
 
-    const loadSkills = () => setSkills(skillService.getPlaceholderSkills());
+    const loadSkills = () => setSkills(skillService.getPlaceholderSkills())
 
     const selectSkill = (e) => {
-        const parentID = e?.target.closest("[data-id]");
+        const parentID = e?.target.closest('[data-id]')
 
-        if (parentID === null) return;
+        if (parentID === null) return
 
-        const {id} = parentID.dataset;
+        const {id} = parentID.dataset
 
-        setIndex(id);
-    };
+        setIndex(id)
+    }
 
     const renderSkill = () => {
         if (index > -1)
-            return <Skills.Skill skill={skills[index]} onHandleClick={closeModal}/>;
-    };
+            return <Skills.Skill skill={skills[index]} onHandleClick={closeModal}/>
+    }
 
-    const closeModal = () => setIndex(-1);
-    const closeOnEscape = (e) => e.key === "Escape" && closeModal();
+    const closeModal = () => setIndex(-1)
+    const closeOnEscape = (e) => e.key === 'Escape' && closeModal()
 
     return (
         <Skills.Root onHandleKeyDown={closeOnEscape}>
@@ -39,40 +39,40 @@ function SkillsSection() {
             )}
             {renderSkill()}
         </Skills.Root>
-    );
+    )
 }
 
 function ProjectsSection() {
     const [projects, setProjects] = useState([]),
         [index, setIndex] = useState(-1),
-        [search, setSearch] = useState(""),
-        [sort, setSort] = useState("");
+        [search, setSearch] = useState(''),
+        [sort, setSort] = useState('')
 
-    const projectsFound = projectService.filterProjects(projects, search);
+    const projectsFound = projectService.filterProjects(projects, search)
 
-    const closeModal = () => setIndex(-1);
-    const closeOnEscape = (e) => e.key === "Escape" && closeModal();
+    const closeModal = () => setIndex(-1)
+    const closeOnEscape = (e) => e.key === 'Escape' && closeModal()
 
     const loadProjects = () => {
-        if (projects.length === 0) setProjects(projectService.getPlaceholderProjects());
-    };
+        if (projects.length === 0) setProjects(projectService.getPlaceholderProjects())
+    }
 
     const searchProjects = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        setSearch(e.target.elements["search"].value);
-        setSort(e.target.elements["sort"].value);
-    };
+        setSearch(e.target.elements['search'].value)
+        setSort(e.target.elements['sort'].value)
+    }
 
     const selectProject = (e) => {
-        const parentID = e?.target.closest("[data-id]");
+        const parentID = e?.target.closest('[data-id]')
 
-        if (parentID === null) return;
+        if (parentID === null) return
 
-        const {id} = parentID.dataset;
+        const {id} = parentID.dataset
 
-        setIndex(id);
-    };
+        setIndex(id)
+    }
 
     const renderProject = () => {
         if (index > -1)
@@ -81,8 +81,8 @@ function ProjectsSection() {
                     project={projectsFound[index]}
                     onHandleClick={closeModal}
                 />
-            );
-    };
+            )
+    }
 
     return (
         <Projects.Root onHandleKeyDown={closeOnEscape}>
@@ -95,11 +95,11 @@ function ProjectsSection() {
             />
             {renderProject()}
         </Projects.Root>
-    );
+    )
 }
 
 function MainContent() {
-    const links = socialMediaService.getAllSocialLinks();
+    const links = socialMediaService.getAllSocialLinks()
 
     return (
         <Root>

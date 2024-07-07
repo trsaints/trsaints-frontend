@@ -1,17 +1,17 @@
-import { ScrollTop, Header, Footer } from "../../components";
-import { MainContent } from "../../layouts"
+import {Footer, Header, ScrollTop} from '../../components'
+import {MainContent} from '../../layouts'
 
-import "./App.css";
+import './App.css'
 
 function App() {
-  return (
-    <>
-      <ScrollTop />
-      <Header srcPath='/computer_logo.svg' />
-      <MainContent />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <ScrollTop/>
+            <Header srcPath='/computer_logo.svg'/>
+            <MainContent/>
+            <Footer/>
+        </>
+    )
 }
 
-export {App};
+export {App}
