@@ -11,7 +11,7 @@ function SkillsSection() {
     const [skills, setSkills] = useState([]),
         [index, setIndex] = useState(-1);
 
-    const loadSkills = () => setSkills(skillService.getAllSkills());
+    const loadSkills = () => setSkills(skillService.getPlaceholderSkills());
 
     const selectSkill = (e) => {
         const parentID = e?.target.closest("[data-id]");
@@ -54,7 +54,7 @@ function ProjectsSection() {
     const closeOnEscape = (e) => e.key === "Escape" && closeModal();
 
     const loadProjects = () => {
-        if (projects.length === 0) setProjects(projectService.getAllProjects());
+        if (projects.length === 0) setProjects(projectService.getPlaceholderProjects());
     };
 
     const searchProjects = (e) => {
