@@ -1,17 +1,17 @@
 import {useEffect, useRef} from 'react'
 
-const globalObserverContext = new Map()
+const globalObserverContext = new Map<number, IntersectionObserver>()
 
-function hasThreshold(threshold) {
+function hasThreshold(threshold: number) {
     return globalObserverContext.has(threshold)
 }
 
-function addObserverToContext(threshold, animationName) {
+function addObserverToContext(threshold: number, animationName: string) {
     const observer = getIntersectionObserver(threshold, animationName)
     globalObserverContext.set(threshold, observer)
 }
 
-function getIntersectionObserver(threshold, animationName) {
+function getIntersectionObserver(threshold: number, animationName: string) {
     const observer = new IntersectionObserver(
         (entries) => setObserverEntries(entries, observer, animationName),
         getOptions(threshold)
@@ -20,20 +20,29 @@ function getIntersectionObserver(threshold, animationName) {
     return observer
 }
 
-function setObserverEntries(entries, observer, animationName) {
+function setObserverEntries(
+    entries: IntersectionObserverEntry[],
+    observer: IntersectionObserver,
+    animationName: string
+) {
     entries.forEach((entry) =>
-        updateEntryClassList(entry, observer, animationName)
+                        updateEntryClassList(entry, observer, animationName)
     )
 }
 
-function updateEntryClassList(entry, observer, animationName) {
-    if (entry.isIntersecting) {
-        entry.target.classList.add(animationName)
-        observer.unobserve(entry.target)
-    }
+function updateEntryClassList(
+    entry: IntersectionObserverEntry,
+    observer: IntersectionObserver,
+    animationName: string
+) {
+    if (!entry.isIntersecting)
+        return
+
+    entry.target.classList.add(animationName)
+    observer.unobserve(entry.target)
 }
 
-function getOptions(threshold) {
+function getOptions(threshold: number) {
     return {
         root: null,
         rootMargin: '0px',
@@ -41,20 +50,20 @@ function getOptions(threshold) {
     }
 }
 
-function useIntersectionObserver(threshold, animationName) {
-    const ref = useRef()
+function useIntersectionObserver(threshold: number, animationName: string) {
+    const ref = useRef<Element>()
 
     useEffect(() => {
         if (!hasThreshold(threshold))
             addObserverToContext(threshold, animationName)
 
-        const observer = globalObserverContext.get(threshold),
-            isCurrentRef = ref.current !== undefined
+        const observer     = globalObserverContext.get(threshold)
+        const isCurrentRef = (ref.current !== undefined)
 
-        if (!isCurrentRef) return
+        if (!isCurrentRef || !observer) return
 
-        observer.observe(ref.current)
-        return () => observer.unobserve(ref.current)
+        observer.observe(ref.current!)
+        return () => observer.unobserve(ref.current!)
     }, [threshold, animationName])
 
     return ref
