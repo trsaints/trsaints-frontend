@@ -5,7 +5,7 @@ import {
   socialMediaService,
 } from "../../services";
 
-import { Hero, About, Contact, Projects, Skills } from "../../components";
+import { Hero, About, Contact, Projects, Skills } from "../../pages";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
