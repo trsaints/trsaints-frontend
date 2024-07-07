@@ -1,4 +1,4 @@
-export type Link = {
+export type LinkData = {
     url: string
     label: string
 }

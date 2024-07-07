@@ -1,12 +1,13 @@
 import {Navbar} from '../Navbar'
+import {LinkData} from '../../types/LinkData'
 
 function HeaderMenu() {
-    const mainLinks = [
-        {name: 'início', url: '#'},
-        {name: 'sobre', url: '#about'},
-        {name: 'skills', url: '#skills'},
-        {name: 'projetos', url: '#projects'},
-        {name: 'contato', url: '#contact'},
+    const mainLinks: LinkData[] = [
+        {label: 'início', url: '#'},
+        {label: 'sobre', url: '#about'},
+        {label: 'skills', url: '#skills'},
+        {label: 'projetos', url: '#projects'},
+        {label: 'contato', url: '#contact'},
     ]
 
     return (
