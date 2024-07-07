@@ -1,4 +1,4 @@
-import { intersectionService } from "../../../services";
+import { intersectionService } from "../../services";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
