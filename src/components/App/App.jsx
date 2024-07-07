@@ -1,7 +1,4 @@
-import { MainContent } from "../MainContent/MainContent.jsx";
-import { MainFooter } from "../MainFooter/MainFooter";
-import { MainHeader } from "../MainHeader/MainHeader.jsx";
-import {ScrollTop} from "../ScrollTop/ScrollTop";
+import { ScrollTop, MainHeader, MainContent, MainFooter } from "../../components";
 
 import "./App.css";
 
