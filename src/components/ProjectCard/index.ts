@@ -1,1 +1,1 @@
-export * from './ProjectCard.tsx'
+export * from './ProjectCard'

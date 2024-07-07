@@ -1,1 +1,1 @@
-export * from './SkillCard.tsx'
+export * from './SkillCard'
