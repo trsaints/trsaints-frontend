@@ -39,6 +39,10 @@ function filterProjects(projects: Project[], search: string) {
     return projects.filter((project) => projectTitleHas(project, search))
 }
 
+function getProjectById(projects: Project[], id: number) {
+    return projects.find(project => project.id === id)
+}
+
 function projectTitleHas(project: Project, search: string) {
     return project.title.toLowerCase().includes(search.toLowerCase())
 }
@@ -46,5 +50,6 @@ function projectTitleHas(project: Project, search: string) {
 export const projectService = {
     filterProjects,
     getPlaceholderProjects,
+    getProjectById,
     projectTitleHas
 }
