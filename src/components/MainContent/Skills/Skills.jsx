@@ -1,10 +1,10 @@
-import { intersectionService } from "../../services";
+import { intersectionService } from "../../../services";
 import {
   faArrowDown,
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Modal, SkillCard, SkillModal } from '../../components'
+import { Modal, SkillCard, SkillModal } from '../../../components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Skills.css";

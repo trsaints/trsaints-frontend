@@ -1,5 +1,4 @@
-import { ScrollTop, MainHeader, MainFooter } from "../../components";
-import { MainContent } from "../../layouts"
+import { ScrollTop, MainHeader, MainContent, MainFooter } from "../../components";
 
 import "./App.css";
 
