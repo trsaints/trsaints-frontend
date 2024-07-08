@@ -3,7 +3,7 @@ import {Project} from '../models'
 function getPlaceholderProjects(): Project[] {
     return [
         {
-            id: 1,
+            uuid: 1,
             title: 'Project 1',
             description: 'Description 1',
             releaseDate: new Date(),
@@ -13,7 +13,7 @@ function getPlaceholderProjects(): Project[] {
             sourceUrl: 'https://github.com'
         },
         {
-            id: 2,
+            uuid: 2,
             title: 'Project 2',
             description: 'Description 2',
             releaseDate: new Date(),
@@ -23,7 +23,7 @@ function getPlaceholderProjects(): Project[] {
             sourceUrl: 'https://github.com'
         },
         {
-            id: 3,
+            uuid: 3,
             title: 'Project 3',
             description: 'Description 3',
             releaseDate: new Date(),
@@ -40,7 +40,7 @@ function filterProjects(projects: Project[], search: string) {
 }
 
 function getProjectById(projects: Project[], id: number) {
-    return projects.find(project => project.id === id)
+    return projects.find(project => project.uuid === id)
 }
 
 function projectTitleHas(project: Project, search: string) {

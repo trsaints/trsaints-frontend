@@ -4,19 +4,28 @@ import {Modal, ProjectCard, ProjectFilter, ProjectModal} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Projects.css'
+import {ComponentProps, useContext} from 'react'
+import {ProjectsContext} from '../../context/ProjectsContext'
+import {Project} from '../../models'
 
-function Root({children, onHandleKeyDown}) {
+interface IRoot extends ComponentProps<'article'> {}
+
+function Root(props: IRoot) {
+    const {children} = props
+    const {closeOnEscape} = useContext(ProjectsContext)
+    
     return (
-        <article className='projects' id='projects' onKeyDown={onHandleKeyDown}>
+        <article className='projects' id='projects' onKeyDown={closeOnEscape}>
             {children}
         </article>
     )
 }
 
-function Header({onHandleClick}) {
+function Header() {
+    const {loadProjects} = useContext(ProjectsContext)
     return (
         <header className='projects__header'>
-            <h2 className='projects__title' >
+            <h2 className='projects__title'>
                 meus projetos
             </h2>
 
@@ -28,7 +37,7 @@ function Header({onHandleClick}) {
             <a
                 href='#projects-content'
                 className='projects__button highlight-btn'
-                onClick={onHandleClick}
+                onClick={loadProjects}
             >
                 ver projetos
                 <FontAwesomeIcon className='suffix-icon' icon={faArrowDown}/>
@@ -37,12 +46,16 @@ function Header({onHandleClick}) {
     )
 }
 
-function ProjectsList({projects}) {
+interface IProjectsList extends ComponentProps<'ul'> {
+    projects: Project[]
+}
+
+function ProjectsList(props: IProjectsList) {
+    const {projects} = props
+    
     const projectCards = projects.map((project) => (
-        <li key={project?.id} data-id={project?.id}>
-            <ProjectCard.Root>
-                <ProjectCard.Content project={project}/>
-            </ProjectCard.Root>
+        <li key={project?.uuid} data-id={project?.uuid}>
+            <ProjectCard project={project} stack='[to be replaced]'/>
         </li>
     ))
 
@@ -59,13 +72,21 @@ function ProjectsList({projects}) {
     )
 }
 
-function Content(props) {
-    const hasProjectsFound = props?.projects.length > 0,
-        hasProjectsLoaded = props?.baseProjectsLength > 0
+interface IContent extends ComponentProps<'article'> {
+    baseProjectsLength: number
+    projects: Project[]
+}
+
+function Content(props: IContent) {
+    const {selectProject} = useContext(ProjectsContext)
+    const {projects, baseProjectsLength} = props
+    
+    const hasProjectsFound  = projects.length > 0,
+          hasProjectsLoaded = baseProjectsLength > 0
 
     const renderFilter = () => {
         if (hasProjectsLoaded)
-            return <Filter onHandleSubmit={props?.onHandleSubmit}/>
+            return <Filter/>
     }
 
     const renderProjects = () => {
@@ -76,7 +97,7 @@ function Content(props) {
         <article
             id='projects-content'
             className='projects__content'
-            onClick={props?.onHandleClick}
+            onClick={selectProject}
         >
             <h3 className='projects__subtitle sr-only'>portfolio</h3>
 
@@ -86,27 +107,31 @@ function Content(props) {
     )
 }
 
-function Filter({onHandleSubmit}) {
+function Filter() {
+    const {searchProjects} = useContext(ProjectsContext)
+    
     return (
-        <ProjectFilter.Root onHandleSubmit={onHandleSubmit}>
+        <ProjectFilter.Root onHandleSubmit={searchProjects}>
             <ProjectFilter.Select options={['nome', 'data']}/>
             <ProjectFilter.SearchBar/>
         </ProjectFilter.Root>
     )
 }
 
-function Project(props) {
-    return (
-        <Modal onHandleClick={props?.onHandleClick}>
-            <ProjectModal.Root>
-                <ProjectModal.Header {...props?.project} />
-                <ProjectModal.Desc desc={props?.project?.desc}/>
-                <ProjectModal.Links
-                    title={props?.project?.title}
-                    links={props?.project?.links}
-                />
-                <ProjectModal.Banner banner={props?.project?.banner}/>
-            </ProjectModal.Root>
+interface IProjectPanel extends ComponentProps<'dialog'> {
+    project?: Project
+}
+
+function ProjectPanel(props: IProjectPanel) {
+    const {hideProject} = useContext(ProjectsContext)
+    const {project} = props
+    
+    return (project !== undefined) && (
+        <Modal onHandleClick={hideProject}>
+            <ProjectModal 
+                project={project} 
+                releaseDate={project.releaseDate.toDateString()} 
+                stack={['to be replaced']}/>
         </Modal>
     )
 }
@@ -115,5 +140,5 @@ export const Projects = {
     Root,
     Header,
     Content,
-    Project,
+    ProjectPanel,
 }
