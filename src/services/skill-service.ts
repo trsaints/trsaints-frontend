@@ -3,7 +3,7 @@ import {Skill} from '../models/Skill'
 function getPlaceholderSkills(): Skill[] {
     return [
         {
-            id: 1,
+            uuid: 1,
             title: 'JavaScript',
             category: 'hard',
             description: 'JavaScript is a programming language that is used to create interactive effects within web browsers.',
@@ -11,7 +11,7 @@ function getPlaceholderSkills(): Skill[] {
             bannerAlt: 'JavaScript logo'
         },
         {
-            id: 2,
+            uuid: 2,
             title: 'HTML',
             category: 'hard',
             description: 'HTML is a markup language that is used to create the structure of web pages.',
@@ -19,7 +19,7 @@ function getPlaceholderSkills(): Skill[] {
             bannerAlt: 'HTML5 logo'
         },
         {
-            id: 3,
+            uuid: 3,
             title: 'CSS',
             category: 'hard',
             description: 'CSS is a style sheet language that is used to style the appearance of web pages.',
@@ -30,7 +30,7 @@ function getPlaceholderSkills(): Skill[] {
 }
 
 function getSkillById(skills: Skill[], id: number) {
-    return skills.find(skill => skill.id === id)
+    return skills.find(skill => skill.uuid === id)
 }
 
 export const skillService = {

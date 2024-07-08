@@ -75,7 +75,7 @@ function SkillsList(props: ISkillsList) {
     const {selectSkill} = useContext(SkillsContext)
 
     const skillCards = skills.map((skill) => (
-        <li key={skill?.id} data-id={skill?.id}>
+        <li key={skill?.uuid} data-id={skill?.uuid}>
             <SkillCard.Root>
                 <SkillCard.Content skill={skill}/>
             </SkillCard.Root>
