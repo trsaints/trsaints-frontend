@@ -1,4 +1,5 @@
 import {faUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
+import {intersectionService} from '../../services'
 
 import {Navbar} from '../../components'
 
@@ -13,9 +14,11 @@ function Root({children}) {
 }
 
 function Header({links}) {
+    const ref = intersectionService.useIntersectionObserver(0.5, 'typed-out')
+
     return (
         <header className='about__header'>
-            <h2 className='about__title' >
+            <h2 className='about__title' ref={ref}>
                 sobre mim
             </h2>
 

@@ -1,4 +1,5 @@
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons'
+import {intersectionService} from '../../services'
 
 import {Modal, ProjectCard, ProjectFilter, ProjectModal} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -14,9 +15,11 @@ function Root({children, onHandleKeyDown}) {
 }
 
 function Header({onHandleClick}) {
+    const ref = intersectionService.useIntersectionObserver(0.5, 'typed-out')
+
     return (
         <header className='projects__header'>
-            <h2 className='projects__title' >
+            <h2 className='projects__title' ref={ref}>
                 meus projetos
             </h2>
 

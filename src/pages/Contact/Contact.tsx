@@ -1,3 +1,4 @@
+import {intersectionService} from '../../services'
 import {faCircleQuestion, faEnvelope, faMessage, faPaperPlane, faUser,} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -13,9 +14,11 @@ function Root({children}) {
 }
 
 function Header() {
+    const ref = intersectionService.useIntersectionObserver(0.5, 'typed-out')
+
     return (
         <header className='contact__header'>
-            <h2 className='contact__title' >contato</h2>
+            <h2 className='contact__title' ref={ref}>contato</h2>
 
             <p className='contact__desc'>
                 Precisa falar comigo? <br/> Mande uma mensagem que, em breve, entrarei
