@@ -1,0 +1,23 @@
+.footer {
+    padding: 2.5rem 1.5rem;
+
+    background-color: var(--black);
+    box-shadow: 0 0 8px var(--black);
+    text-align: center;
+}
+
+.footer__title {
+    margin-bottom: 1rem;
+
+    font-size: 1.25rem;
+}
+
+.footer__time {
+    display: block;
+
+    margin-bottom: 1rem;
+}
+
+.footer__time, .footer__desc {
+    font-size: 1rem;
+}
