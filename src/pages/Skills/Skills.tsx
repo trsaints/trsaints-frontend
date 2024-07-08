@@ -1,3 +1,4 @@
+import {intersectionService} from '../../services'
 import {faArrowDown, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
 
 import {Modal, SkillCard, SkillModal} from '../../components'
@@ -14,9 +15,11 @@ function Root({children, onHandleKeyDown}) {
 }
 
 function Header({onHandleClick}) {
+    const ref = intersectionService.useIntersectionObserver(0.5, 'typed-out')
+
     return (
         <header className='skills__header'>
-            <h2 className='skills__title' >
+            <h2 className='skills__title' ref={ref}>
                 minhas <span lang='en'>skills</span>
             </h2>
 
