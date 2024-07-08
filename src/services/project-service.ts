@@ -1,45 +1,55 @@
-import {Project} from '../models'
-
-function getPlaceholderProjects(): Project[] {
+function getPlaceholderProjects() {
     return [
         {
+            id: 0,
+            title: 'Project Title',
+            stack: [{tech: 'HTML'}, {tech: 'CSS'}, {tech: 'Javascript'}],
+            year: 2023,
+            banner: {
+                src: 'https://picsum.photos/200/300',
+                alt: 'Project banner',
+            },
+            desc: 'Project Description',
+            links: [
+                {
+                    name: 'ver código fonte',
+                    url: 'https://github.com/trsaints',
+                },
+                {
+                    name: 'deploy',
+                    url: 'https://www.linkedin.com/in/trsaints2003/',
+                },
+            ],
+        },
+        {
             id: 1,
-            title: 'Project 1',
-            description: 'Description 1',
-            releaseDate: new Date(),
-            skillsIds: [1, 2, 3],
-            bannerUrl: 'https://via.placeholder.com/150',
-            bannerAlt: 'Project 1',
-            sourceUrl: 'https://github.com'
+            title: 'Project Title 2',
+            stack: [{tech: 'HTML'}, {tech: 'CSS'}, {tech: 'React'}],
+            year: 2023,
+            banner: {
+                src: 'https://picsum.photos/200/300',
+                alt: 'Project banner',
+            },
+            desc: 'Project Description',
+            links: [
+                {
+                    name: 'ver código fonte',
+                    url: 'https://github.com/trsaints',
+                },
+                {
+                    name: 'deploy',
+                    url: 'https://www.linkedin.com/in/trsaints2003/',
+                },
+            ],
         },
-        {
-            id: 2,
-            title: 'Project 2',
-            description: 'Description 2',
-            releaseDate: new Date(),
-            skillsIds: [4, 5, 6],
-            bannerUrl: 'https://via.placeholder.com/150',
-            bannerAlt: 'Project 2',
-            sourceUrl: 'https://github.com'
-        },
-        {
-            id: 3,
-            title: 'Project 3',
-            description: 'Description 3',
-            releaseDate: new Date(),
-            skillsIds: [7, 8, 9],
-            bannerUrl: 'https://via.placeholder.com/150',
-            bannerAlt: 'Project 3',
-            sourceUrl: 'https://github.com'
-        }
     ]
 }
 
-function filterProjects(projects: Project[], search: string) {
+function filterProjects(projects, search) {
     return projects.filter((project) => projectTitleHas(project, search))
 }
 
-function projectTitleHas(project: Project, search: string) {
+function projectTitleHas(project, search) {
     return project.title.toLowerCase().includes(search.toLowerCase())
 }
 
