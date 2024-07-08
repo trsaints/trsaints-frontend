@@ -20,13 +20,10 @@ function SkillsSection() {
     const selectSkill = (e: MouseEvent) => {
         const target = e?.target as HTMLElement
 
-        if (target === null) return
-        
-        const container = target?.closest('[data-id]')
-        const id = container?.getAttribute('data-id')
-        
-        if (id === null) return
-        
+        if (target === null || target.dataset['Id'] === undefined) return
+
+        const id = target.dataset['Id']
+
         setSkillId(Number(id))
     }
 
@@ -123,7 +120,7 @@ function MainContent() {
     return (
         <Root>
             <Hero/>
-            <About links={links} srcPath={''}/>
+            <About links={links}/>
             <SkillsSection/>
             <Contact/>
         </Root>
