@@ -14,6 +14,7 @@ function MainContextProvider(props: IMainContextProvider) {
     const [skills, setSkills] = useState<Skill[]>([])
     
     const [search, setSearch] = useState<string>('')
+    const [sort, setSort] = useState<string>('')
 
     const context: IMainContext =  {
         projects,
@@ -25,7 +26,9 @@ function MainContextProvider(props: IMainContextProvider) {
         skills,
         setSkills,
         search,
-        setSearch
+        setSearch,
+        sort, 
+        setSort
     }
     
     return (<MainContext.Provider value={context}>{children}</MainContext.Provider>)
