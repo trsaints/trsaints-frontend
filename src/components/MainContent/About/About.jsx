@@ -1,5 +1,5 @@
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { intersectionService } from "../../../services";
+import { intersectionService } from "../../../services/intersection-service";
 
 import {Navbar} from "../../Navbar";
 
