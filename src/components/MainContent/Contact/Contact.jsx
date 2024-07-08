@@ -1,4 +1,5 @@
-import { intersectionService } from "../../../services/intersection-service";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Contact.css";
 import {
   faCircleQuestion,
   faEnvelope,
@@ -6,10 +7,7 @@ import {
   faPaperPlane,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import "./Contact.css";
+import { intersectionService } from "../../../services/intersection-service";
 
 function Root({ children }) {
   return (

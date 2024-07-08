@@ -1,4 +1,4 @@
-import {Navbar} from "../../Navbar/Navbar";
+import Navbar from "../../Navbar/Navbar";
 
 function Root({ children }) {
   return <menu className="header__menu">{children}</menu>;

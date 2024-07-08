@@ -1,11 +1,11 @@
-import { intersectionService } from "../../../services/intersection-service";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import "./Hero.css";
 
-function Hero() {
+import { intersectionService } from "../../../services/intersection-service";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+export default function Hero() {
   const ref = intersectionService.useIntersectionObserver(1, "typed-out");
 
   return (
@@ -28,5 +28,3 @@ function Hero() {
     </header>
   );
 }
-
-export { Hero }
