@@ -3,8 +3,12 @@ import {faUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
 import {Navbar} from '../../components'
 
 import './About.css'
+import {ComponentProps, PropsWithChildren} from 'react'
+import {SocialLink} from '../../types/SocialLink'
 
-function Root({children}) {
+function Root(props: PropsWithChildren) {
+    const {children} = props
+    
     return (
         <article className='about' id='about'>
             {children}
@@ -12,7 +16,13 @@ function Root({children}) {
     )
 }
 
-function Header({links}) {
+interface IHeader extends ComponentProps<'header'> {
+    links: SocialLink[]
+}
+
+function Header(props: IHeader) {
+    const {links} = props
+    
     return (
         <header className='about__header'>
             <h2 className='about__title' >
@@ -30,7 +40,13 @@ function Header({links}) {
     )
 }
 
-function Pitch({srcPath}) {
+interface IPitch extends ComponentProps<'aside'> {
+    srcPath: string
+}
+
+function Pitch(props: IPitch) {
+    const {srcPath} = props
+    
     return (
         <aside className='window-frame pitch'>
             <video className='pitch__video' src={srcPath}></video>
@@ -44,11 +60,18 @@ function Pitch({srcPath}) {
     )
 }
 
-function About({links}) {
+interface IAbout extends ComponentProps<'article'> {
+    links: SocialLink[]
+    srcPath: string
+}
+
+function About(props: IAbout) {
+    const {links, srcPath} = props
+    
     return (
         <Root>
             <Header links={links}/>
-            <Pitch srcPath=''/>
+            <Pitch srcPath={srcPath}/>
         </Root>
     )
 }
