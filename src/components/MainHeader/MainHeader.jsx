@@ -1,15 +1,22 @@
-import {HeaderMenu} from "../HeaderMenu"
+import { HeaderMenu } from "../HeaderMenu";
 
-import "./MainHeader.css"
+import "./MainHeader.css";
 
-function MainHeader({srcPath}) {
-    return (
-        <header className="header">
-            <img className="header__banner" src={srcPath} alt=""/>
-
-            <HeaderMenu />
-        </header>
-    )
+function Root({ children }) {
+  return <header className="header">{children}</header>;
 }
 
-export {MainHeader}
+function Banner({ srcPath }) {
+  return <img className="header__banner" src={srcPath} alt="" />;
+}
+
+function Menu() {
+  return (
+    <HeaderMenu.Root>
+      <HeaderMenu.Button />
+      <HeaderMenu.Nav />
+    </HeaderMenu.Root>
+  );
+}
+
+export const MainHeader = { Root, Banner, Menu };
