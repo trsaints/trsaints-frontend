@@ -1,4 +1,4 @@
-import { intersectionService } from "../../services";
+import { intersectionService } from "../../../services";
 import {
   faCircleQuestion,
   faEnvelope,
