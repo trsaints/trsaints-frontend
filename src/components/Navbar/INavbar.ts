@@ -1,9 +1,8 @@
-import {LinkData} from '../../types/LinkData'
+import {Link} from '../../types/Link'
 import {IconProp} from '@fortawesome/fontawesome-svg-core'
-import {ComponentProps} from 'react'
 
-export interface INavbar extends ComponentProps<'nav'> {
+export interface INavbar extends React.ComponentProps<'nav'> {
     element: string
-    links: LinkData[]
-    icon?: IconProp
+    links: Link[]
+    icon: IconProp
 }
