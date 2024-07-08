@@ -4,8 +4,10 @@ import {
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Modal, SkillCard, SkillModal } from '../../../components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Modal } from "../../Modal/Modal";
+import { SkillCard } from "./SkillCard/SkillCard";
+import { SkillModal } from "./SkillModal/SkillModal";
 
 import "./Skills.css";
 

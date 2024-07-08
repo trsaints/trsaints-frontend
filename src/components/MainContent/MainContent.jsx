@@ -5,7 +5,11 @@ import {
   socialMediaService,
 } from "../../services/db-service";
 
-import { Hero, About, Contact, Projects, Skills } from "../../components";
+import { About } from "./About/About";
+import { Contact } from "./Contact/Contact";
+import {Hero} from "./Hero/Hero";
+import { Projects } from "./Projects/Projects";
+import { Skills } from "./Skills/Skills";
 
 function Root({ children }) {
   return <main className="main">{children}</main>;
