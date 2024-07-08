@@ -27,12 +27,15 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         setSort(sortTerm)
     }
 
-    const selectProject = (e:  React.MouseEvent<HTMLElement>) => {
-        const target = e?.target as HTMLElement
+    const selectProject   = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
+        const target = e.target as HTMLElement
 
-        if (target === null || target.dataset['Id'] === undefined) return
+        if (target === null) return
 
-        const id = target.dataset['Id']
+        const container = target.closest('[data-id]')
+        const id        = container?.getAttribute('data-id')
+
+        if (id === null) return
 
         setProjectId(Number(id))
     }
