@@ -1,4 +1,4 @@
-import {Navbar} from "../Navbar/index.js";
+import {Navbar} from "../../Navbar";
 
 function Root({ children }) {
   return <menu className="header__menu">{children}</menu>;
