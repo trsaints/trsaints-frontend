@@ -4,30 +4,25 @@ import {Modal, SkillCard, SkillModal} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Skills.css'
-import {ComponentProps, KeyboardEventHandler, MouseEventHandler} from 'react'
+import {ComponentProps, useContext} from 'react'
 import {Skill} from '../../models'
+import {SkillsContext} from '../../context/SkillsContext'
 
 interface IRoot extends ComponentProps<'article'> {
-    onHandleKeyDown: KeyboardEventHandler<HTMLElement>
 }
 
 function Root(props: IRoot) {
-    const {children, onHandleKeyDown} = props
-    
+    const {closeOnEscape} = useContext(SkillsContext)
+    const {children}      = props
+
     return (
-        <article className='skills' id='skills' onKeyDown={onHandleKeyDown}>
+        <article className='skills' id='skills' onKeyDown={closeOnEscape}>
             {children}
         </article>
     )
 }
 
-interface ISkillsHeader extends ComponentProps<'header'> {
-    onHandleClick: MouseEventHandler<HTMLAnchorElement>
-}
-
-function SkillsHeader(props: ISkillsHeader) {
-    const {onHandleClick} = props
-    
+function SkillsHeader() {
     return (
         <header className='skills__header'>
             <h2 className='skills__title'>
@@ -40,18 +35,14 @@ function SkillsHeader(props: ISkillsHeader) {
                 saber mais.
             </p>
 
-            <SkillsHeaderMenu loadSkills={onHandleClick}/>
+            <SkillsHeaderMenu/>
         </header>
     )
 }
 
-interface ISkillsHeaderMenu extends ComponentProps<'menu'> {
-    loadSkills: MouseEventHandler<HTMLAnchorElement>
-}
+function SkillsHeaderMenu() {
+    const {loadSkills} = useContext(SkillsContext)
 
-function SkillsHeaderMenu(props: ISkillsHeaderMenu) {
-    const {loadSkills} = props
-    
     return (
         <menu className='skills__menu nav'>
             <li className='skills__option'>
@@ -77,12 +68,12 @@ function SkillsHeaderMenu(props: ISkillsHeaderMenu) {
 
 interface ISkillsList extends ComponentProps<'ul'> {
     skills: Skill[]
-    renderPanel: MouseEventHandler<HTMLUListElement>
 }
 
 function SkillsList(props: ISkillsList) {
-    const {skills, renderPanel} = props
-    
+    const {skills}      = props
+    const {selectSkill} = useContext(SkillsContext)
+
     const skillCards = skills.map((skill) => (
         <li key={skill?.id} data-id={skill?.id}>
             <SkillCard.Root>
@@ -91,27 +82,24 @@ function SkillsList(props: ISkillsList) {
         </li>
     ))
 
-    return (
-        <ul
-            className='skills__list window-frame'
-            onClick={renderPanel}
-            id='skills-list'
-        >
-            {skillCards}
-        </ul>
-    )
+    return (skills.length > 0)
+        && (
+            <ul className='skills__list window-frame' onClick={selectSkill} id='skills-list'>
+                {skillCards}
+            </ul>
+        )
 }
 
 interface ISkillPanel extends ComponentProps<'dialog'> {
     skill?: Skill
-    onHandleClick: MouseEventHandler<HTMLButtonElement>
 }
 
 function SkillPanel(props: ISkillPanel) {
-    const {skill, onHandleClick} = props
-    
+    const {skill}     = props
+    const {hideSkill} = useContext(SkillsContext)
+
     return skill !== undefined && (
-        <Modal onHandleClick={onHandleClick}>
+        <Modal onHandleClick={hideSkill}>
             <SkillModal skill={skill}/>
         </Modal>
     )
