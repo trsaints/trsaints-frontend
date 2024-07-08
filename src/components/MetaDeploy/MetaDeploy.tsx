@@ -3,7 +3,7 @@ import './MetaDeploy.css'
 
 function MetaDeploy(props: IMetaDeploy) {
     const {deployUrl} = props
-    const hasDeploy   = deployUrl !== ''
+    const hasDeploy   = deployUrl !== undefined
 
     return hasDeploy && (
         <dl className='meta'>

@@ -10,7 +10,8 @@ function getPlaceholderProjects(): Project[] {
             skillsIds: [1, 2, 3],
             bannerUrl: 'https://via.placeholder.com/150',
             bannerAlt: 'Project 1',
-            sourceUrl: 'https://github.com'
+            sourceUrl: 'https://github.com',
+            deployUrl: 'https://vercel.com'
         },
         {
             uuid: 2,

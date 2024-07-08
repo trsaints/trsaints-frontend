@@ -1,5 +1,6 @@
 import {ComponentProps} from 'react'
 import './MetaStack.css'
+
 interface IMetaStack extends ComponentProps<'dl'> {
     stack: string
 }

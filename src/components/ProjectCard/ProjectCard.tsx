@@ -10,8 +10,8 @@ function ProjectCard(props: IProjectCard) {
         <article className='project-card'>
             <h3 className='project-card__title'>{project.title}</h3>
 
-            {/*<MetaStack stack={stack}/>*/}
-            <MetaDeploy deployUrl={project.deployUrl ?? ''}/>
+            <MetaStack stack={stack}/>
+            <MetaDeploy deployUrl={project.deployUrl}/>
 
             <button className='sr-only' type='button'>ver projeto: {project.title}</button>
         </article>
