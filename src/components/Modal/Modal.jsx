@@ -21,13 +21,7 @@ function Menu({ onHandleClick }) {
   );
 }
 
-function Modal({ children, onHandleClick }) {
-  return (
-      <Root>
-        <Menu onHandleClick={onHandleClick} />
-        {children}
-      </Root>
-  )
-}
-
-export { Modal }
+export const Modal = {
+  Root,
+  Menu,
+};

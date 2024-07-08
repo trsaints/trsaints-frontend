@@ -83,12 +83,14 @@ function SkillsList({ skills, onHandleClick }) {
 
 function Skill(props) {
   return (
-    <Modal onHandleClick={props?.onHandleClick}>
+    <Modal.Root>
+      <Modal.Menu onHandleClick={props?.onHandleClick} />
+
       <SkillModal.Root>
         <SkillModal.Header skill={props?.skill} />
         <SkillModal.Content skill={props?.skill} />
       </SkillModal.Root>
-    </Modal>
+    </Modal.Root>
   );
 }
 
