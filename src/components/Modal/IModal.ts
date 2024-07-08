@@ -1,3 +1,5 @@
-export interface IModal extends React.ComponentProps<'dialog'> {
-    onHandleClick: () => void
+import {ComponentProps, MouseEventHandler} from 'react'
+
+export interface IModal extends ComponentProps<'dialog'> {
+    onHandleClick: MouseEventHandler<HTMLButtonElement>
 }
