@@ -2,7 +2,7 @@ import {Footer, Header, ScrollTop} from '../../components'
 import {Default} from '../../layouts'
 
 import './App.css'
-import {MainContextProvider} from '../../context/providers/MainContextProvider/MainContextProvider'
+import {MainContextProvider} from '../../context/providers/MainContextProvider'
 
 function App() {
     return (

@@ -1,4 +1,4 @@
-import {Project, Skill} from '../../models'
+import {Project, Skill} from '../models'
 import {Dispatch, SetStateAction} from 'react'
 
 export interface IMainContext {
