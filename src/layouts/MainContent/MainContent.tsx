@@ -1,4 +1,4 @@
-import {FormEvent, KeyboardEventHandler, MouseEventHandler, PropsWithChildren, useContext} from 'react'
+import {FormEvent, PropsWithChildren, useContext} from 'react'
 import {projectService, skillService, socialMediaService,} from '../../services'
 
 import {About, Contact, Hero, Projects, Skills} from '../../pages'
@@ -13,32 +13,42 @@ function Root(props: PropsWithChildren) {
 function SkillsSection() {
     const {skills, setSkills}   = useContext(MainContext)
     const {skillId, setSkillId} = useContext(MainContext)
-    
-    const selectedSkill = skillService.getSkillById(skills, skillId)
+    const selectedSkill         = skillService.getSkillById(skills, skillId)
 
-    const loadSkills: MouseEventHandler<HTMLAnchorElement> = () => setSkills(skillService.getPlaceholderSkills())
+    const loadSkills = () => setSkills(skillService.getPlaceholderSkills())
 
-    const selectSkill: MouseEventHandler<HTMLUListElement> = (e) => {
-        const target = e.target as HTMLElement
+    const selectSkill = (e: MouseEvent) => {
+        const target = e?.target as HTMLElement
 
         if (target === null) return
-
-        const container = target.closest('[data-id]')
-        const id        = container?.getAttribute('data-id')
-
+        
+        const container = target?.closest('[data-id]')
+        const id = container?.getAttribute('data-id')
+        
         if (id === null) return
-
+        
         setSkillId(Number(id))
     }
-    const closeModal = () => setSkillId(-1)
-    const closeOnEscape: KeyboardEventHandler<HTMLElement>
-                     = (e) => (e.key === 'Escape') && closeModal()
+
+    const renderSkill = () => {
+        if (skillId !== -1)
+            return <Skills.Skill skill={selectedSkill} onHandleClick={closeModal}/>
+    }
+
+    const closeModal    = () => setSkillId(-1)
+    const closeOnEscape = (e: KeyboardEvent) => e.key === 'Escape' && closeModal()
 
     return (
         <Skills.Root onHandleKeyDown={closeOnEscape}>
-            <Skills.SkillsHeader onHandleClick={loadSkills}/>
-            {(skills.length > 0) && <Skills.SkillsList skills={skills} renderPanel={selectSkill}/>}
-            <Skills.SkillPanel skill={selectedSkill} onHandleClick={closeModal}/>
+            {skills.length > 0 &&
+                (
+                    <>
+                        <Skills.Header onHandleClick={loadSkills}/>
+                        <Skills.SkillsList skills={skills} onHandleClick={selectSkill}/>
+                    </>
+                )
+            }
+            {renderSkill()}
         </Skills.Root>
     )
 }
@@ -48,8 +58,8 @@ function ProjectsSection() {
     const {projectId, setProjectId} = useContext(MainContext)
 
     const {search, setSearch} = useContext(MainContext)
-    const {sort, setSort}     = useContext(MainContext)
-
+    const {sort, setSort} = useContext(MainContext)
+    
     const projectsFound   = projectService.filterProjects(projects, search)
     const selectedProject = projectService.getProjectById(projects, projectId)
 
@@ -64,11 +74,11 @@ function ProjectsSection() {
         e.preventDefault()
 
         const searchParameters = new FormData(e.currentTarget as HTMLFormElement)
-        const searchTerm       = searchParameters.get('search')?.toString()
-        const sortTerm         = searchParameters.get('sort')?.toString()
-
+        const searchTerm = searchParameters.get('search')?.toString()
+        const sortTerm = searchParameters.get('sort')?.toString()
+        
         if (!searchTerm || !sortTerm) return
-
+        
         setSearch(searchTerm)
         setSort(sortTerm)
     }
