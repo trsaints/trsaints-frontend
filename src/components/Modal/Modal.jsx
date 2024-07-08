@@ -1,8 +1,7 @@
-import { faClose } from "@fortawesome/free-solid-svg-icons";
+import "./Modal.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import "./Modal.css";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 function Root({ children }) {
   return <dialog className="modal window-frame">{children}</dialog>;

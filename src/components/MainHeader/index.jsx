@@ -1,6 +1,6 @@
 import { HeaderMenu } from "./HeaderMenu/HeaderMenu";
 
-import "./MainHeader.css";
+import "./index.css";
 
 function Root({ children }) {
   return <header className="header">{children}</header>;
