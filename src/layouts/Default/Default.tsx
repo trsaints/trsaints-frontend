@@ -107,7 +107,7 @@ function ProjectsSection() {
     )
 }
 
-function MainContent() {
+function Default() {
     const links = socialMediaService.getAllSocialLinks()
 
     return (
@@ -120,4 +120,4 @@ function MainContent() {
     )
 }
 
-export {MainContent}
+export {Default}
