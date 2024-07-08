@@ -1,13 +1,13 @@
-import {HeaderMenu} from '../HeaderMenu'
+import {HeaderMenu} from "../HeaderMenu"
 
-import './Header.css'
+import "./Header.css"
 
 function Header({srcPath}) {
     return (
-        <header className='header'>
-            <img className='header__banner' src={srcPath} alt=''/>
+        <header className="header">
+            <img className="header__banner" src={srcPath} alt=""/>
 
-            <HeaderMenu/>
+            <HeaderMenu />
         </header>
     )
 }

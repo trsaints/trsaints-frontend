@@ -1,1 +1,1 @@
-export * from './SkillModal'
+export * from './SkillModal.tsx'

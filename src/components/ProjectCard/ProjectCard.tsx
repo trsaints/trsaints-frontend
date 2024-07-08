@@ -1,49 +1,49 @@
-import './ProjectCard.css'
+import "./ProjectCard.css";
 
-function Root({children}) {
-    return <article className='project-card'>{children}</article>
+function Root({ children }) {
+  return <article className="project-card">{children}</article>;
 }
 
-function Content({project}) {
-    return (
-        <>
-            <h3 className='project-card__title'>{project.title}</h3>
+function Content({ project }) {
+  return (
+    <>
+      <h3 className="project-card__title">{project.title}</h3>
 
-            <MetaStack stack={project.stack}/>
-            <MetaDeploy links={project.links}/>
+      <MetaStack stack={project.stack} />
+      <MetaDeploy links={project.links} />
 
-            <button className='sr-only' type='button'>ver projeto: {project.title}</button>
-        </>
-    )
+      <button className="sr-only" type="button">ver projeto: {project.title}</button>
+    </>
+  );
 }
 
-function MetaStack({stack}) {
-    const mainStack = stack.map((tech) => tech.tech).join(', ')
+function MetaStack({ stack }) {
+  const mainStack = stack.map((tech) => tech.tech).join(", ");
 
-    return (
-        <dl className='meta'>
-            <dt className='meta__key'>
-                <span lang='en'>stack</span>
-            </dt>
+  return (
+    <dl className="meta">
+      <dt className="meta__key">
+        <span lang="en">stack</span>
+      </dt>
 
-            <dd className='meta__value'>{mainStack}</dd>
-        </dl>
-    )
+      <dd className="meta__value">{mainStack}</dd>
+    </dl>
+  );
 }
 
-function MetaDeploy({links}) {
-    const deployLink = links[1]['url'] !== '' && links[1]['url']
+function MetaDeploy({ links }) {
+  const deployLink = links[1]["url"] !== "" && links[1]["url"];
 
-    return (
-        <dl className='meta'>
-            <dt className='meta__key'>deploy</dt>
+  return (
+    <dl className="meta">
+      <dt className="meta__key">deploy</dt>
 
-            <dd className='meta__value'>{deployLink}</dd>
-        </dl>
-    )
+      <dd className="meta__value">{deployLink}</dd>
+    </dl>
+  );
 }
 
 export const ProjectCard = {
-    Root,
-    Content,
-}
+  Root,
+  Content,
+};
