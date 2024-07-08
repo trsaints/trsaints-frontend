@@ -1,100 +1,84 @@
-import {FormEvent, PropsWithChildren, useContext} from 'react'
+import {useState} from 'react'
 import {projectService, skillService, socialMediaService,} from '../../services'
 
 import {About, Contact, Hero, Projects, Skills} from '../../pages'
-import {MainContext} from '../../context/MainContext'
 
-function Root(props: PropsWithChildren) {
-    const {children} = props
-
+function Root({children}) {
     return <main className='main'>{children}</main>
 }
 
 function SkillsSection() {
-    const {skills, setSkills}   = useContext(MainContext)
-    const {skillId, setSkillId} = useContext(MainContext)
-    const selectedSkill         = skillService.getSkillById(skills, skillId)
+    const [skills, setSkills] = useState([]),
+        [index, setIndex] = useState(-1)
 
     const loadSkills = () => setSkills(skillService.getPlaceholderSkills())
 
-    const selectSkill = (e: MouseEvent) => {
-        const target = e?.target as HTMLElement
+    const selectSkill = (e) => {
+        const parentID = e?.target.closest('[data-id]')
 
-        if (target === null || target.dataset['Id'] === undefined) return
+        if (parentID === null) return
 
-        const id = target.dataset['Id']
+        const {id} = parentID.dataset
 
-        setSkillId(Number(id))
+        setIndex(id)
     }
 
     const renderSkill = () => {
-        if (skillId !== -1)
-            return <Skills.Skill skill={selectedSkill} onHandleClick={closeModal}/>
+        if (index > -1)
+            return <Skills.Skill skill={skills[index]} onHandleClick={closeModal}/>
     }
 
-    const closeModal    = () => setSkillId(-1)
-    const closeOnEscape = (e: KeyboardEvent) => e.key === 'Escape' && closeModal()
+    const closeModal = () => setIndex(-1)
+    const closeOnEscape = (e) => e.key === 'Escape' && closeModal()
 
     return (
         <Skills.Root onHandleKeyDown={closeOnEscape}>
-            {skills.length > 0 &&
-                (
-                    <>
-                        <Skills.Header onHandleClick={loadSkills}/>
-                        <Skills.SkillsList skills={skills} onHandleClick={selectSkill}/>
-                    </>
-                )
-            }
+            <Skills.Header onHandleClick={loadSkills}/>
+            {skills.length > 0 && (
+                <Skills.SkillsList skills={skills} onHandleClick={selectSkill}/>
+            )}
             {renderSkill()}
         </Skills.Root>
     )
 }
 
 function ProjectsSection() {
-    const {projects, setProjects}   = useContext(MainContext)
-    const {projectId, setProjectId} = useContext(MainContext)
+    const [projects, setProjects] = useState([]),
+        [index, setIndex] = useState(-1),
+        [search, setSearch] = useState(''),
+        [sort, setSort] = useState('')
 
-    const {search, setSearch} = useContext(MainContext)
-    const {sort, setSort} = useContext(MainContext)
-    
-    const projectsFound   = projectService.filterProjects(projects, search)
-    const selectedProject = projectService.getProjectById(projects, projectId)
+    const projectsFound = projectService.filterProjects(projects, search)
 
-    const closeModal    = () => setProjectId(-1)
-    const closeOnEscape = (e: KeyboardEvent) => e.key === 'Escape' && closeModal()
+    const closeModal = () => setIndex(-1)
+    const closeOnEscape = (e) => e.key === 'Escape' && closeModal()
 
     const loadProjects = () => {
         if (projects.length === 0) setProjects(projectService.getPlaceholderProjects())
     }
 
-    const searchProjects = (e: FormEvent) => {
+    const searchProjects = (e) => {
         e.preventDefault()
 
-        const searchParameters = new FormData(e.currentTarget as HTMLFormElement)
-        const searchTerm = searchParameters.get('search')?.toString()
-        const sortTerm = searchParameters.get('sort')?.toString()
-        
-        if (!searchTerm || !sortTerm) return
-        
-        setSearch(searchTerm)
-        setSort(sortTerm)
+        setSearch(e.target.elements['search'].value)
+        setSort(e.target.elements['sort'].value)
     }
 
-    const selectProject = (e: MouseEvent) => {
-        const target = e?.target as HTMLElement
+    const selectProject = (e) => {
+        const parentID = e?.target.closest('[data-id]')
 
-        if (target === null || target.dataset['Id'] === undefined) return
+        if (parentID === null) return
 
-        const id = target.dataset['Id']
+        const {id} = parentID.dataset
 
-        setProjectId(Number(id))
+        setIndex(id)
     }
 
     const renderProject = () => {
-        if (projectId > -1)
+        if (index > -1)
             return (
                 <Projects.Project
-                    project={selectedProject}
+                    project={projectsFound[index]}
                     onHandleClick={closeModal}
                 />
             )
@@ -122,6 +106,7 @@ function MainContent() {
             <Hero/>
             <About links={links}/>
             <SkillsSection/>
+            <ProjectsSection/>
             <Contact/>
         </Root>
     )
