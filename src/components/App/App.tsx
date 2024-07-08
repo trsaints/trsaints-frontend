@@ -1,5 +1,5 @@
 import {Footer, Header, ScrollTop} from '../../components'
-import {Default} from '../../layouts'
+import {MainContent} from '../../layouts'
 
 import './App.css'
 import {MainContextProvider} from '../../context/providers/MainContextProvider'
@@ -11,7 +11,7 @@ function App() {
             <Header srcPath='/computer_logo.svg'/>
             
             <MainContextProvider>
-                <Default/>
+                <MainContent/>
             </MainContextProvider>
             
             <Footer/>
