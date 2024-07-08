@@ -1,4 +1,4 @@
-import { HeaderMenu } from "../HeaderMenu";
+import { HeaderMenu } from "./HeaderMenu";
 
 import "./MainHeader.css";
 
