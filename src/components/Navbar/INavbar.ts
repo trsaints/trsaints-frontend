@@ -1,4 +1,4 @@
-import {LinkData} from '../../types/LinkData'
+import {LinkData} from '../../types'
 import {IconProp} from '@fortawesome/fontawesome-svg-core'
 import {ComponentProps} from 'react'
 

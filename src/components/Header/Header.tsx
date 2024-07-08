@@ -1,7 +1,6 @@
 import {HeaderMenu} from '../HeaderMenu'
 
 import {IHeader} from './IHeader'
-
 import './Header.css'
 
 function Header(props: IHeader) {

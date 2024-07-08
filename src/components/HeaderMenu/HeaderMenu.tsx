@@ -1,5 +1,6 @@
+import {LinkData} from '../../types'
+
 import {Navbar} from '../Navbar'
-import {LinkData} from '../../types/LinkData'
 
 function HeaderMenu() {
     const mainLinks: LinkData[] = [

@@ -135,7 +135,7 @@ function ProjectModal(props: IProjectModal) {
                 releaseDate={releaseDate}
                 stack={stack}
             />
-    
+
             <Banner {...project}/>
             <Desc {...project}/>
             <Links{...project}/>

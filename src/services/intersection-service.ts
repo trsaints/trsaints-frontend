@@ -26,7 +26,7 @@ function setObserverEntries(
     animationName: string
 ) {
     entries.forEach((entry) =>
-                        updateEntryClassList(entry, observer, animationName)
+        updateEntryClassList(entry, observer, animationName)
     )
 }
 

@@ -7,16 +7,16 @@ import {IMainContext} from '../../MainContext/IMainContext'
 function MainContextProvider(props: IMainContextProvider) {
     const {children} = props
 
-    const [projects, setProjects] = useState<Project[]>([])
+    const [projects, setProjects]   = useState<Project[]>([])
     const [projectId, setProjectId] = useState<number>(-1)
-    
-    const [skillId, setSkillId] = useState<number>(-1)
-    const [skills, setSkills] = useState<Skill[]>([])
-    
-    const [search, setSearch] = useState<string>('')
-    const [sort, setSort] = useState<string>('')
 
-    const context: IMainContext =  {
+    const [skillId, setSkillId] = useState<number>(-1)
+    const [skills, setSkills]   = useState<Skill[]>([])
+
+    const [search, setSearch] = useState<string>('')
+    const [sort, setSort]     = useState<string>('')
+
+    const context: IMainContext = {
         projects,
         setProjects,
         projectId,
@@ -27,10 +27,10 @@ function MainContextProvider(props: IMainContextProvider) {
         setSkills,
         search,
         setSearch,
-        sort, 
+        sort,
         setSort
     }
-    
+
     return (<MainContext.Provider value={context}>{children}</MainContext.Provider>)
 }
 

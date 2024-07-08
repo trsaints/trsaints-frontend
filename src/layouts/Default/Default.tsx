@@ -1,10 +1,10 @@
 import {PropsWithChildren, useContext} from 'react'
+import {MainContext} from '../../context/MainContext'
 import {projectService, skillService, socialMediaService,} from '../../services'
 
 import {About, Contact, Hero, Projects, Skills} from '../../pages'
-import {MainContext} from '../../context/MainContext'
 import {SkillsContextProvider} from '../../context/providers'
-import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider/ProjectsContextProvider'
+import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
 
 function Root(props: PropsWithChildren) {
     const {children} = props
@@ -30,7 +30,7 @@ function SkillsSection() {
 }
 
 function ProjectsSection() {
-    const {projects}   = useContext(MainContext)
+    const {projects}  = useContext(MainContext)
     const {projectId} = useContext(MainContext)
 
     const {search, sort} = useContext(MainContext)

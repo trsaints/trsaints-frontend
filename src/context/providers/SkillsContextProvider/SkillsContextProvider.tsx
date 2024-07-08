@@ -12,7 +12,7 @@ function SkillsContextProvider(props: ISkillsContextProvider) {
 
     const loadSkills = () => setSkills(skillService.getPlaceholderSkills())
 
-    const selectSkill   = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
+    const selectSkill = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
         const target = e.target as HTMLElement
 
         if (target === null) return

@@ -1,4 +1,4 @@
-import {SocialLink} from '../types/SocialLink'
+import {SocialLink} from '../types'
 
 function getAllSocialLinks(): SocialLink[] {
     return [

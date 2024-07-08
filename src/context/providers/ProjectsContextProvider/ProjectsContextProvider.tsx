@@ -10,7 +10,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
     const {setProjects, setProjectId, setSearch, setSort} = useContext(MainContext)
 
     const hideProject   = () => setProjectId(-1)
-    const closeOnEscape = (e: React.KeyboardEvent<HTMLElement>) => 
+    const closeOnEscape = (e: React.KeyboardEvent<HTMLElement>) =>
         e.key === 'Escape' && hideProject()
     const loadProjects  = () => setProjects(projectService.getPlaceholderProjects())
 
@@ -27,7 +27,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         setSort(sortTerm)
     }
 
-    const selectProject   = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
+    const selectProject = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
         const target = e.target as HTMLElement
 
         if (target === null) return
@@ -47,7 +47,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         searchProjects,
         selectProject
     }
-    
+
     return (<ProjectsContext.Provider value={context}>{children}</ProjectsContext.Provider>)
 }
 

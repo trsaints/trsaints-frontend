@@ -3,7 +3,6 @@ import {faClose} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {IModal} from './IModal'
-
 import './Modal.css'
 
 function Modal(props: IModal) {
@@ -19,7 +18,7 @@ function Modal(props: IModal) {
                     </button>
                 </li>
             </menu>
-            
+
             {children}
         </dialog>
     )
