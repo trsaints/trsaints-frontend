@@ -1,8 +1,9 @@
-import {FormEvent, KeyboardEventHandler, MouseEventHandler, PropsWithChildren, useContext} from 'react'
+import {FormEvent, PropsWithChildren, useContext} from 'react'
 import {projectService, skillService, socialMediaService,} from '../../services'
 
 import {About, Contact, Hero, Projects, Skills} from '../../pages'
 import {MainContext} from '../../context/MainContext'
+import {SkillsContextProvider} from '../../context/providers'
 
 function Root(props: PropsWithChildren) {
     const {children} = props
@@ -11,35 +12,19 @@ function Root(props: PropsWithChildren) {
 }
 
 function SkillsSection() {
-    const {skills, setSkills}   = useContext(MainContext)
-    const {skillId, setSkillId} = useContext(MainContext)
+    const {skills}   = useContext(MainContext)
+    const {skillId} = useContext(MainContext)
     
     const selectedSkill = skillService.getSkillById(skills, skillId)
 
-    const loadSkills: MouseEventHandler<HTMLAnchorElement> = () => setSkills(skillService.getPlaceholderSkills())
-
-    const selectSkill: MouseEventHandler<HTMLUListElement> = (e) => {
-        const target = e.target as HTMLElement
-
-        if (target === null) return
-
-        const container = target.closest('[data-id]')
-        const id        = container?.getAttribute('data-id')
-
-        if (id === null) return
-
-        setSkillId(Number(id))
-    }
-    const closeModal = () => setSkillId(-1)
-    const closeOnEscape: KeyboardEventHandler<HTMLElement>
-                     = (e) => (e.key === 'Escape') && closeModal()
-
     return (
-        <Skills.Root onHandleKeyDown={closeOnEscape}>
-            <Skills.SkillsHeader onHandleClick={loadSkills}/>
-            {(skills.length > 0) && <Skills.SkillsList skills={skills} renderPanel={selectSkill}/>}
-            <Skills.SkillPanel skill={selectedSkill} onHandleClick={closeModal}/>
-        </Skills.Root>
+        <SkillsContextProvider>
+            <Skills.Root>
+                <Skills.SkillsHeader/>
+                <Skills.SkillsList skills={skills}/>
+                <Skills.SkillPanel skill={selectedSkill}/>
+            </Skills.Root>
+        </SkillsContextProvider>
     )
 }
 
