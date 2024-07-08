@@ -1,8 +1,8 @@
-import {MainContext} from '../MainContext'
+import {MainContext} from '../../MainContext/MainContext'
 import {useState} from 'react'
 import {IMainContextProvider} from './IMainContextProvider'
-import {Project, Skill} from '../../models'
-import {IMainContext} from '../IMainContext'
+import {Project, Skill} from '../../../models'
+import {IMainContext} from '../../MainContext/IMainContext'
 
 function MainContextProvider(props: IMainContextProvider) {
     const {children} = props
