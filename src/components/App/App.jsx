@@ -1,4 +1,4 @@
-import { ScrollTop, Header, Footer } from "../../components";
+import { ScrollTop, MainHeader, MainFooter } from "../../components";
 import { MainContent } from "../../layouts"
 
 import "./App.css";
@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <ScrollTop />
-      <Header srcPath='/computer_logo.svg' />
+      <MainHeader srcPath='/computer_logo.svg' />
       <MainContent />
-      <Footer />
+      <MainFooter />
     </>
   );
 }
