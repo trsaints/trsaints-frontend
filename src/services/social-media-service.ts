@@ -1,11 +1,13 @@
-function getAllSocialLinks() {
+import {SocialLink} from '../types/SocialLink'
+
+function getAllSocialLinks(): SocialLink[] {
     return [
         {
-            name: 'Github',
+            label: 'Github',
             url: 'https://github.com/trsaints',
         },
         {
-            name: 'LinkedIn',
+            label: 'LinkedIn',
             url: 'https://www.linkedin.com/in/trsaints2003/',
         },
     ]
