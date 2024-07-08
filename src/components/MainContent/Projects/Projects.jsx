@@ -1,7 +1,10 @@
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { intersectionService } from "../../../services/intersection-service";
 
-import { Modal, ProjectModal, ProjectFilter, ProjectCard } from "../../../components";
+import { ProjectModal } from "./ProjectModal/ProjectModal";
+import { ProjectCard } from "./ProjectCard/ProjectCard";
+import { ProjectFilter } from "./ProjectFilter/ProjectFilter";
+import { Modal } from "../../Modal/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Projects.css";
