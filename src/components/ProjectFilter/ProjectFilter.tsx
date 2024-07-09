@@ -1,16 +1,18 @@
-import {ComponentProps, FormEvent, useContext} from 'react'
+import {ComponentProps, useContext} from 'react'
 import {ProjectsContext} from '../../context/ProjectsContext'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 import './ProjectFilter.css'
 
-interface IRoot extends ComponentProps<'form'> {}
+interface IRoot extends ComponentProps<'form'> {
+}
 
 function Root(props: IRoot) {
-    const {children} = props
+    const {children}       = props
     const {searchProjects} = useContext(ProjectsContext)
-    
+
     return (
         <form className='filter' onSubmit={searchProjects}>
             <fieldset className='filter__fieldset'>
@@ -32,7 +34,7 @@ interface ISelect extends ComponentProps<'div'> {
 
 function Select(props: ISelect) {
     const {options} = props
-    
+
     const optionItems = options.map(
         (option) => option && <option key={option}>{option}</option>
     )
