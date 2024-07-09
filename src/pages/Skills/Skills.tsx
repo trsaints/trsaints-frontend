@@ -7,6 +7,9 @@ import './Skills.css'
 import {ComponentProps, useContext} from 'react'
 import {Skill} from '../../models'
 import {SkillsContext} from '../../context/SkillsContext'
+import {MainContext} from '../../context/MainContext'
+import {skillService} from '../../services'
+import {SkillsContextProvider} from '../../context/providers'
 
 interface IRoot extends ComponentProps<'article'> {
 }
@@ -105,9 +108,22 @@ function SkillPanel(props: ISkillPanel) {
     )
 }
 
-export const Skills = {
-    Root,
-    SkillsHeader,
-    SkillsList,
-    SkillPanel,
+function Skills() {
+    const {skills}  = useContext(MainContext)
+    const {skillId} = useContext(MainContext)
+
+    const selectedSkill = skillService.getSkillById(skills, skillId)
+
+    return (
+        <SkillsContextProvider>
+            <Root>
+                <SkillsHeader/>
+                <SkillsList skills={skills}/>
+                <SkillPanel skill={selectedSkill}/>
+            </Root>
+        </SkillsContextProvider>
+    )
 }
+
+export {Skills}
+
