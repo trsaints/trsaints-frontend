@@ -1,11 +1,17 @@
 import {faCircleQuestion, faEnvelope, faMessage, faPaperPlane, faUser,} from '@fortawesome/free-solid-svg-icons'
 
+import {FormField} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+import {ComponentProps} from 'react'
 import './Contact.css'
-import {FormField} from '../../components'
 
-function Root({children}) {
+interface IRoot extends ComponentProps<'article'> {
+}
+
+function Root(props: IRoot) {
+    const {children} = props
+
     return (
         <aside className='contact' id='contact'>
             {children}
@@ -45,19 +51,19 @@ function Form() {
                            inputType='email'
                            label='e-mail'
                            id='email'/>
-                
+
                 <FormField icon={faCircleQuestion}
-                            iconPosition='prefix'
-                            placeholder='Assunto'
-                            inputType='text'
-                            label='Assunto'
-                            id='subject'/>
-                
+                           iconPosition='prefix'
+                           placeholder='Assunto'
+                           inputType='text'
+                           label='Assunto'
+                           id='subject'/>
+
                 <FormField icon={faMessage}
-                            iconPosition='prefix'
-                            placeholder='Mensagem'
-                            label='Mensagem'
-                            id='message'/>
+                           iconPosition='prefix'
+                           placeholder='Mensagem'
+                           label='Mensagem'
+                           id='message'/>
             </fieldset>
 
             <button className='form__submit link-btn' type='submit'>
