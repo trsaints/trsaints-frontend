@@ -1,101 +1,98 @@
 .contact {
-  padding: 5rem 1.5rem;
+    padding: 5rem 1.5rem;
 }
 
-
-
 .contact__desc {
-  margin-bottom: 66px;
+    margin-bottom: 66px;
 }
 
 .form {
-  padding: 22px;
+    padding: 22px;
 }
 
 .form__fieldset {
-  position: inherit;
+    position: inherit;
 
-  padding-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .form__legend {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
 
-  border-bottom: 2px dashed;
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
+    border-bottom: 2px dashed;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
 }
 
-.form__field + .form__field,
-.form__field--textarea {
-  margin-top: 1.5rem;
+.form-field + .form-field {
+    margin-top: 1.5rem;
 }
 
-.form__field {
-  display: flex;
-  flex-direction: column;
+.form-field {
+    display: flex;
+    flex-direction: column;
 }
 
-.form__label {
-  display: block;
+.form-field__label {
+    display: block;
 
-  background-color: var(--lavender-web-2);
-  color: var(--black);
+    background-color: var(--lavender-web-2);
+    color: var(--black);
 
-  padding: 0.5rem;
-  width: fit-content;
+    padding: 0.5rem;
+    width: fit-content;
 
-  cursor: pointer;
-  text-transform: uppercase;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.form__label::after {
-  content: ":";
+.form-field__label::after {
+    content: ":";
 }
 
-.form__input {
-  flex: 1;
+.form-field__input {
+    flex: 1;
 
-  border: 0.25rem dashed transparent;
-  border-bottom-color: white;
-  padding: 0.5rem;
+    border: 0.25rem dashed transparent;
+    border-bottom-color: white;
+    padding: 0.5rem;
 }
 
-.form__textarea {
-  border: 0.25rem dashed;
-  padding: 0.5rem;
-  resize: vertical;
-  width: 100%;
+.form-field__textarea {
+    border: 0.25rem dashed;
+    padding: 0.5rem;
+    resize: vertical;
+    width: 100%;
 }
 
 .form__submit {
-  position: inherit;
-  z-index: 2;
+    position: inherit;
+    z-index: 2;
 }
 
 @media screen and (min-width: 720px) {
-  .contact {
-    padding-inline: 2.5rem;
-  }
+    .contact {
+        padding-inline: 2.5rem;
+    }
 
-  .form {
-    width: 70%;
-  }
+    .form {
+        width: 70%;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-  .contact {
-    padding-inline: 4rem;
+    .contact {
+        padding-inline: 4rem;
 
-    background-image: url("/trsaints_programming.svg");
-    background-position: calc(100% - 4rem) 50%;
-    background-repeat: no-repeat;
-    background-size: 40%;
-  }
+        background-image: url("/trsaints_programming.svg");
+        background-position: calc(100% - 4rem) 50%;
+        background-repeat: no-repeat;
+        background-size: 40%;
+    }
 
-  .form {
-    width: 50%;
-  }
+    .form {
+        width: 50%;
+    }
 }
