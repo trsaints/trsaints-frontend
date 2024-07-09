@@ -1,28 +1,15 @@
+import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
+import {ProjectsContext} from '../../context/ProjectsContext'
+import {ComponentProps, useContext} from 'react'
+import {Project} from '../../models'
+import {MainContext} from '../../context/MainContext'
+import {projectService} from '../../services'
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons'
 
 import {Modal, ProjectCard, ProjectFilter, ProjectModal} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Projects.css'
-import {ComponentProps, useContext} from 'react'
-import {ProjectsContext} from '../../context/ProjectsContext'
-import {Project} from '../../models'
-import {MainContext} from '../../context/MainContext'
-import {projectService} from '../../services'
-import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
-
-interface IRoot extends ComponentProps<'article'> {}
-
-function Root(props: IRoot) {
-    const {children} = props
-    const {closeOnEscape} = useContext(ProjectsContext)
-    
-    return (
-        <article className='projects' id='projects' onKeyDown={closeOnEscape}>
-            {children}
-        </article>
-    )
-}
 
 function Header() {
     const {loadProjects} = useContext(ProjectsContext)
@@ -55,7 +42,7 @@ interface IProjectsList extends ComponentProps<'ul'> {
 
 function ProjectsList(props: IProjectsList) {
     const {projects} = props
-    
+
     const projectCards = projects.map((project) => (
         <li key={project?.uuid} data-id={project?.uuid}>
             <ProjectCard project={project} stack='[to be replaced]'/>
@@ -81,9 +68,9 @@ interface IContent extends ComponentProps<'article'> {
 }
 
 function Content(props: IContent) {
-    const {selectProject} = useContext(ProjectsContext)
+    const {selectProject}                = useContext(ProjectsContext)
     const {projects, baseProjectsLength} = props
-    
+
     const hasProjectsFound  = projects.length > 0,
           hasProjectsLoaded = baseProjectsLength > 0
 
@@ -112,7 +99,7 @@ function Content(props: IContent) {
 
 function Filter() {
     const {searchProjects} = useContext(ProjectsContext)
-    
+
     return (
         <ProjectFilter.Root onHandleSubmit={searchProjects}>
             <ProjectFilter.Select options={['nome', 'data']}/>
@@ -127,13 +114,13 @@ interface IProjectPanel extends ComponentProps<'dialog'> {
 
 function ProjectPanel(props: IProjectPanel) {
     const {hideProject} = useContext(ProjectsContext)
-    const {project} = props
-    
+    const {project}     = props
+
     return (project !== undefined) && (
         <Modal onHandleClick={hideProject}>
-            <ProjectModal 
-                project={project} 
-                releaseDate={project.releaseDate.toDateString()} 
+            <ProjectModal
+                project={project}
+                releaseDate={project.releaseDate.toDateString()}
                 stack={['to be replaced']}/>
         </Modal>
     )
@@ -143,6 +130,7 @@ function Projects() {
     const {projects}  = useContext(MainContext)
     const {projectId} = useContext(MainContext)
 
+    const {closeOnEscape} = useContext(ProjectsContext)
     const {search, sort} = useContext(MainContext)
 
     const projectsFound   = projectService.filterProjects(projects, search)
@@ -150,11 +138,11 @@ function Projects() {
 
     return (
         <ProjectsContextProvider>
-            <Root>
+            <article className='projects' id='projects' onKeyDown={closeOnEscape}>
                 <Header/>
                 <Content baseProjectsLength={projects.length} projects={projectsFound}/>
                 <ProjectPanel project={selectedProject}/>
-            </Root>
+            </article>
         </ProjectsContextProvider>
     )
 }

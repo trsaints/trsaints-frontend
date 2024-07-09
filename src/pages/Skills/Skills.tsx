@@ -11,20 +11,6 @@ import {MainContext} from '../../context/MainContext'
 import {skillService} from '../../services'
 import {SkillsContextProvider} from '../../context/providers'
 
-interface IRoot extends ComponentProps<'article'> {
-}
-
-function Root(props: IRoot) {
-    const {closeOnEscape} = useContext(SkillsContext)
-    const {children}      = props
-
-    return (
-        <article className='skills' id='skills' onKeyDown={closeOnEscape}>
-            {children}
-        </article>
-    )
-}
-
 function SkillsHeader() {
     return (
         <header className='skills__header'>
@@ -109,6 +95,7 @@ function SkillPanel(props: ISkillPanel) {
 }
 
 function Skills() {
+    const {closeOnEscape} = useContext(SkillsContext)
     const {skills}  = useContext(MainContext)
     const {skillId} = useContext(MainContext)
 
@@ -116,11 +103,11 @@ function Skills() {
 
     return (
         <SkillsContextProvider>
-            <Root>
+            <article className='skills' id='skills' onKeyDown={closeOnEscape}>
                 <SkillsHeader/>
                 <SkillsList skills={skills}/>
                 <SkillPanel skill={selectedSkill}/>
-            </Root>
+            </article>
         </SkillsContextProvider>
     )
 }
