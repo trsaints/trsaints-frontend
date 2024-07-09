@@ -3,6 +3,7 @@ import {faCircleQuestion, faEnvelope, faMessage, faPaperPlane, faUser,} from '@f
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Contact.css'
+import {FormField} from '../../components'
 
 function Root({children}) {
     return (
@@ -15,7 +16,7 @@ function Root({children}) {
 function Header() {
     return (
         <header className='contact__header'>
-            <h2 className='contact__title' >contato</h2>
+            <h2 className='contact__title'>contato</h2>
 
             <p className='contact__desc'>
                 Precisa falar comigo? <br/> Mande uma mensagem que, em breve, entrarei
@@ -31,56 +32,32 @@ function Form() {
             <fieldset className='form__fieldset'>
                 <legend className='form__legend'>informações básicas</legend>
 
-                <div className='form__field'>
-                    <label className='form__label' htmlFor='name'>
-                        <FontAwesomeIcon className='prefix-icon' icon={faUser}/>
-                        nome
-                    </label>
+                <FormField icon={faUser}
+                           iconPosition='prefix'
+                           placeholder='thiago'
+                           inputType='text'
+                           label='nome'
+                           id='name'/>
 
-                    <input
-                        className='form__input'
-                        type='text'
-                        placeholder='thiago'
-                        id='name'
-                    />
-                </div>
-
-                <div className='form__field'>
-                    <label className='form__label' htmlFor='email'>
-                        <FontAwesomeIcon className='prefix-icon' icon={faEnvelope}/>
-
-                        <span lang='en'>e-mail</span>
-                    </label>
-
-                    <input
-                        className='form__input'
-                        type='email'
-                        placeholder='endereco@dominio'
-                        id='email'
-                    />
-                </div>
-
-                <div className='form__field'>
-                    <label className='form__label' htmlFor='subject'>
-                        <FontAwesomeIcon className='prefix-icon' icon={faCircleQuestion}/>
-                        assunto
-                    </label>
-
-                    <input className='form__input' type='text' id='subject'/>
-                </div>
-
-                <div className='form__field--textarea'>
-                    <label className='form__label' htmlFor='message'>
-                        <FontAwesomeIcon className='prefix-icon' icon={faMessage}/>
-                        mensagem
-                    </label>
-
-                    <textarea
-                        className='form__textarea'
-                        placeholder='Mensagem'
-                        id='message'
-                    ></textarea>
-                </div>
+                <FormField icon={faEnvelope}
+                           iconPosition='prefix'
+                           placeholder='endereco@dominio'
+                           inputType='email'
+                           label='e-mail'
+                           id='email'/>
+                
+                <FormField icon={faCircleQuestion}
+                            iconPosition='prefix'
+                            placeholder='Assunto'
+                            inputType='text'
+                            label='Assunto'
+                            id='subject'/>
+                
+                <FormField icon={faMessage}
+                            iconPosition='prefix'
+                            placeholder='Mensagem'
+                            label='Mensagem'
+                            id='message'/>
             </fieldset>
 
             <button className='form__submit link-btn' type='submit'>
