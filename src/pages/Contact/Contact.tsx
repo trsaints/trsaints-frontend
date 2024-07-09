@@ -3,21 +3,7 @@ import {faCircleQuestion, faEnvelope, faMessage, faPaperPlane, faUser,} from '@f
 import {FormField} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-import {ComponentProps} from 'react'
 import './Contact.css'
-
-interface IRoot extends ComponentProps<'article'> {
-}
-
-function Root(props: IRoot) {
-    const {children} = props
-
-    return (
-        <aside className='contact' id='contact'>
-            {children}
-        </aside>
-    )
-}
 
 function Header() {
     return (
@@ -76,10 +62,10 @@ function Form() {
 
 function Contact() {
     return (
-        <Root>
+        <aside className='contact' id='contact'>
             <Header/>
             <Form/>
-        </Root>
+        </aside>
     )
 }
 
