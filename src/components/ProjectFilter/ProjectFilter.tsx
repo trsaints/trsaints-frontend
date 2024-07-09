@@ -1,12 +1,18 @@
+import {ComponentProps, FormEvent, useContext} from 'react'
+import {ProjectsContext} from '../../context/ProjectsContext'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
 import './ProjectFilter.css'
 
-function Root({children, onHandleSubmit}) {
+interface IRoot extends ComponentProps<'form'> {}
+
+function Root(props: IRoot) {
+    const {children} = props
+    const {searchProjects} = useContext(ProjectsContext)
+    
     return (
-        <form className='filter' onSubmit={onHandleSubmit}>
+        <form className='filter' onSubmit={searchProjects}>
             <fieldset className='filter__fieldset'>
                 <legend className='filter__legend sr-only'>filtro</legend>
                 {children}
@@ -20,7 +26,13 @@ function Root({children, onHandleSubmit}) {
     )
 }
 
-function Select({options}) {
+interface ISelect extends ComponentProps<'div'> {
+    options: string[]
+}
+
+function Select(props: ISelect) {
+    const {options} = props
+    
     const optionItems = options.map(
         (option) => option && <option key={option}>{option}</option>
     )
@@ -60,8 +72,14 @@ function SearchBar() {
     )
 }
 
-export const ProjectFilter = {
-    Root,
-    Select,
-    SearchBar,
+function ProjectFilter() {
+
+    return (
+        <Root>
+            <Select options={['nome', 'data']}/>
+            <SearchBar/>
+        </Root>
+    )
 }
+
+export {ProjectFilter}

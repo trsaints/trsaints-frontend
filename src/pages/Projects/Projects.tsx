@@ -76,7 +76,7 @@ function Content(props: IContent) {
 
     const renderFilter = () => {
         if (hasProjectsLoaded)
-            return <Filter/>
+            return <ProjectFilter />
     }
 
     const renderProjects = () => {
@@ -94,17 +94,6 @@ function Content(props: IContent) {
             {renderFilter()}
             {renderProjects()}
         </article>
-    )
-}
-
-function Filter() {
-    const {searchProjects} = useContext(ProjectsContext)
-
-    return (
-        <ProjectFilter.Root onHandleSubmit={searchProjects}>
-            <ProjectFilter.Select options={['nome', 'data']}/>
-            <ProjectFilter.SearchBar/>
-        </ProjectFilter.Root>
     )
 }
 
