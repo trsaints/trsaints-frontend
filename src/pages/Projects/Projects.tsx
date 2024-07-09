@@ -7,6 +7,9 @@ import './Projects.css'
 import {ComponentProps, useContext} from 'react'
 import {ProjectsContext} from '../../context/ProjectsContext'
 import {Project} from '../../models'
+import {MainContext} from '../../context/MainContext'
+import {projectService} from '../../services'
+import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
 
 interface IRoot extends ComponentProps<'article'> {}
 
@@ -136,9 +139,24 @@ function ProjectPanel(props: IProjectPanel) {
     )
 }
 
-export const Projects = {
-    Root,
-    Header,
-    Content,
-    ProjectPanel,
+function Projects() {
+    const {projects}  = useContext(MainContext)
+    const {projectId} = useContext(MainContext)
+
+    const {search, sort} = useContext(MainContext)
+
+    const projectsFound   = projectService.filterProjects(projects, search)
+    const selectedProject = projectService.getProjectById(projects, projectId)
+
+    return (
+        <ProjectsContextProvider>
+            <Root>
+                <Header/>
+                <Content baseProjectsLength={projects.length} projects={projectsFound}/>
+                <ProjectPanel project={selectedProject}/>
+            </Root>
+        </ProjectsContextProvider>
+    )
 }
+
+export {Projects}
