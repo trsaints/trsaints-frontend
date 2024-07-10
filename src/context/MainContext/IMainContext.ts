@@ -1,5 +1,5 @@
 import {Project, Skill} from '../../models'
-import {Dispatch, SetStateAction} from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 
 export interface IMainContext {
     projects: Project[]
@@ -14,4 +14,8 @@ export interface IMainContext {
     setSearch: Dispatch<SetStateAction<string>>
     sort: string
     setSort: Dispatch<SetStateAction<string>>
+    isModalOpen: boolean
+    setIsModalOpen: Dispatch<SetStateAction<boolean>>
+    modalContent: React.ReactNode
+    setModalContent: Dispatch<SetStateAction<React.ReactNode>>
 }
