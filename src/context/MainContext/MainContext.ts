@@ -13,7 +13,11 @@ const MainContext = createContext<IMainContext>({
     search: '',
     setSearch: () => {},
     sort: '',
-    setSort: () => {}
+    setSort: () => {},
+    isModalOpen: false,
+    setIsModalOpen: () => {},
+    modalContent: null,
+    setModalContent: () => {}
 })
 
 export {MainContext}
