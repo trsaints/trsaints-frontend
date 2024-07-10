@@ -1,5 +1,4 @@
-import {ComponentProps, MouseEventHandler} from 'react'
+import {ComponentProps} from 'react'
 
 export interface IModal extends ComponentProps<'dialog'> {
-    onHandleClick: MouseEventHandler<HTMLButtonElement>
 }
