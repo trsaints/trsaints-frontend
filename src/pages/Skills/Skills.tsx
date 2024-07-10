@@ -1,6 +1,6 @@
 import {faArrowDown, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
 
-import {Modal, SkillCard, SkillModal} from '../../components'
+import {SkillCard} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './Skills.css'
@@ -79,23 +79,7 @@ function SkillsList(props: ISkillsList) {
         )
 }
 
-interface ISkillPanel extends ComponentProps<'dialog'> {
-    skill?: Skill
-}
-
-function SkillPanel(props: ISkillPanel) {
-    const {skill}     = props
-    const {hideSkill} = useContext(SkillsContext)
-
-    return skill !== undefined && (
-        <Modal onHandleClick={hideSkill}>
-            <SkillModal skill={skill}/>
-        </Modal>
-    )
-}
-
 function Skills() {
-    const {closeOnEscape} = useContext(SkillsContext)
     const {skills}  = useContext(MainContext)
     const {skillId} = useContext(MainContext)
 
@@ -103,10 +87,9 @@ function Skills() {
 
     return (
         <SkillsContextProvider>
-            <article className='skills' id='skills' onKeyDown={closeOnEscape}>
+            <article className='skills' id='skills'>
                 <SkillsHeader/>
                 <SkillsList skills={skills}/>
-                <SkillPanel skill={selectedSkill}/>
             </article>
         </SkillsContextProvider>
     )

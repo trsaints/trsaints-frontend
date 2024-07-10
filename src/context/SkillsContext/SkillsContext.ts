@@ -3,8 +3,6 @@ import {ISkillsContext} from './ISkillsContext'
 
 const SkillsContext = createContext<ISkillsContext>({
         selectSkill: () => {},
-        hideSkill: () => {},
-        closeOnEscape: () => {},
         loadSkills: () => {}
 })
 

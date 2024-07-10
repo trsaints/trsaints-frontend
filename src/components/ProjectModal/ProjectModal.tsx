@@ -1,18 +1,8 @@
 import {faGlobe, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
 import './ProjectModal.css'
-import {ComponentProps, PropsWithChildren} from 'react'
+import {ComponentProps} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Project} from '../../models'
-
-interface IRoot extends PropsWithChildren {
-
-}
-
-function Root(props: IRoot) {
-    const {children} = props
-
-    return <article className='project'>{children}</article>
-}
 
 interface IHeaderProps extends ComponentProps<'header'> {
     title: string
@@ -129,7 +119,7 @@ function ProjectModal(props: IProjectModal) {
     const {project, releaseDate, stack} = props
 
     return (
-        <Root>
+        <article className='project'>
             <Header
                 title={project.title}
                 releaseDate={releaseDate}
@@ -139,7 +129,7 @@ function ProjectModal(props: IProjectModal) {
             <Banner {...project}/>
             <Desc {...project}/>
             <Links{...project}/>
-        </Root>
+        </article>
     )
 }
 
