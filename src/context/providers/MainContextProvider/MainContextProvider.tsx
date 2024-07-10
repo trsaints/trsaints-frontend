@@ -17,25 +17,25 @@ function MainContextProvider(props: IMainContextProvider) {
     const [search, setSearch] = useState<string>('')
     const [sort, setSort]     = useState<string>('')
 
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(true)
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
     const [modalContent, setModalContent] = useState<React.ReactNode>(null)
 
     const context: IMainContext = {
         projects,
-        setProjects,
         projectId,
-        setProjectId,
         skillId,
-        setSkillId,
         skills,
-        setSkills,
         search,
-        setSearch,
         sort,
-        setSort,
         isModalOpen,
-        setIsModalOpen,
         modalContent,
+        setProjects,
+        setProjectId,
+        setSkillId,
+        setSkills,
+        setSearch,
+        setSort,
+        setIsModalOpen,
         setModalContent
     }
 
