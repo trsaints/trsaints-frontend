@@ -1,11 +1,11 @@
 import './ProjectsHeader.css'
-import {useContext} from 'react'
-import {ProjectsContext} from '../../context/ProjectsContext'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons'
+import {IProjectsHeader} from './IProjectsHeader'
 
-function ProjectsHeader() {
-    const {loadProjects} = useContext(ProjectsContext)
+function ProjectsHeader(props: IProjectsHeader) {
+    const {onHandleClick} = props
+    
     return (
         <header className='projects__header'>
             <h2 className='projects__title'>
@@ -20,7 +20,7 @@ function ProjectsHeader() {
             <a
                 href='#projects-content'
                 className='projects__button highlight-btn'
-                onClick={loadProjects}
+                onClick={onHandleClick}
             >
                 ver projetos
                 <FontAwesomeIcon className='suffix-icon' icon={faArrowDown}/>
