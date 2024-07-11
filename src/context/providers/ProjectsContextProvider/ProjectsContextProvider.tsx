@@ -4,7 +4,7 @@ import React, {FormEvent, useContext} from 'react'
 import {MainContext} from '../../MainContext'
 import {IProjectsContext} from '../../ProjectsContext/IProjectsContext'
 import {IProjectsContextProvider} from './IProjectsContextProvider'
-import {ProjectModal} from '../../../components'
+import {ProjectsPanel} from '../../../components'
 
 function ProjectsContextProvider(props: IProjectsContextProvider) {
     const {children} = props
@@ -55,7 +55,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
 
         setIsModalOpen(true)
         setModalContent(
-            <ProjectModal project={selectedProject} stack={['to be replaced']}/>
+            <ProjectsPanel project={selectedProject} stack={['to be replaced']}/>
         )
     }
 

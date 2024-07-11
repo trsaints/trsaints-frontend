@@ -1,5 +1,5 @@
 import {faGlobe, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
-import './ProjectModal.css'
+import './ProjectsPanel.css'
 import {ComponentProps} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Project} from '../../models'
@@ -114,7 +114,7 @@ interface IProjectModal extends ComponentProps<'article'> {
     stack: string[]
 }
 
-function ProjectModal(props: IProjectModal) {
+function ProjectsPanel(props: IProjectModal) {
     const {project, stack} = props
 
     return (
@@ -132,4 +132,4 @@ function ProjectModal(props: IProjectModal) {
     )
 }
 
-export {ProjectModal}
+export {ProjectsPanel}
