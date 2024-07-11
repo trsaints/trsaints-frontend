@@ -1,5 +1,5 @@
-import {ISkillsModal, ISkillModalContent, ISkillModalHeader} from './ISkillsModal'
-import './SkillsModal.css'
+import {ISkillsPanel, ISkillModalContent, ISkillModalHeader} from './ISkillsPanel'
+import './SkillsPanel.css'
 
 function SkillModalHeader(props: ISkillModalHeader) {
     const {title, category} = props
@@ -35,7 +35,7 @@ function SkillModalContent(props: ISkillModalContent) {
     )
 }
 
-function SkillsModal(props: ISkillsModal) {
+function SkillsPanel(props: ISkillsPanel) {
     const {skill} = props
 
     return (
@@ -45,4 +45,4 @@ function SkillsModal(props: ISkillsModal) {
         </article>)
 }
 
-export {SkillsModal}
+export {SkillsPanel}
