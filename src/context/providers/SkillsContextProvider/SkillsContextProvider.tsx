@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {skillService} from '../../../services'
-import {SkillsContext} from '../../SkillsContext/SkillsContext'
+import {SkillsContext} from '../../SkillsContext'
 import {MainContext} from '../../MainContext'
 
 import {ISkillsContext} from '../../SkillsContext/ISkillsContext'
@@ -12,7 +12,7 @@ function SkillsContextProvider(props: ISkillsContextProvider) {
 
     const loadSkills = () => setSkills(skillService.getPlaceholderSkills())
 
-    const selectSkill = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
+    const selectSkill   = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
         const target = e.target as HTMLElement
 
         if (target === null) return
@@ -24,13 +24,9 @@ function SkillsContextProvider(props: ISkillsContextProvider) {
 
         setSkillId(Number(id))
     }
-    const hideSkill     = () => setSkillId(-1)
-    const closeOnEscape = (e: React.KeyboardEvent) => (e.key === 'Escape') && hideSkill()
 
     const context: ISkillsContext = {
         selectSkill,
-        hideSkill,
-        closeOnEscape,
         loadSkills
     }
 
