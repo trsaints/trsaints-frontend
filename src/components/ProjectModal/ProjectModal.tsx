@@ -111,18 +111,17 @@ function Banner(props: IBanner) {
 
 interface IProjectModal extends ComponentProps<'article'> {
     project: Project
-    releaseDate: string
     stack: string[]
 }
 
 function ProjectModal(props: IProjectModal) {
-    const {project, releaseDate, stack} = props
+    const {project, stack} = props
 
     return (
         <article className='project'>
             <Header
                 title={project.title}
-                releaseDate={releaseDate}
+                releaseDate={project.releaseDate.toDateString()}
                 stack={stack}
             />
 

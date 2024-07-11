@@ -4,15 +4,24 @@ import React, {FormEvent, useContext} from 'react'
 import {MainContext} from '../../MainContext'
 import {IProjectsContext} from '../../ProjectsContext/IProjectsContext'
 import {IProjectsContextProvider} from './IProjectsContextProvider'
+import {ProjectModal} from '../../../components'
 
 function ProjectsContextProvider(props: IProjectsContextProvider) {
-    const {children}                                      = props
-    const {setProjects, setProjectId, setSearch, setSort} = useContext(MainContext)
+    const {children} = props
 
-    const hideProject   = () => setProjectId(-1)
-    const closeOnEscape = (e: React.KeyboardEvent<HTMLElement>) =>
-        e.key === 'Escape' && hideProject()
-    const loadProjects  = () => setProjects(projectService.getPlaceholderProjects())
+    const {
+              setProjects,
+              setProjectId,
+              setSkillId,
+              setSearch,
+              setSort,
+              setIsModalOpen,
+              setModalContent
+          } = useContext(MainContext)
+
+    const {projects, projectId} = useContext(MainContext)
+
+    const loadProjects = () => setProjects(projectService.getPlaceholderProjects())
 
     const searchProjects = (e: FormEvent) => {
         e.preventDefault()
@@ -38,11 +47,19 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         if (id === null) return
 
         setProjectId(Number(id))
+        setSkillId(-1)
+
+        const selectedProject = projectService.getProjectById(projects, Number(id))
+
+        if (!selectedProject) return
+
+        setIsModalOpen(true)
+        setModalContent(
+            <ProjectModal project={selectedProject} stack={['to be replaced']}/>
+        )
     }
 
     const context: IProjectsContext = {
-        hideProject,
-        closeOnEscape,
         loadProjects,
         searchProjects,
         selectProject
