@@ -1,32 +1,9 @@
-import {ComponentProps, useContext} from 'react'
-import {ProjectsContext} from '../../context/ProjectsContext'
+import {ComponentProps, FormEventHandler} from 'react'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import './ProjectFilter.css'
-
-interface IRoot extends ComponentProps<'form'> {
-}
-
-function Root(props: IRoot) {
-    const {children}       = props
-    const {searchProjects} = useContext(ProjectsContext)
-
-    return (
-        <form className='filter' onSubmit={searchProjects}>
-            <fieldset className='filter__fieldset'>
-                <legend className='filter__legend sr-only'>filtro</legend>
-                {children}
-            </fieldset>
-
-            <button className='highlight-btn filter__submit' type='submit'>
-                buscar
-                <FontAwesomeIcon className='suffix-icon' icon={faSearch}/>
-            </button>
-        </form>
-    )
-}
 
 interface ISelect extends ComponentProps<'div'> {
     options: string[]
@@ -74,13 +51,27 @@ function SearchBar() {
     )
 }
 
-function ProjectFilter() {
+interface IRoot extends ComponentProps<'form'> {
+    onHandleSubmit: FormEventHandler<HTMLFormElement>
+}
+
+function ProjectFilter(props: IRoot) {
+    const {onHandleSubmit} = props
 
     return (
-        <Root>
-            <Select options={['nome', 'data']}/>
-            <SearchBar/>
-        </Root>
+        <form className='filter' onSubmit={onHandleSubmit}>
+            <fieldset className='filter__fieldset'>
+                <legend className='filter__legend sr-only'>filtro</legend>
+
+                <Select options={['Nome', 'Data', 'Tecnologia']}/>
+                <SearchBar/>
+            </fieldset>
+
+            <button className='highlight-btn filter__submit' type='submit'>
+                buscar
+                <FontAwesomeIcon className='suffix-icon' icon={faSearch}/>
+            </button>
+        </form>
     )
 }
 
