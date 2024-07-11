@@ -1,4 +1,4 @@
-import {FormEventHandler, KeyboardEventHandler, MouseEventHandler} from 'react'
+import {FormEventHandler, MouseEventHandler} from 'react'
 
 export interface IProjectsContext {
     loadProjects: MouseEventHandler<HTMLAnchorElement>
