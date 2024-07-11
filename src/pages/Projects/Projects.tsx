@@ -1,25 +1,36 @@
 import {projectService} from '../../services'
 
-import {useContext} from 'react'
+import {ComponentProps, useContext} from 'react'
 import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
 import {MainContext} from '../../context/MainContext'
 import {ProjectsContent} from '../../components/ProjectsContent'
 import {ProjectsHeader} from '../../components/ProjectsHeader'
 
+import {ProjectsContext} from '../../context/ProjectsContext'
+
 import './Projects.css'
 
-function Projects() {
-    const {projects, projectId, search} = useContext(MainContext)
+function Root(props: ComponentProps<'article'>) {
+    const {selectProject} = useContext(ProjectsContext)
 
-    const projectsFound   = projectService.filterProjects(projects, search)
-    const selectedProject = projectService.getProjectById(projects, projectId)
+    return (
+        <article className='projects' id='projects' onClick={selectProject}>
+            {props.children}
+        </article>
+    )
+}
+
+function Projects() {
+    const {projects, search} = useContext(MainContext)
+
+    const projectsFound = projectService.filterProjects(projects, search)
 
     return (
         <ProjectsContextProvider>
-            <article className='projects' id='projects'>
+            <Root>
                 <ProjectsHeader/>
                 <ProjectsContent baseProjectsLength={projects.length} projects={projectsFound}/>
-            </article>
+            </Root>
         </ProjectsContextProvider>
     )
 }
