@@ -1,31 +1,30 @@
 import {faGlobe, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
-import './ProjectsPanel.css'
-import {ComponentProps} from 'react'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Project} from '../../models'
 
-interface IHeaderProps extends ComponentProps<'header'> {
-    title: string
-    releaseDate: string
-    stack: string[]
-}
+import {
+    IPanelBanner,
+    IPanelDate,
+    IPanelDescription,
+    IPanelHeader,
+    IPanelLinks,
+    IPanelStack,
+    IProjectsPanel
+} from './IProjectsPanel'
+import './ProjectsPanel.css'
 
-function Header(props: IHeaderProps) {
+function Header(props: IPanelHeader) {
     const {title, releaseDate, stack} = props
 
     return (<header className='project__header'>
         <h3 className='project__title'>{title}</h3>
 
         <DateDisplay year={releaseDate}/>
-        <Stacks stack={['[to be replaced]']}/>
+        <Stack stack={stack}/>
     </header>)
 }
 
-interface IStacks extends ComponentProps<'ul'> {
-    stack: string[]
-}
-
-function Stacks(props: IStacks) {
+function Stack(props: IPanelStack) {
     const {stack} = props
 
     const stacks = stack.map((tech, index) => (<li className='project__tech' key={`${tech}-${index}`}>
@@ -35,11 +34,7 @@ function Stacks(props: IStacks) {
     return <ul className='project__stacks'>{stacks}</ul>
 }
 
-interface IDateDisplay extends ComponentProps<'p'> {
-    year: string
-}
-
-function DateDisplay(props: IDateDisplay) {
+function DateDisplay(props: IPanelDate) {
     const {year} = props
 
     return (<p className='project__date'>
@@ -51,23 +46,13 @@ function DateDisplay(props: IDateDisplay) {
     </p>)
 }
 
-interface IDescription extends ComponentProps<'p'> {
-    description: string
-}
-
-function Desc(props: IDescription) {
+function Desc(props: IPanelDescription) {
     const {description} = props
 
     return <p className='project__desc'>{description}</p>
 }
 
-interface ILinks extends ComponentProps<'nav'> {
-    title: string
-    deployUrl?: string
-    sourceUrl: string
-}
-
-function Links(props: ILinks) {
+function Links(props: IPanelLinks) {
     const {title, deployUrl, sourceUrl} = props
 
     return (<nav className='project__links'>
@@ -93,13 +78,7 @@ function Links(props: ILinks) {
     </nav>)
 }
 
-interface IBanner extends ComponentProps<'figure'> {
-    title: string
-    bannerUrl: string
-    bannerAlt: string
-}
-
-function Banner(props: IBanner) {
+function Banner(props: IPanelBanner) {
     const {title, bannerUrl, bannerAlt} = props
 
     return (<figure className='project__figure'>
@@ -109,12 +88,7 @@ function Banner(props: IBanner) {
     </figure>)
 }
 
-interface IProjectModal extends ComponentProps<'article'> {
-    project: Project
-    stack: string[]
-}
-
-function ProjectsPanel(props: IProjectModal) {
+function ProjectsPanel(props: IProjectsPanel) {
     const {project, stack} = props
 
     return (
