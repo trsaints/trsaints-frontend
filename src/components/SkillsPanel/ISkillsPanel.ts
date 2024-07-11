@@ -13,7 +13,7 @@ export interface ISkillModalContent extends PropsWithChildren {
     bannerAlt: string
 }
 
-export interface ISkillsModal extends ComponentProps<'article'> {
+export interface ISkillsPanel extends ComponentProps<'article'> {
     skill: Skill
 }
 
