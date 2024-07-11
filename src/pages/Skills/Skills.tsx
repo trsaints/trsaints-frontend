@@ -1,15 +1,16 @@
+import {ComponentProps, useContext} from 'react'
+import {Skill} from '../../models'
+
 import {faArrowDown, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
 
 import {SkillCard} from '../../components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-import './Skills.css'
-import {ComponentProps, useContext} from 'react'
-import {Skill} from '../../models'
 import {SkillsContext} from '../../context/SkillsContext'
 import {MainContext} from '../../context/MainContext'
-import {skillService} from '../../services'
 import {SkillsContextProvider} from '../../context/providers'
+
+import './Skills.css'
 
 function SkillsHeader() {
     return (
@@ -80,10 +81,7 @@ function SkillsList(props: ISkillsList) {
 }
 
 function Skills() {
-    const {skills}  = useContext(MainContext)
-    const {skillId} = useContext(MainContext)
-
-    const selectedSkill = skillService.getSkillById(skills, skillId)
+    const {skills} = useContext(MainContext)
 
     return (
         <SkillsContextProvider>
