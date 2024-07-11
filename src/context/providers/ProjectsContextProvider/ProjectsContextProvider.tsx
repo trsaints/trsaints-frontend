@@ -19,7 +19,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
               setModalContent
           } = useContext(MainContext)
 
-    const {projects, projectId} = useContext(MainContext)
+    const {projects} = useContext(MainContext)
 
     const loadProjects = () => setProjects(projectService.getPlaceholderProjects())
 
@@ -54,9 +54,7 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         if (!selectedProject) return
 
         setIsModalOpen(true)
-        setModalContent(
-            <ProjectsPanel project={selectedProject} stack={['to be replaced']}/>
-        )
+        setModalContent(<ProjectsPanel project={selectedProject} stack={['to be replaced']}/>)
     }
 
     const context: IProjectsContext = {
