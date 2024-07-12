@@ -7,7 +7,9 @@ function Navbar(props: INavbar) {
     const {element, links, icon = null} = props
 
     const linkItems = links.map((link, index) => (
-        <a key={`${index}-link`} className={`${element}__link`} href={link.url}>
+        <a key={`${index}-link`} 
+           className={`${element}__link`} 
+           href={link.url}>
             {link.label}
             {icon !== null && <FontAwesomeIcon className='suffix-icon' icon={icon}/>}
         </a>

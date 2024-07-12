@@ -1,11 +1,11 @@
+import {useContext} from 'react'
 import {projectService} from '../../services'
 
-import {useContext} from 'react'
 import {ProjectsContextProvider} from '../../context/providers/ProjectsContextProvider'
+import {ProjectFilter, ProjectsHeader, ProjectsList} from '../../components'
+
 import {MainContext} from '../../context/MainContext'
 import {ProjectsContext} from '../../context/ProjectsContext'
-
-import {ProjectFilter, ProjectsHeader, ProjectsList} from '../../components'
 
 import './Projects.css'
 

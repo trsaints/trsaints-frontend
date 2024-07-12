@@ -1,6 +1,8 @@
 import {ComponentProps} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 import {faArrowDown, faUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {ISkillsHeader} from './ISkillsHeader'
 import './SkillsHeader.css'
@@ -27,7 +29,7 @@ function Root(props: ComponentProps<'header'>) {
 
 function SkillsHeader(props: ISkillsHeader) {
     const {onHandleClick} = props
-    
+
     return (
         <Root>
             <menu className='skills__menu nav'>
