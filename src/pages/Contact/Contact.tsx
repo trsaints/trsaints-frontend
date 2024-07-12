@@ -1,3 +1,5 @@
+import {intersectionService} from '../../services'
+
 import {faCircleQuestion, faEnvelope, faMessage, faPaperPlane, faUser,} from '@fortawesome/free-solid-svg-icons'
 
 import {FormField} from '../../components'
@@ -6,9 +8,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import './Contact.css'
 
 function Header() {
+    const ref = intersectionService
+        .useIntersectionObserver<HTMLHeadingElement>(0.75, (entry) => {
+            intersectionService.addAnimation(entry, 'typed-out')
+        })
+
     return (
         <header className='contact__header'>
-            <h2 className='contact__title'>contato</h2>
+            <h2 className='contact__title' ref={ref}>contato</h2>
 
             <p className='contact__desc'>
                 Precisa falar comigo? <br/> Mande uma mensagem que, em breve, entrarei

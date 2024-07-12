@@ -4,13 +4,17 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {IProjectsHeader} from './IProjectsHeader'
 import './ProjectsHeader.css'
+import {intersectionService} from '../../services'
 
 function ProjectsHeader(props: IProjectsHeader) {
     const {onHandleClick} = props
+    const ref = intersectionService.useIntersectionObserver<HTMLHeadingElement>(0.75, (entry) => {
+        intersectionService.addAnimation(entry, 'typed-out')
+    })
 
     return (
         <header className='projects__header'>
-            <h2 className='projects__title'>
+            <h2 className='projects__title' ref={ref}>
                 meus projetos
             </h2>
 
