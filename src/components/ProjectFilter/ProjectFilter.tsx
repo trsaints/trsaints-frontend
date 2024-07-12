@@ -1,15 +1,11 @@
-import {ComponentProps, FormEventHandler} from 'react'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+import {IProjectFilter, IProjectFilterSelect} from './IProjectFilter'
 import './ProjectFilter.css'
 
-interface ISelect extends ComponentProps<'div'> {
-    options: string[]
-}
-
-function Select(props: ISelect) {
+function ProjectFilterSelect(props: IProjectFilterSelect) {
     const {options} = props
 
     const optionItems = options.map(
@@ -33,7 +29,7 @@ function Select(props: ISelect) {
     )
 }
 
-function SearchBar() {
+function ProjectFilterSearchBar() {
     return (
         <div className='filter__search'>
             <label className='filter__label sr-only' htmlFor='filter-search'>
@@ -51,20 +47,15 @@ function SearchBar() {
     )
 }
 
-interface IRoot extends ComponentProps<'form'> {
-    onHandleSubmit: FormEventHandler<HTMLFormElement>
-}
-
-function ProjectFilter(props: IRoot) {
+function ProjectFilter(props: IProjectFilter) {
     const {onHandleSubmit} = props
 
     return (
         <form className='filter' onSubmit={onHandleSubmit}>
             <fieldset className='filter__fieldset'>
                 <legend className='filter__legend sr-only'>filtro</legend>
-
-                <Select options={['Nome', 'Data', 'Tecnologia']}/>
-                <SearchBar/>
+                <ProjectFilterSelect options={['Nome', 'Data', 'Tecnologia']}/>
+                <ProjectFilterSearchBar/>
             </fieldset>
 
             <button className='highlight-btn filter__submit' type='submit'>
