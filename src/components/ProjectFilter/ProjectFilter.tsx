@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {IProjectFilter, IProjectFilterSelect} from './IProjectFilter'
 import './ProjectFilter.css'
+import {intersectionService} from '../../services'
 
 function ProjectFilterSelect(props: IProjectFilterSelect) {
     const {options} = props
