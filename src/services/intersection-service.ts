@@ -1,19 +1,29 @@
-import {useEffect, useRef} from 'react'
+import {useEffect, useRef, MutableRefObject} from 'react'
 
 const globalObserverContext = new Map<number, IntersectionObserver>()
+
+function addAnimation(entry: IntersectionObserverEntry, animationName: string) {
+    entry.target.classList.add(animationName)
+}
 
 function hasThreshold(threshold: number) {
     return globalObserverContext.has(threshold)
 }
 
-function addObserverToContext(threshold: number, animationName: string) {
-    const observer = getIntersectionObserver(threshold, animationName)
+function addObserverToContext(
+    threshold: number,
+    callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void
+) {
+    const observer = getIntersectionObserver(threshold, callback)
     globalObserverContext.set(threshold, observer)
 }
 
-function getIntersectionObserver(threshold: number, animationName: string) {
+function getIntersectionObserver(
+    threshold: number,
+    callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void
+) {
     const observer = new IntersectionObserver(
-        (entries) => setObserverEntries(entries, observer, animationName),
+        (entries) => setObserverEntries(entries, observer, callback),
         getOptions(threshold)
     )
 
@@ -23,22 +33,22 @@ function getIntersectionObserver(threshold: number, animationName: string) {
 function setObserverEntries(
     entries: IntersectionObserverEntry[],
     observer: IntersectionObserver,
-    animationName: string
+    callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void
 ) {
     entries.forEach((entry) =>
-        updateEntryClassList(entry, observer, animationName)
+        triggerEntryCallback(entry, observer, callback)
     )
 }
 
-function updateEntryClassList(
+function triggerEntryCallback(
     entry: IntersectionObserverEntry,
     observer: IntersectionObserver,
-    animationName: string
+    callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void
 ) {
     if (!entry.isIntersecting)
         return
 
-    entry.target.classList.add(animationName)
+    callback(entry, observer)
     observer.unobserve(entry.target)
 }
 
@@ -50,25 +60,32 @@ function getOptions(threshold: number) {
     }
 }
 
-function useIntersectionObserver(threshold: number, animationName: string) {
-    const ref = useRef<Element>()
+function useIntersectionObserver<T extends Element>(
+    threshold: number,
+    callback: (entry: IntersectionObserverEntry, observer: IntersectionObserver) => void
+): MutableRefObject<T | null> {
+    const ref = useRef<T | null>(null)
 
     useEffect(() => {
+        const {current} = ref
+
         if (!hasThreshold(threshold))
-            addObserverToContext(threshold, animationName)
+            addObserverToContext(threshold, callback)
 
-        const observer     = globalObserverContext.get(threshold)
-        const isCurrentRef = (ref.current !== undefined)
+        const observer  = globalObserverContext.get(threshold)
+        const refExists = (current !== undefined)
 
-        if (!isCurrentRef || !observer) return
+        if (!refExists || !observer) return
 
-        observer.observe(ref.current!)
-        return () => observer.unobserve(ref.current!)
-    }, [threshold, animationName])
+        observer.observe(current!)
+
+        return () => observer.unobserve(current!)
+    }, [threshold, callback])
 
     return ref
 }
 
 export const intersectionService = {
     useIntersectionObserver,
+    addAnimation
 }
