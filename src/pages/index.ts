@@ -1,4 +1,4 @@
-export * from '../components/Hero'
+export * from './Hero'
 export * from './Skills'
 export * from './About'
 export * from './Contact'
