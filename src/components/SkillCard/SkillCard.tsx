@@ -1,24 +1,22 @@
+import {ISkillCard} from './ISkillCard'
 import './SkillCard.css'
 
-function Root({children}) {
-    return <article className='skill-card'>{children}</article>
-}
+function SkillCard(props: ISkillCard) {
+    const {skill} = props
 
-function Content({skill}) {
     return (
-        <>
-            <button className='skill-card__button'><span className='sr-only'>Ver: </span>{skill?.title}</button>
+        <article className='skill-card'>
+            <button className='skill-card__button'>
+                <span className='sr-only'>Ver: </span>{skill?.title}
+            </button>
 
             <dl className='skill-card__meta'>
-                <dt className='sr-only' lang='en'>skill type:</dt>
+                <dt className='sr-only'>categoria:</dt>
 
-                <dd className='skill-card__value'>{skill?.type}</dd>
+                <dd className='skill-card__value' lang='en'>{skill?.category} skill</dd>
             </dl>
-        </>
+        </article>
     )
 }
 
-export const SkillCard = {
-    Root,
-    Content,
-}
+export {SkillCard} 
