@@ -48,6 +48,10 @@ body {
   --step-count: 8;
 }
 
+.projects__count {
+  --step-count: 12;
+}
+
 .contact__title {
   --step-count: 10;
 }
@@ -59,13 +63,18 @@ body {
     white-space: nowrap;
   }
 
-  .hero__title .typed-out {
+  .hero__title {
     --step-count: 24;
   }
 
   .skills__title,
   .projects__title {
     --step-count: 15;
+  }
+
+  .projects__count {
+    --step-count: 25;
+    white-space: nowrap;
   }
 }
 
