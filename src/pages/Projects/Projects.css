@@ -21,6 +21,7 @@
 }
 
 .projects__content {
+  padding: 5rem 1.5rem;
   background-color: var(--dark-purple);
   background-image: linear-gradient(var(--dark-purple) 2px, transparent 2px),
     linear-gradient(to right, var(--dark-purple) 2px, var(--black-2) 2px);
@@ -35,9 +36,7 @@
 }
 
 .projects__count {
-  padding-inline: 1.5rem;
   margin-bottom: 4rem;
-  font-weight: bold;
 }
 
 .projects__list {
@@ -45,22 +44,19 @@
 
   flex-direction: column;
   padding-bottom: 5rem;
-  padding-inline: 1.5rem;
   row-gap: 6rem;
 }
 
 @media screen and (min-width: 720px) {
   .projects__header,
-  .projects__list,
-  .projects__count {
+  .projects__content {
     padding-inline: 2.5rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .projects__header,
-  .projects__list,
-  .projects__count {
+  .projects__content {
     padding-inline: 4rem;
   }
 
