@@ -1,12 +1,12 @@
 import {ComponentProps, PropsWithChildren} from 'react'
-import {Skill} from '../../models'
+import {Skill} from '../../entities'
 
-export interface ISkillModalHeader extends ComponentProps<'header'> {
+export interface ISkillsPanelHeader extends ComponentProps<'header'> {
     title: string
     category: string
 }
 
-export interface ISkillModalContent extends PropsWithChildren {
+export interface ISkillsPanelContent extends PropsWithChildren {
     title: string
     description: string
     bannerUrl: string
