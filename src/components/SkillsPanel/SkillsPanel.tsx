@@ -1,7 +1,7 @@
-import {ISkillsPanel, ISkillModalContent, ISkillModalHeader} from './ISkillsPanel'
+import {ISkillsPanel, ISkillsPanelContent, ISkillsPanelHeader} from './ISkillsPanel'
 import './SkillsPanel.css'
 
-function SkillModalHeader(props: ISkillModalHeader) {
+function SkillsPanelHeader(props: ISkillsPanelHeader) {
     const {title, category} = props
 
     return (
@@ -19,7 +19,7 @@ function SkillModalHeader(props: ISkillModalHeader) {
     )
 }
 
-function SkillModalContent(props: ISkillModalContent) {
+function SkillsPanelContent(props: ISkillsPanelContent) {
     const {title, description, bannerAlt, bannerUrl} = props
 
     return (
@@ -40,8 +40,8 @@ function SkillsPanel(props: ISkillsPanel) {
 
     return (
         <article className='skill'>
-            <SkillModalHeader {...skill}/>
-            <SkillModalContent {...skill}/>
+            <SkillsPanelHeader {...skill}/>
+            <SkillsPanelContent {...skill}/>
         </article>)
 }
 
