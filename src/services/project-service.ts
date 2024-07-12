@@ -1,4 +1,4 @@
-import {Project} from '../models'
+import {Project} from '../entities'
 
 function getPlaceholderProjects(): Project[] {
     return [

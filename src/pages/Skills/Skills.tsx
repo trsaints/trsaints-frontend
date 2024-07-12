@@ -4,8 +4,7 @@ import {SkillsContext} from '../../context/SkillsContext'
 import {MainContext} from '../../context/MainContext'
 import {SkillsContextProvider} from '../../context/providers'
 
-import {SkillsList} from '../../components/SkillsList/SkillsList'
-import {SkillsHeader} from '../../components/SkillsHeader'
+import {SkillsHeader, SkillsList} from '../../components'
 
 import './Skills.css'
 

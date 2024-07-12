@@ -2,8 +2,8 @@ import {createContext} from 'react'
 import {ISkillsContext} from './ISkillsContext'
 
 const SkillsContext = createContext<ISkillsContext>({
-        selectSkill: () => {},
-        loadSkills: () => {}
+    selectSkill: () => {},
+    loadSkills: () => {}
 })
 
 export {SkillsContext}

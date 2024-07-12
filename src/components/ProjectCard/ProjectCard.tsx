@@ -1,7 +1,8 @@
-import './ProjectCard.css'
-import {IProjectCard} from './IProjectCard'
 import {MetaStack} from '../MetaStack'
 import {MetaDeploy} from '../MetaDeploy'
+
+import {IProjectCard} from './IProjectCard'
+import './ProjectCard.css'
 
 function ProjectCard(props: IProjectCard) {
     const {stack, project} = props

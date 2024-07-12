@@ -1,17 +1,20 @@
+import {ReactElement} from 'react'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {IFormField} from './IFormField'
 import './FormField.css'
-import React, {DetailedHTMLProps, ReactElement} from 'react'
+
 function FormField(props: IFormField) {
     const {
-              icon
-              , label
-              , id
-              , iconPosition
-              , placeholder
-              , inputType
-          }            = props
+              icon,
+              label,
+              id,
+              iconPosition,
+              placeholder,
+              inputType
+          } = props
+
     const iconSelector = `${iconPosition}-icon`
 
     let inputElement: ReactElement

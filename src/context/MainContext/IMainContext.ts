@@ -1,21 +1,22 @@
-import {Project, Skill} from '../../models'
-import React, {Dispatch, SetStateAction} from 'react'
+import {Project, Skill} from '../../entities'
+import {Dispatch, ReactNode, SetStateAction} from 'react'
 
 export interface IMainContext {
     projects: Project[]
-    setProjects: Dispatch<SetStateAction<Project[]>>
     projectId: number
-    setProjectId: Dispatch<SetStateAction<number>>
     skills: Skill[]
-    setSkills: Dispatch<SetStateAction<Skill[]>>
     skillId: number
-    setSkillId: Dispatch<SetStateAction<number>>
     search: string
-    setSearch: Dispatch<SetStateAction<string>>
     sort: string
-    setSort: Dispatch<SetStateAction<string>>
     isModalOpen: boolean
+    modalContent: ReactNode
+
+    setProjects: Dispatch<SetStateAction<Project[]>>
+    setProjectId: Dispatch<SetStateAction<number>>
+    setSkills: Dispatch<SetStateAction<Skill[]>>
+    setSkillId: Dispatch<SetStateAction<number>>
+    setSearch: Dispatch<SetStateAction<string>>
+    setSort: Dispatch<SetStateAction<string>>
     setIsModalOpen: Dispatch<SetStateAction<boolean>>
-    modalContent: React.ReactNode
-    setModalContent: Dispatch<SetStateAction<React.ReactNode>>
+    setModalContent: Dispatch<SetStateAction<ReactNode>>
 }

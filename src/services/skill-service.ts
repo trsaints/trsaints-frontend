@@ -1,4 +1,4 @@
-import {Skill} from '../models'
+import {Skill} from '../entities'
 
 function getPlaceholderSkills(): Skill[] {
     return [
