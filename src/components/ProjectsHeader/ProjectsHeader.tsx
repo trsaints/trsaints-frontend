@@ -1,11 +1,13 @@
-import './ProjectsHeader.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons'
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 import {IProjectsHeader} from './IProjectsHeader'
+import './ProjectsHeader.css'
 
 function ProjectsHeader(props: IProjectsHeader) {
     const {onHandleClick} = props
-    
+
     return (
         <header className='projects__header'>
             <h2 className='projects__title'>

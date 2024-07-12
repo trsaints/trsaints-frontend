@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import {skillService} from '../../../services'
-import {SkillsContext} from '../../SkillsContext'
-import {MainContext} from '../../MainContext'
 
-import {ISkillsContext} from '../../SkillsContext/ISkillsContext'
-import {ISkillsContextProvider} from './ISkillsContextProvider'
 import {SkillsPanel} from '../../../components'
+
+import {MainContext} from '../../MainContext'
+import {ISkillsContext, SkillsContext} from '../../SkillsContext'
+import {ISkillsContextProvider} from './ISkillsContextProvider'
 
 function SkillsContextProvider(props: ISkillsContextProvider) {
     const {children} = props
@@ -37,7 +37,7 @@ function SkillsContextProvider(props: ISkillsContextProvider) {
         const selectedSkill = skillService.getSkillById(skills, Number(id))
 
         if (!selectedSkill) return
-        
+
         setIsModalOpen(true)
         setModalContent(<SkillsPanel skill={selectedSkill}/>)
     }

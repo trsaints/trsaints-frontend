@@ -3,20 +3,20 @@ import {IMainContext} from './IMainContext'
 
 const MainContext = createContext<IMainContext>({
     projects: [],
-    setProjects: () => {},
     projectId: -1,
-    setProjectId: () => {},
     skills: [],
-    setSkills: () => {},
     skillId: -1,
-    setSkillId: () => {},
     search: '',
-    setSearch: () => {},
     sort: '',
-    setSort: () => {},
     isModalOpen: false,
-    setIsModalOpen: () => {},
     modalContent: null,
+    setProjects: () => {},
+    setProjectId: () => {},
+    setSkills: () => {},
+    setSkillId: () => {},
+    setSearch: () => {},
+    setSort: () => {},
+    setIsModalOpen: () => {},
     setModalContent: () => {}
 })
 

@@ -1,10 +1,11 @@
-import {ProjectsContext} from '../../ProjectsContext'
-import {projectService} from '../../../services'
 import React, {FormEvent, useContext} from 'react'
-import {MainContext} from '../../MainContext'
-import {IProjectsContext} from '../../ProjectsContext/IProjectsContext'
-import {IProjectsContextProvider} from './IProjectsContextProvider'
+import {projectService} from '../../../services'
+
 import {ProjectsPanel} from '../../../components'
+
+import {MainContext} from '../../MainContext'
+import {IProjectsContext, ProjectsContext} from '../../ProjectsContext'
+import {IProjectsContextProvider} from './IProjectsContextProvider'
 
 function ProjectsContextProvider(props: IProjectsContextProvider) {
     const {children} = props

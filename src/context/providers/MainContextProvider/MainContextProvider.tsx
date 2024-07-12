@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
-import {Project, Skill} from '../../../models'
-import {MainContext} from '../../MainContext'
-import {IMainContext} from '../../MainContext/IMainContext'
+import {ReactNode, useState} from 'react'
+import {Project, Skill} from '../../../entities'
 
+import {IMainContext, MainContext} from '../../MainContext'
 import {IMainContextProvider} from './IMainContextProvider'
 
 function MainContextProvider(props: IMainContextProvider) {
@@ -17,8 +16,8 @@ function MainContextProvider(props: IMainContextProvider) {
     const [search, setSearch] = useState<string>('')
     const [sort, setSort]     = useState<string>('')
 
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-    const [modalContent, setModalContent] = useState<React.ReactNode>(null)
+    const [isModalOpen, setIsModalOpen]   = useState<boolean>(false)
+    const [modalContent, setModalContent] = useState<ReactNode>(null)
 
     const context: IMainContext = {
         projects,
