@@ -6,13 +6,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {ISkillsHeader} from './ISkillsHeader'
 import './SkillsHeader.css'
+import {intersectionService} from '../../services'
 
 function Root(props: ComponentProps<'header'>) {
     const {children} = props
+    const ref        = intersectionService
+        .useIntersectionObserver<HTMLHeadingElement>(0.75, (entry) => {
+            intersectionService.addAnimation(entry, 'typed-out')
+        })
 
     return (
         <header className='skills__header'>
-            <h2 className='skills__title'>
+            <h2 className='skills__title' ref={ref}>
                 minhas <span lang='en'>skills</span>
             </h2>
 
