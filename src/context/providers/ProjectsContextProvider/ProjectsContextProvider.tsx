@@ -30,11 +30,14 @@ function ProjectsContextProvider(props: IProjectsContextProvider) {
         const searchParameters = new FormData(e.currentTarget as HTMLFormElement)
         const searchTerm       = searchParameters.get('search')?.toString()
         const sortTerm         = searchParameters.get('sort')?.toString()
-
-        if (!searchTerm || !sortTerm) return
+        
+        if (!searchTerm) {
+            setSearch('')
+            return
+        }
 
         setSearch(searchTerm)
-        setSort(sortTerm)
+        setSort(sortTerm!)
     }
 
     const selectProject = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
