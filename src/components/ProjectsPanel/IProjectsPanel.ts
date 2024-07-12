@@ -1,31 +1,31 @@
 import {ComponentProps} from 'react'
-import {Project} from '../../models'
+import {Project} from '../../entities'
 
-export interface IPanelHeader extends ComponentProps<'header'> {
+export interface IProjectsPanelHeader extends ComponentProps<'header'> {
     title: string
     releaseDate: string
     stack: string[]
 }
 
-export interface IPanelStack extends ComponentProps<'ul'> {
+export interface IProjectsPanelStack extends ComponentProps<'ul'> {
     stack: string[]
 }
 
-export interface IPanelDate extends ComponentProps<'p'> {
+export interface IProjectsPanelDate extends ComponentProps<'p'> {
     year: string
 }
 
-export interface IPanelDescription extends ComponentProps<'p'> {
+export interface IProjectsPanelDescription extends ComponentProps<'p'> {
     description: string
 }
 
-export interface IPanelLinks extends ComponentProps<'nav'> {
+export interface IProjectsPanelLinks extends ComponentProps<'nav'> {
     title: string
     deployUrl?: string
     sourceUrl: string
 }
 
-export interface IPanelBanner extends ComponentProps<'figure'> {
+export interface IProjectsPanelBanner extends ComponentProps<'figure'> {
     title: string
     bannerUrl: string
     bannerAlt: string
