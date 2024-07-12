@@ -7,9 +7,7 @@ function SkillsList(props: ISkillsList) {
 
     const skillCards = skills.map((skill) => (
         <li key={skill?.uuid} data-id={skill?.uuid}>
-            <SkillCard.Root>
-                <SkillCard.Content skill={skill}/>
-            </SkillCard.Root>
+            <SkillCard skill={skill} />
         </li>
     ))
 
