@@ -3,28 +3,28 @@ import {faGlobe, faUpRightFromSquare,} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import {
-    IPanelBanner,
-    IPanelDate,
-    IPanelDescription,
-    IPanelHeader,
-    IPanelLinks,
-    IPanelStack,
+    IProjectsPanelBanner,
+    IProjectsPanelDate,
+    IProjectsPanelDescription,
+    IProjectsPanelHeader,
+    IProjectsPanelLinks,
+    IProjectsPanelStack,
     IProjectsPanel
 } from './IProjectsPanel'
 import './ProjectsPanel.css'
 
-function Header(props: IPanelHeader) {
+function ProjectsPanelHeader(props: IProjectsPanelHeader) {
     const {title, releaseDate, stack} = props
 
     return (<header className='project__header'>
         <h3 className='project__title'>{title}</h3>
 
-        <DateDisplay year={releaseDate}/>
-        <Stack stack={stack}/>
+        <ProjectsPanelDate year={releaseDate}/>
+        <ProjectsPanelStack stack={stack}/>
     </header>)
 }
 
-function Stack(props: IPanelStack) {
+function ProjectsPanelStack(props: IProjectsPanelStack) {
     const {stack} = props
 
     const stacks = stack.map((tech, index) => (<li className='project__tech' key={`${tech}-${index}`}>
@@ -34,7 +34,7 @@ function Stack(props: IPanelStack) {
     return <ul className='project__stacks'>{stacks}</ul>
 }
 
-function DateDisplay(props: IPanelDate) {
+function ProjectsPanelDate(props: IProjectsPanelDate) {
     const {year} = props
 
     return (<p className='project__date'>
@@ -46,13 +46,13 @@ function DateDisplay(props: IPanelDate) {
     </p>)
 }
 
-function Desc(props: IPanelDescription) {
+function ProjectsPanelDescription(props: IProjectsPanelDescription) {
     const {description} = props
 
     return <p className='project__desc'>{description}</p>
 }
 
-function Links(props: IPanelLinks) {
+function ProjectsPanelLinks(props: IProjectsPanelLinks) {
     const {title, deployUrl, sourceUrl} = props
 
     return (<nav className='project__links'>
@@ -78,7 +78,7 @@ function Links(props: IPanelLinks) {
     </nav>)
 }
 
-function Banner(props: IPanelBanner) {
+function Banner(props: IProjectsPanelBanner) {
     const {title, bannerUrl, bannerAlt} = props
 
     return (<figure className='project__figure'>
@@ -93,15 +93,15 @@ function ProjectsPanel(props: IProjectsPanel) {
 
     return (
         <article className='project'>
-            <Header
+            <ProjectsPanelHeader
                 title={project.title}
                 releaseDate={project.releaseDate.toDateString()}
                 stack={stack}
             />
 
             <Banner {...project}/>
-            <Desc {...project}/>
-            <Links{...project}/>
+            <ProjectsPanelDescription {...project}/>
+            <ProjectsPanelLinks{...project}/>
         </article>
     )
 }
